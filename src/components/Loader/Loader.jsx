@@ -52,7 +52,6 @@ const Loader = () => {
         setShow6(true);
       }, 15000);
     } else {
-      // Skip intro and go directly to main content
       setShow6(true);
     }
   }, []);

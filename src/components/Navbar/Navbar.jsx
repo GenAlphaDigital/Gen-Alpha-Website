@@ -6,6 +6,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Image from "next/image";
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
   const [visible, setVisible] = useState("none");
   const [scrolled, setScrolled] = useState(false);
   const [hover, setHover] = useState(false);
@@ -14,6 +15,12 @@ const Navbar = () => {
     if (visible === "none") setVisible("flex");
     else setVisible("none");
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 15000);
+  }, []);
 
   const handleScroll = () => {
     if (window.scrollY > window.innerHeight) {
@@ -31,75 +38,80 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
-      className={styles.navbar}
-      style={{
-        width: visible === "none" ? "1.5rem" : "100%",
-      }}
-    >
+    show && (
       <div
-        className={styles.container}
+        className={styles.navbar}
         style={{
-          width: "6rem",
+          width: visible === "none" ? "1.5rem" : "100%",
         }}
-        onMouseEnter={() => {
-          setHover(true);
-          console.log("hovered");
-        }}
-        onMouseLeave={() => setHover(false)}
       >
         <div
-          className={styles.navContainer}
-          onClick={handleClick}
+          className={styles.container}
           style={{
-            backgroundColor: visible === "none" ? "var(--blue)" : "white",
+            width: "6rem",
           }}
+          onMouseEnter={() => {
+            setHover(true);
+            console.log("hovered");
+          }}
+          onMouseLeave={() => setHover(false)}
         >
-          {visible === "none" ? (
-            <IoMdMenu
-              style={{
-                display: "block",
-                color: scrolled ? "white" : "white",
-                transition: "color 0.3s ease",
-              }}
-            />
-          ) : (
-            <IoMdClose style={{ color: "black" }} />
-          )}
+          <div
+            className={styles.navContainer}
+            onClick={handleClick}
+            style={{
+              backgroundColor: visible === "none" ? "var(--blue)" : "white",
+            }}
+          >
+            {visible === "none" ? (
+              <IoMdMenu
+                style={{
+                  display: "block",
+                  color: scrolled ? "white" : "white",
+                  transition: "color 0.3s ease",
+                }}
+              />
+            ) : (
+              <IoMdClose style={{ color: "black" }} />
+            )}
+          </div>
+        </div>
+        <div
+          className={`${styles.linksContainer}`}
+          style={{ display: visible }}
+        >
+          <div className={styles.logo}>
+            <Image src={"/g.svg"} alt="logo" width={1000} height={1000} />
+          </div>
+          <div className={styles.links}>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <Link href={"/"} onClick={() => setVisible("none")}>
+                Home
+              </Link>
+            </div>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <Link href={"/about"} onClick={() => setVisible("none")}>
+                About Us
+              </Link>
+            </div>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <Link href={"/services"} onClick={() => setVisible("none")}>
+                Services
+              </Link>
+            </div>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <Link href={"/projects"} onClick={() => setVisible("none")}>
+                Our Works
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-      <div className={`${styles.linksContainer}`} style={{ display: visible }}>
-        <div className={styles.logo}>
-          <Image src={"/g.svg"} alt="logo" width={1000} height={1000} />
-        </div>
-        <div className={styles.links}>
-          <div className={styles.link}>
-            <div className={styles.bounceDot}></div>
-            <Link href={"/"} onClick={() => setVisible("none")}>
-              Home
-            </Link>
-          </div>
-          <div className={styles.link}>
-            <div className={styles.bounceDot}></div>
-            <Link href={"/about"} onClick={() => setVisible("none")}>
-              About Us
-            </Link>
-          </div>
-          <div className={styles.link}>
-            <div className={styles.bounceDot}></div>
-            <Link href={"/services"} onClick={() => setVisible("none")}>
-              Services
-            </Link>
-          </div>
-          <div className={styles.link}>
-            <div className={styles.bounceDot}></div>
-            <Link href={"/projects"} onClick={() => setVisible("none")}>
-              Our Works
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    )
   );
 };
 
