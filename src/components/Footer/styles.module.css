@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 35vh;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1rem;
+  /* font-weight: 600; */
+}
+
+.line {
+  width: 75%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.bottom p {
+  font-size: 12px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .container {
+    height: auto;
+    padding: 4rem 0;
+  }
+}

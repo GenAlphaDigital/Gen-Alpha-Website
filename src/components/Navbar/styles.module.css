@@ -1,0 +1,148 @@
+.navbar {
+  position: fixed;
+  width: 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+  right: 0;
+}
+
+.container {
+  /* width: 1.5rem; */
+  height: 100%;
+  position: absolute;
+  right: 0;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.navContainer {
+  width: 100%;
+  height: 75%;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+  background-color: var(--blue);
+  transform: translateX(60%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
+  padding: 1rem;
+}
+
+.navContainer svg {
+  color: white;
+  display: none;
+}
+
+.container:hover {
+  width: 6rem;
+}
+
+.container:hover .navContainer svg {
+  display: block;
+}
+
+.linksContainer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue);
+  position: absolute;
+  z-index: 1;
+  animation: slide 0.7s ease-in-out;
+  display: flex;
+}
+
+.slideOut {
+  animation: slideOutAnimation 0.7s ease-in-out;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 3rem;
+}
+
+.logo img {
+  width: 30%;
+  height: 15%;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.bounceDot {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  animation: bounce 1s ease-in-out;
+}
+
+.link:hover .bounceDot {
+  display: block;
+}
+
+.links {
+  flex: 1;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+@keyframes slide {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slideOutAnimation {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

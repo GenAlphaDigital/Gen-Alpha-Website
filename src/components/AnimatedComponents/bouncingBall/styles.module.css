@@ -1,0 +1,15 @@
+.bouncingBall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  /* outline: 1px solid black; */
+}
+
+.bouncingBallInner {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #000;
+  border-radius: 50%;
+}

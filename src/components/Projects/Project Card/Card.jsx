@@ -1,0 +1,81 @@
+import Image from "next/image";
+import styles from "./styles.module.css";
+import { MotionDiv } from "@/components/motionComponents/motionComponents";
+
+const line = {
+  hidden: {
+    width: 0,
+  },
+  visible: {
+    width: "100%",
+    transition: {
+      duration: 1.2,
+    },
+  },
+};
+
+const left = {
+  hidden: {
+    x: "-5vh",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      duration: 1.2,
+    },
+  },
+};
+
+const right = {
+  hidden: {
+    x: "5vh",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      duration: 1.2,
+    },
+  },
+};
+
+const Card = () => {
+  return (
+    <div className={styles.container}>
+      <MotionDiv
+        variants={line}
+        initial="hidden"
+        whileInView="visible"
+        className={styles.line}
+      ></MotionDiv>
+      <div className={styles.project}>
+        <MotionDiv
+          variants={left}
+          initial="hidden"
+          whileInView="visible"
+          className={styles.textContainer}
+        >
+          <small>Project Title</small>
+          <p>
+            Project Description, Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry.
+          </p>
+        </MotionDiv>
+        <MotionDiv
+          variants={right}
+          initial="hidden"
+          whileInView="visible"
+          className={styles.imgContainer}
+        >
+          <Image
+            src={"/projects/project1.jpg"}
+            alt="project"
+            width={1000}
+            height={1000}
+          />
+        </MotionDiv>
+      </div>
+    </div>
+  );
+};
+
+export default Card;

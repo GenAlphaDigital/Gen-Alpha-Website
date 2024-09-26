@@ -1,0 +1,44 @@
+.main {
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  /* background-color: var(--orange); */
+  background-image: url("/public/cursor.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* cursor: none; */
+  /* border-radius: 50%; */
+  z-index: 999;
+  pointer-events: none;
+
+  transition: all 0.1s ease;
+}
+
+.followedCursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  z-index: 999;
+  position: fixed;
+  pointer-events: none;
+  transition: all 0.1s ease;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .main {
+    display: none;
+  }
+}
