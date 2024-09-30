@@ -10,7 +10,6 @@ import Service from "../Service/Service";
 import Projects from "../Projects/Projects";
 import Brands from "../Brands/Brands";
 import Image from "next/image";
-import Footer from "../Footer/Footer";
 
 const Loader = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -193,7 +192,6 @@ const Loader = () => {
             <Service />
             <Projects />
             <Brands />
-            <Footer />
           </>
         )}
       </AnimatePresence>

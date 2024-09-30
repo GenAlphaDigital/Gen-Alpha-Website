@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 const Projects = () => {
   return (
     <div className={styles.container}>
-      <small>Our Work</small>
+      <p>Our Work</p>
       <Card />
       <Card />
       <Card />

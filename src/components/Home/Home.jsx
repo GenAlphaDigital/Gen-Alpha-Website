@@ -38,16 +38,24 @@ const Home = () => {
               text={"We empower digital presence and"}
               styles={{ fontSize: "2.5rem", lineHeight: "1" }}
             />
-            <StaggeredText
-              text={"amplify impact for startups and businesses. 🚀"}
-              styles={{
-                fontWeight: "300",
-                lineHeight: "1",
-                fontSize: "1.5rem",
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                gap: "0.5rem",
               }}
-            />
+            >
+              <StaggeredText
+                text={"amplify impact for startups and businesses. "}
+                styles={{
+                  fontWeight: "300",
+                  lineHeight: "1",
+                  fontSize: "1.5rem",
+                }}
+              />
+              <Image src={"/rocket.gif"} alt="rocket" width={45} height={45} />
+            </div>
           </div>
-
           <MotionDiv className={styles.btns}>
             <MotionButton
               variants={flow}

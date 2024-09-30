@@ -13,7 +13,7 @@ const Brands = ({ bg }) => {
       }}
     >
       <div className={styles.header}>
-        <small>Brands In Collaboration With Us</small>
+        <p>Brands In Collaboration With Us</p>
         <div className={styles.line}></div>
       </div>
 

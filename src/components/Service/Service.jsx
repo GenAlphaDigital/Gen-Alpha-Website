@@ -6,28 +6,28 @@ import { MotionDiv } from "../motionComponents/motionComponents";
 
 const services = [
   {
-    image: "/services/service1.png",
+    image: "/services/service1.gif",
     title: "Product Branding and Designing",
     desc: `Blending creativity and strategy, we create compelling brand
             identities with memorable visuals that align with your vision, from
             logos to complete brand ecosystems.`,
   },
   {
-    image: "/services/service2.png",
+    image: "/services/service2.gif",
     title: "Product Packaging",
     desc: `Enhance product presentation with functional, sustainable packaging
             that stands out and tells your brand's story, leaving a lasting
             impression on customers.`,
   },
   {
-    image: "/services/service3.png",
+    image: "/services/service3.gif",
     title: "Technology and Development",
     desc: `We develop cutting-edge tech solutions that streamline operations
             and enhance user experiences, leveraging the latest trends for
             robust and scalable systems.`,
   },
   {
-    image: "/services/service4.png",
+    image: "/services/service4.gif",
     title: "Advertisment and Marketing",
     desc: `Our data-driven advertising and marketing services combine creative
             storytelling with strategic campaigns to maximize your brand's
