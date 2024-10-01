@@ -7,6 +7,11 @@ import Header from "@/components/Header/Header";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import Image from "next/image";
 import StaggeredWords from "@/components/StaggeredWords/StaggeredWords";
+import Footer from "@/components/Footer/Footer";
+import Packaging from "@/components/3d Components/packaging";
+import WebDev from "@/components/3d Components/webdev";
+import Marketing from "@/components/3d Components/marketing";
+import Branding from "@/components/3d Components/branding";
 
 const page = () => {
   return (
@@ -37,7 +42,7 @@ const page = () => {
             />
           </div>
           <div className={styles.imgContainer}>
-            <MotionDiv
+            {/* <MotionDiv
               className={styles.card}
               initial={{ x: "10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
@@ -51,7 +56,8 @@ const page = () => {
                   <div className={styles.arrow}></div>
                 </button>
               </div>
-            </MotionDiv>
+            </MotionDiv> */}
+            <Branding />
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
@@ -62,13 +68,14 @@ const page = () => {
             />
           </div>
           <div className={styles.imgContainer}>
-            <MotionDiv
+            {/* <MotionDiv
               className={styles.card}
               initial={{ x: "-10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             >
               <div className={styles.img}>
                 <Image src={"/packaging.gif"} alt="" width={500} height={500} />
+                 
               </div>
               <div className={styles.desc}>
                 <b>{"Product Packaging"}</b>
@@ -76,7 +83,8 @@ const page = () => {
                   <div className={styles.arrow}></div>
                 </button>
               </div>
-            </MotionDiv>
+            </MotionDiv> */}
+            <Packaging />
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
@@ -87,7 +95,7 @@ const page = () => {
             />
           </div>
           <div className={styles.imgContainer}>
-            <MotionDiv
+            {/* <MotionDiv
               className={styles.card}
               initial={{ x: "10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
@@ -101,7 +109,8 @@ const page = () => {
                   <div className={styles.arrow}></div>
                 </button>
               </div>
-            </MotionDiv>
+            </MotionDiv> */}
+            <WebDev />
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
@@ -112,7 +121,7 @@ const page = () => {
             />
           </div>
           <div className={styles.imgContainer}>
-            <MotionDiv
+            {/* <MotionDiv
               className={styles.card}
               initial={{ x: "-10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
@@ -126,10 +135,12 @@ const page = () => {
                   <div className={styles.arrow}></div>
                 </button>
               </div>
-            </MotionDiv>
+            </MotionDiv> */}
+            <Marketing />
           </div>
         </MotionDiv>
       </div>
+      <Footer />
     </div>
   );
 };

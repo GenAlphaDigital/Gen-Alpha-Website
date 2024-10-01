@@ -2,7 +2,6 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./SmoothScrolling";
 import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 
 const poppins = Poppins({
   weight: ["300", "400", "700", "100", "200", "500", "600", "800", "900"],
@@ -20,7 +19,6 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <Navbar />
         <SmoothScrolling>{children}</SmoothScrolling>
-        <Footer />
       </body>
     </html>
   );

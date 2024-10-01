@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import { MotionDiv } from "../motionComponents/motionComponents";
+import Packaging from "../3d Components/packaging";
 
 const services = [
   {
@@ -14,6 +15,7 @@ const services = [
   },
   {
     image: "/services/service2.gif",
+    service: <Packaging />,
     title: "Product Packaging",
     desc: `Enhance product presentation with functional, sustainable packaging
             that stands out and tells your brand's story, leaving a lasting
@@ -21,6 +23,7 @@ const services = [
   },
   {
     image: "/services/service3.gif",
+
     title: "Technology and Development",
     desc: `We develop cutting-edge tech solutions that streamline operations
             and enhance user experiences, leveraging the latest trends for
@@ -105,7 +108,9 @@ const Service = () => {
             }}
             className={styles.serviceRes}
           >
-            <Image src={service.image} width={50} height={50} alt="service" />
+            {/* <Image src={service.image} width={50} height={50} alt="service" />
+             */}
+            <service.service />
             <h6>{service.title}</h6>
             <small>{service.desc}</small>
             <button className={styles.btnRes}>Learn More</button>
