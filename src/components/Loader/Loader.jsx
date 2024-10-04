@@ -11,6 +11,7 @@ import Projects from "../Projects/Projects";
 import Brands from "../Brands/Brands";
 import Image from "next/image";
 import Footer from "../Footer/Footer";
+import Contact from "../Contact/Contact";
 
 const Loader = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -193,6 +194,7 @@ const Loader = () => {
             <Service />
             <Projects />
             <Brands />
+            <Contact />
             <Footer />
           </>
         )}

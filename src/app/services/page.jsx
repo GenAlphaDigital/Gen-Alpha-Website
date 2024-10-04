@@ -1,11 +1,7 @@
-import {
-  MotionDiv,
-  MotionP,
-} from "@/components/motionComponents/motionComponents";
+import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import styles from "./page.module.css";
 import Header from "@/components/Header/Header";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
-import Image from "next/image";
 import StaggeredWords from "@/components/StaggeredWords/StaggeredWords";
 import Footer from "@/components/Footer/Footer";
 import Packaging from "@/components/3d Components/packaging";
@@ -38,105 +34,64 @@ const page = () => {
           <div className={styles.textContainer}>
             <StaggeredText
               whileInView={true}
-              text={`Service Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+              text={`Blending creativity and strategy, we create compelling brand identities with memorable visuals that align with your vision, from logos to complete brand ecosystems.`}
             />
           </div>
           <div className={styles.imgContainer}>
-            {/* <MotionDiv
-              className={styles.card}
+            <MotionDiv
               initial={{ x: "10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             >
-              <div className={styles.img}>
-                <Image src={"/branding.gif"} alt="" width={500} height={500} />
-              </div>
-              <div className={styles.desc}>
-                <b>{"Product Designing and Branding"}</b>
-                <button>
-                  <div className={styles.arrow}></div>
-                </button>
-              </div>
-            </MotionDiv> */}
-            <Branding />
+              <Branding />
+            </MotionDiv>
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
           <div className={styles.textContainer}>
             <StaggeredText
               whileInView={true}
-              text={`Service Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+              text={`Enhance product presentation with functional, sustainable packaging that stands out and tells your brand's story, leaving a lasting impression on customers.`}
             />
           </div>
           <div className={styles.imgContainer}>
-            {/* <MotionDiv
-              className={styles.card}
+            <MotionDiv
               initial={{ x: "-10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             >
-              <div className={styles.img}>
-                <Image src={"/packaging.gif"} alt="" width={500} height={500} />
-                 
-              </div>
-              <div className={styles.desc}>
-                <b>{"Product Packaging"}</b>
-                <button>
-                  <div className={styles.arrow}></div>
-                </button>
-              </div>
-            </MotionDiv> */}
-            <Packaging />
+              <Packaging />
+            </MotionDiv>
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
           <div className={styles.textContainer}>
             <StaggeredText
               whileInView={true}
-              text={`Service Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+              text={`We develop cutting-edge tech solutions that streamline operations and enhance user experiences, leveraging the latest trends for robust and scalable systems.`}
             />
           </div>
           <div className={styles.imgContainer}>
-            {/* <MotionDiv
-              className={styles.card}
+            <MotionDiv
               initial={{ x: "10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             >
-              <div className={styles.img}>
-                <Image src={"/dev.gif"} alt="" width={500} height={500} />
-              </div>
-              <div className={styles.desc}>
-                <b>{"Technology and Development"}</b>
-                <button>
-                  <div className={styles.arrow}></div>
-                </button>
-              </div>
-            </MotionDiv> */}
-            <WebDev />
+              <WebDev />
+            </MotionDiv>
           </div>
         </MotionDiv>
         <MotionDiv className={styles.service}>
           <div className={styles.textContainer}>
             <StaggeredText
               whileInView={true}
-              text={`Service Description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+              text={`Our data-driven advertising and marketing services combine creative storytelling with strategic campaigns to maximize your brand's reach and impact across multiple platforms.`}
             />
           </div>
           <div className={styles.imgContainer}>
-            {/* <MotionDiv
-              className={styles.card}
+            <MotionDiv
               initial={{ x: "-10vh", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             >
-              <div className={styles.img}>
-                <Image src={"/marketing.gif"} alt="" width={500} height={500} />
-              </div>
-              <div className={styles.desc}>
-                <b>{"Product Marketing"}</b>
-                <button>
-                  <div className={styles.arrow}></div>
-                </button>
-              </div>
-            </MotionDiv> */}
-            <Marketing />
+              <Marketing />
+            </MotionDiv>
           </div>
         </MotionDiv>
       </div>

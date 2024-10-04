@@ -3,29 +3,10 @@ import Packaging from "@/components/3d Components/packaging";
 import Branding from "@/components/3d Components/branding";
 import WebDev from "@/components/3d Components/webdev";
 import React from "react";
+import Contact from "@/components/Contact/Contact";
 
 const page = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "50%",
-          // height: "50",
-        }}
-      >
-        <Branding />
-      </div>
-    </div>
-  );
+  return <Contact />;
 };
 
 export default page;
