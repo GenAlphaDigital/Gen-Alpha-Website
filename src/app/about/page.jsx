@@ -98,6 +98,21 @@ const About = () => {
     },
   };
 
+  const item2 = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        ease: "easeOut",
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <div className={styles.container}>
       {/* Logo */}
@@ -118,7 +133,9 @@ const About = () => {
             >
               {title && (
                 <MotionDiv variants={item}>
-                  <p>Redefining routine with data-driven creativity and </p>
+                  <p>
+                    We redefine the routine with data-driven creativity and{" "}
+                  </p>
                   <p>relentless innovation</p>
                 </MotionDiv>
               )}
@@ -152,9 +169,24 @@ const About = () => {
       </div>
 
       {/* About Us Time Line */}
+      <p
+        style={{
+          fontSize: "3rem",
+          textAlign: "center",
+          margin: "2rem 0",
+        }}
+      >
+        About Us
+      </p>
       <div className={styles.about}>
-        <div className={styles.boxContainer}>
-          <div className={styles.box} ref={boxRefs[0]}>
+        <MotionDiv className={styles.boxContainer}>
+          <MotionDiv
+            variants={item2}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.box}
+            ref={boxRefs[0]}
+          >
             <div>
               <p>Year 2021</p>
               <p>Focus on Digital Marketing Clients</p>
@@ -163,8 +195,14 @@ const About = () => {
                 building a strong foundation in this sector.
               </p>
             </div>
-          </div>
-          <div className={styles.box} ref={boxRefs[1]}>
+          </MotionDiv>
+          <MotionDiv
+            variants={item2}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.box}
+            ref={boxRefs[1]}
+          >
             <div>
               <p>Year 2022</p>
               <p>Delivered Our First Tech Project</p>
@@ -173,8 +211,14 @@ const About = () => {
                 expanding our expertise and service offerings.
               </p>
             </div>
-          </div>
-          <div className={styles.box} ref={boxRefs[2]}>
+          </MotionDiv>
+          <MotionDiv
+            variants={item2}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.box}
+            ref={boxRefs[2]}
+          >
             <div>
               <p>Year 2023</p>
               <p>Registered as a Google & Amazon Partnered Agency</p>
@@ -184,8 +228,14 @@ const About = () => {
                 Sports, Fashion & E-commerce, and Real Estate sectors.{" "}
               </p>
             </div>
-          </div>
-          <div className={styles.box} ref={boxRefs[3]}>
+          </MotionDiv>
+          <MotionDiv
+            variants={item2}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.box}
+            ref={boxRefs[3]}
+          >
             <div>
               <p>December 2023</p>
               <p>Delivered Our First AR/VR Project</p>
@@ -194,8 +244,8 @@ const About = () => {
                 showcasing our innovation in immersive technology.
               </p>
             </div>
-          </div>
-        </div>
+          </MotionDiv>
+        </MotionDiv>
         <MotionDiv
           initial={{ scale: 0 }}
           whileInView={{
