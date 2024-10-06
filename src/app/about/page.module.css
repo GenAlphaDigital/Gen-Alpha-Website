@@ -123,3 +123,7 @@
   width: 50%;
   top: 0;
 }
+
+.gifsContainer div svg {
+  width: 75%;
+}

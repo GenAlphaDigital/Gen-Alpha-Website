@@ -19,7 +19,7 @@ const About = () => {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState(false);
   const [currentGif, setCurrentGif] = useState(gif1);
-  const [direction, setDirection] = useState(1); // Control the Lottie direction
+  const [direction, setDirection] = useState(1);
 
   const gifs = [gif1, gif2, gif3, gif4];
   const boxRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
@@ -66,7 +66,7 @@ const About = () => {
         }
       });
     };
-  }, []);
+  }, [boxRefs, gifs]);
 
   const container = {
     show: {
@@ -238,8 +238,8 @@ const About = () => {
               <p>
                 Our mission is to bring brands and people together through
                 thoughtful, data-driven marketing that truly resonates. We’re
-                passionate about fueling our client's growth and success, and we
-                do it by blending creativity with a deep commitment to
+                passionate about fueling our client&apos;s growth and success,
+                and we do it by blending creativity with a deep commitment to
                 delivering real results.
               </p>
             </div>
@@ -273,7 +273,7 @@ const About = () => {
           }}
           className={styles.gifsContainer}
         >
-          <Lottie animationData={Mission} loop={true} />
+          <Lottie animationData={Mission} width={"75%"} height={"75%"} />
         </MotionDiv>
       </div>
       <Footer />
