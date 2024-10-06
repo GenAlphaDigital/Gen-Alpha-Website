@@ -85,9 +85,6 @@ const Loader = () => {
     },
   });
 
-  // The rest of the item variations remain the same
-  // ...
-
   return (
     <div>
       <AnimatePresence>
