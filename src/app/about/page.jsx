@@ -21,9 +21,6 @@ const About = () => {
   const [currentGif, setCurrentGif] = useState(gif1);
   const [direction, setDirection] = useState(1);
 
-  const gifs = [gif1, gif2, gif3, gif4];
-  const boxRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-
   useEffect(() => {
     setShow(true);
     setTimeout(() => {
@@ -32,7 +29,9 @@ const About = () => {
     }, 2000);
   }, []);
 
+  const boxRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   useEffect(() => {
+    const gifs = [gif1, gif2, gif3, gif4];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -66,7 +65,7 @@ const About = () => {
         }
       });
     };
-  }, [boxRefs, gifs]);
+  });
 
   const container = {
     show: {
