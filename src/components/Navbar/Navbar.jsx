@@ -10,16 +10,17 @@ const Navbar = () => {
   const [visible, setVisible] = useState("none");
   const [scrolled, setScrolled] = useState(false);
   const [hover, setHover] = useState(false);
-
   const handleClick = () => {
     if (visible === "none") setVisible("flex");
     else setVisible("none");
   };
 
   useEffect(() => {
+    const hasSeenIntro = localStorage.getItem("hasSeenIntro");
+    const duration = !hasSeenIntro ? 15000 : 3000;
     setTimeout(() => {
       setShow(true);
-    }, 15000);
+    }, duration);
   }, []);
 
   const handleScroll = () => {

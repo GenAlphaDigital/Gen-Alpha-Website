@@ -29,6 +29,16 @@ const Home = () => {
         animate="visible"
       >
         <Image src={"/Logo.svg"} alt="logo" width={120} height={120} />
+
+        <MotionButton
+          variants={flow}
+          initial="initial"
+          animate="visible"
+          whileHover={"hover"}
+          className={styles.contactBtn}
+        >
+          Contact Us <span>&#9990;</span>
+        </MotionButton>
       </MotionDiv>
 
       <div className={styles.wrapper}>

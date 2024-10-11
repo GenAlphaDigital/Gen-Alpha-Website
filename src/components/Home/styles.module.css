@@ -39,6 +39,24 @@
 .header {
   display: flex;
   width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contactBtn {
+  display: flex;
+  align-items: baseline;
+  padding: 1rem;
+  border: none;
+  border-radius: 3rem;
+  background-color: var(--orange);
+  color: white;
+  gap: 1rem;
+  transition: scale 0.5s ease;
+}
+
+.contactBtn:hover {
+  scale: 1.15;
 }
 
 .header img {
@@ -61,6 +79,7 @@
   align-items: center;
   gap: 1rem;
   cursor: pointer;
+  transition: scale 0.5s ease;
 }
 
 .btn span {

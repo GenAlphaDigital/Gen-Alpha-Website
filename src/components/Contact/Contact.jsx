@@ -62,7 +62,9 @@ const Contact = () => {
         <form>
           <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
+          <input type="number" placeholder="Phone Number" />
+          <input type="text" placeholder="Your Brand" />
+          <textarea placeholder="Message" rows={6}></textarea>
           <button type="submit">Send</button>
         </form>
       </MotionDiv>
