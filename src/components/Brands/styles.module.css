@@ -5,8 +5,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 20px;
-  /* height: 100vh; */
   padding: 3rem;
+  border: #ccc 1px solid;
 }
 
 .header {

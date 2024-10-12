@@ -45,6 +45,9 @@ const Card = () => {
         variants={line}
         initial="hidden"
         whileInView="visible"
+        viewport={{
+          once: true,
+        }}
         className={styles.line}
       ></MotionDiv>
       <div className={styles.project}>
@@ -52,9 +55,12 @@ const Card = () => {
           variants={left}
           initial="hidden"
           whileInView="visible"
+          viewport={{
+            once: true,
+          }}
           className={styles.textContainer}
         >
-          <small>Project Title</small>
+          <h3>Project Title</h3>
           <p>
             Project Description, Lorem Ipsum is simply dummy text of the
             printing and typesetting industry.
@@ -64,6 +70,9 @@ const Card = () => {
           variants={right}
           initial="hidden"
           whileInView="visible"
+          viewport={{
+            once: true,
+          }}
           className={styles.imgContainer}
         >
           <Image

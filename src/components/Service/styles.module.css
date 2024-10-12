@@ -9,7 +9,8 @@
   width: 150vw;
   height: 100vh;
   display: flex;
-  transform-style: preserve-3d;
+  transform-style: translate3d(0, 0, 0);
+  transition: all 0.3s ease;
 }
 
 .service {
@@ -22,6 +23,7 @@
   flex-direction: column;
   text-align: center;
   height: 100vh;
+  border: 1px solid #ccc;
 }
 
 .servicesRes {

@@ -21,7 +21,6 @@ const services = [
   },
   {
     image: "/services/service3.gif",
-
     title: "Technology and Development",
     desc: `We develop cutting-edge tech solutions that streamline operations
             and enhance user experiences, leveraging the latest trends for
@@ -39,28 +38,33 @@ const services = [
 const Service = () => {
   useEffect(() => {
     const wrapper = document.querySelector(`.${styles.wrapper}`);
+    wrapper.style.transform = `translateX(0, 0, 0)`;
 
     const handleMouseMove = (e) => {
       const windowWidth = window.innerWidth;
       const mouseX = e.clientX;
-
       const mouseXPercent = (mouseX / windowWidth) * 100;
-
       const translateX = (mouseXPercent + 0) * -0.5;
 
-      console.log(
-        `windowWidth: ${windowWidth}, mouseX: ${mouseX},
-        mouseXPercent: ${mouseXPercent}, translateX: ${translateX}`
-      );
-      if (translateX > -34 && mouseXPercent > 20)
+      if (translateX > -34 && mouseXPercent > 20) {
         wrapper.style.transform = `translate3d(${translateX}%, 0, 0)`;
-      if (mouseXPercent < 20) wrapper.style.transform = `translate3d(0%, 0, 0)`;
+      } else if (mouseXPercent < 20) {
+        wrapper.style.transform = `translate3d(0%, 0, 0)`;
+      }
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    const handleMouseLeave = () => {
+      // Reset the translate to 0 (showing the first card)
+      wrapper.style.transform = `translate3d(0%, 0, 0)`;
+    };
+
+    wrapper.addEventListener("mousemove", handleMouseMove);
+    wrapper.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      wrapper.removeEventListener("mousemove", handleMouseMove);
+      wrapper.removeEventListener("mouseleave", handleMouseLeave);
+      wrapper.style.transform = `translateX(0, 0, 0)`;
     };
   }, []);
 

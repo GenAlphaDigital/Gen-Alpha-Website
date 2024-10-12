@@ -67,30 +67,43 @@
   justify-content: flex-start;
 }
 
+.social div {
+  width: 100%;
+}
+
 .input {
-  border: 1px solid #ccc;
-  max-height: fit-content;
-  max-width: fit-content;
   margin: 0;
   padding: 0 0.5rem !important ;
   margin-top: 0.5rem;
   border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: white;
+  width: 90%;
 }
 
 .input input {
   border: none;
   outline: none;
   background-color: none;
+  padding: 0.5rem;
 }
 
-.input button {
+.input input[type="email"] {
+  width: 80%;
+}
+
+.input input[type="submit"] {
   padding: 0.5rem;
   margin: 0.5rem 0;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
   border: none;
   outline: none;
   background-color: var(--orange);
-  border-radius: 50%;
+  border-radius: 1050%;
   font-weight: bold;
   color: white;
   cursor: pointer;

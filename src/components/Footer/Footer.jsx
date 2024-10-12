@@ -1,19 +1,37 @@
+"use client";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import curve from "./curve.svg";
 import { MotionDiv } from "../motionComponents/motionComponents";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 const Footer = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE2_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <>
-      {/* <Image
-        src={curve}
-        alt=""
-        width={1000}
-        height={1000}
-        className={styles.curve}
-      /> */}
       <MotionDiv
         initial={{
           y: 100,
@@ -107,12 +125,15 @@ const Footer = () => {
               <p>
                 <b>Subscribe For Updates: </b>
               </p>
-              <div className={styles.input}>
-                <input type="email" placeholder="Enter your email" />
-                <button>
-                  <p>&rarr;</p>
-                </button>
-              </div>
+              <form className={styles.input} ref={form} onSubmit={sendEmail}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  name="user_email"
+                  required
+                />
+                <input type="submit" value={`🠦`} />
+              </form>
             </div>
           </div>
         </div>

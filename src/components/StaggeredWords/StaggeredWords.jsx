@@ -29,12 +29,18 @@ const StaggeredWords = ({ text, styles }) => {
   return (
     <>
       {
-        <MotionDiv variants={container} initial="hidden" whileInView="show">
+        <MotionDiv
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+          }}
+        >
           <MotionP
             style={{
               marginBlockStart: 0,
               marginBlockEnd: 0,
-              // lineHeight: "1.1",
             }}
             initial={{
               opacity: 0,
@@ -46,6 +52,9 @@ const StaggeredWords = ({ text, styles }) => {
               transition: {
                 duration: 2,
               },
+            }}
+            viewport={{
+              once: true,
             }}
           >
             {letters.map((letter, index) => (

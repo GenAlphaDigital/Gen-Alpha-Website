@@ -16,14 +16,13 @@
   background-color: transparent;
   border: none;
   border: 1px solid var(--orange);
-  padding: 1.5rem 2rem;
   border-radius: 3rem;
   cursor: pointer;
   transition: linear 0.3s;
   position: relative;
   overflow: hidden;
-  margin: 2rem 0;
   font-size: 1rem;
+  /* margin: 2rem 0; */
   z-index: 2;
   align-self: center;
 }

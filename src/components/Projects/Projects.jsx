@@ -10,9 +10,7 @@ const Projects = () => {
       <Card />
       <Card />
       <Card />
-      <button className={styles.btn}>
-        <p>View All</p>
-      </button>
+      <button className={styles.btn}>View All</button>
     </div>
   );
 };

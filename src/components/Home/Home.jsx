@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import StaggeredText from "../StaggeredText/StaggeredText";
 import Image from "next/image";
 import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
+import { LuPhoneCall } from "react-icons/lu";
 
 const flow = {
   initial: {
@@ -34,10 +35,12 @@ const Home = () => {
           variants={flow}
           initial="initial"
           animate="visible"
-          whileHover={"hover"}
           className={styles.contactBtn}
         >
-          Contact Us <span>&#9990;</span>
+          Contact Us{" "}
+          <span>
+            <LuPhoneCall />
+          </span>
         </MotionButton>
       </MotionDiv>
 
@@ -71,21 +74,23 @@ const Home = () => {
               variants={flow}
               initial="initial"
               animate="visible"
-              whileHover={"hover"}
               className={styles.btn}
             >
-              Learn More <span> &nbsp;&rarr;</span>
+              Learn More <span> &#129050;</span>
             </MotionButton>
             <MotionButton
               variants={flow}
               initial="initial"
               animate="visible"
-              whileHover={"hover"}
               className={styles.btn}
             >
-              Contact Us <span>&#9990;</span>
+              Contact Us{" "}
+              <span>
+                <LuPhoneCall />
+              </span>
             </MotionButton>
           </MotionDiv>
+
           {/* Bouncing ball animation */}
           <MotionDiv
             initial={{
@@ -102,7 +107,7 @@ const Home = () => {
             }}
             className={styles.bouncingBall}
           >
-            <div className={styles.bouncingBallInner}>&darr;</div>
+            <div className={styles.bouncingBallInner}>&#129051;</div>
           </MotionDiv>
         </div>
 

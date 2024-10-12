@@ -56,6 +56,9 @@ const About = () => {
                 duration: 1.6,
               },
             }}
+            viewport={{
+              once: true,
+            }}
             className={styles.btn}
           >
             Know More
