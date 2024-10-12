@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
 :root {
   --orange: #f15a2b;
   --light-orange: #f1592b50;
@@ -15,7 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" !important;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -39,7 +41,6 @@ body {
 }
 
 button {
-  /* font-family: "Poppins"; */
   padding: 1.25rem 1.5rem !important;
   border-radius: 3rem !important;
   border: none;
