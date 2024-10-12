@@ -3,6 +3,8 @@ import StaggeredText from "../StaggeredText/StaggeredText";
 import Image from "next/image";
 import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
 import { LuPhoneCall } from "react-icons/lu";
+import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 
 const flow = {
   initial: {
@@ -76,7 +78,11 @@ const Home = () => {
               animate="visible"
               className={styles.btn}
             >
-              Learn More <span> &#129050;</span>
+              Learn More{" "}
+              <span>
+                {" "}
+                <FaArrowRight />
+              </span>
             </MotionButton>
             <MotionButton
               variants={flow}
@@ -107,7 +113,9 @@ const Home = () => {
             }}
             className={styles.bouncingBall}
           >
-            <div className={styles.bouncingBallInner}>&#129051;</div>
+            <div className={styles.bouncingBallInner}>
+              <FaArrowDown />
+            </div>
           </MotionDiv>
         </div>
 
