@@ -1,10 +1,14 @@
 :root {
   --orange: #f15a2b;
+  --light-orange: #f1592b50;
   --navyblue: #19325c;
   --green: #f89820;
+  --light-green: #f8982050;
   --blue: #29878f;
+  --light-blue: #29878f50;
   --beige: #f5d49e;
   --red: #e51f23;
+  --light-red: #e51f2350;
 }
 
 * {

@@ -6,6 +6,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 const Footer = () => {
   const form = useRef();
 
@@ -58,11 +59,10 @@ const Footer = () => {
               <p>
                 <b>Address:</b>
               </p>
-              <p>Madhapur,</p>
-              <p>Hyderabad,</p>
-              <p>500081,</p>
-              <p>Telangana,</p>
-              <p>India</p>
+              <p>#4 Floor Sprint Business Center,</p>
+              <p>Jaya Bheri Silicon Towers,</p>
+              <p>Kothaguda,</p>
+              <p>Hyderabad - 500094</p>
             </div>
             <div>
               <p>
@@ -85,22 +85,22 @@ const Footer = () => {
               <p>
                 <b>Services: </b>
               </p>
-              <p>Product Branding and Designing</p>
-              <p>Product Packaging</p>
-              <p>Technology and Development</p>
+              <p>Brand &amp; Design Services</p>
+              <p>Technology Services</p>
               <p>Advertisement and Marketing</p>
             </div>
             <div>
               <p>
                 <b>Business Inquires: </b>
               </p>
-              <p>John Doe</p>
+              <p>Saransh Vyas</p>
+              <p>Abhijeet Soni</p>
             </div>
             <div>
               <p>
-                <b>Recruitment Inquires: </b>
+                <b>Careers Page</b>
               </p>
-              <p>Jane Doe</p>
+              <Link href={"/careers"}>Link</Link>
             </div>
           </div>
           <div className={styles.social}>

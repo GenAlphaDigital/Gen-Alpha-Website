@@ -77,8 +77,8 @@ const Service = () => {
               <Image
                 src={service.image}
                 alt="service"
-                width={50}
-                height={50}
+                width={100}
+                height={100}
                 className={styles.image}
               />
               <h4>{service.title}</h4>
@@ -110,7 +110,7 @@ const Service = () => {
             }}
             className={styles.serviceRes}
           >
-            <Image src={service.image} width={50} height={50} alt="service" />
+            <Image src={service.image} width={100} height={100} alt="service" />
 
             <h6>{service.title}</h6>
             <small>{service.desc}</small>
