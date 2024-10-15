@@ -46,22 +46,7 @@ const page = () => {
             </MotionDiv>
           </div>
         </MotionDiv>
-        <MotionDiv className={styles.service}>
-          <div className={styles.textContainer}>
-            <StaggeredText
-              whileInView={true}
-              text={`Enhance product presentation with functional, sustainable packaging that stands out and tells your brand's story, leaving a lasting impression on customers.`}
-            />
-          </div>
-          <div className={styles.imgContainer}>
-            <MotionDiv
-              initial={{ x: "-10vh", opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-            >
-              <Packaging />
-            </MotionDiv>
-          </div>
-        </MotionDiv>
+        
         <MotionDiv className={styles.service}>
           <div className={styles.textContainer}>
             <StaggeredText
