@@ -40,7 +40,7 @@
   gap: 2rem;
   position: relative;
   margin: 5rem 0;
-  height: 100px;
+  height: 200px;
   width: 85%;
   overflow: hidden;
 }
@@ -83,8 +83,8 @@
 }
 
 .brand img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
 }
 

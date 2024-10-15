@@ -5,6 +5,8 @@ import styles from "./styles.module.css";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FaCross } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 const stagger = {
   animate: {
@@ -125,8 +127,8 @@ const Contact = () => {
           {services.length > 0 && (
             <div className={styles.options}>
               {services.map((service, index) => (
-                <small key={index}>{service}</small>
-              ))}
+                <small key={index}>{service} <IoMdClose/> </small>
+              ))} 
             </div>
           )}
 

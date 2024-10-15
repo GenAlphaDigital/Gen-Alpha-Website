@@ -15,7 +15,6 @@
 
 .service {
   transition: all 0.5s;
-  cursor: pointer;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -112,7 +111,6 @@
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  cursor: pointer;
   transition: linear 0.3s;
   position: relative;
   overflow: hidden;
@@ -125,7 +123,6 @@
   border: 1px solid var(--navyblue);
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  cursor: pointer;
   transition: linear 0.3s;
   position: relative;
   overflow: hidden;
