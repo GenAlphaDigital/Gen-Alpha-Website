@@ -23,7 +23,7 @@
 html,
 body {
   position: relative;
-  cursor: url("/cursor.svg"), auto;
+  cursor: url("/cursor.svg");
 }
 
 /* Scrollbar */
@@ -49,7 +49,7 @@ button {
 
 button span {
   font-size: 1rem;
-}
+}   
 
 input::placeholder,
 textarea::placeholder,
@@ -62,5 +62,5 @@ select::placeholder {
 input,
 textarea {
   font-family: "Poppins";
-  font-size: 0.8rem;
+  font-size: 1rem;
 }

@@ -13,13 +13,6 @@ const services = [
             logos to complete brand ecosystems.`,
   },
   {
-    image: "/services/service2.gif",
-    title: "Product Packaging",
-    desc: `Enhance product presentation with functional, sustainable packaging
-            that stands out and tells your brand's story, leaving a lasting
-            impression on customers.`,
-  },
-  {
     image: "/services/service3.gif",
     title: "Technology and Development",
     desc: `We develop cutting-edge tech solutions that streamline operations
