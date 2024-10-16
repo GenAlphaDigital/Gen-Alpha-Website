@@ -110,15 +110,17 @@ const Navbar = () => {
               {
                 <div className={styles.dropDown}>
                   <Link
-                    href={"b&s"}
+                    href={"/services/brand-and-design"}
+                    onClick={() => setVisible("none")}
                     style={{
                       fontSize: "1.5rem",
                     }}
                   >
-                    Brands and Services
+                    Brands and Design
                   </Link>
                   <Link
-                    href={"t&d"}
+                    href={"/services/technology-and-development"}
+                    onClick={() => setVisible("none")}
                     style={{
                       fontSize: "1.5rem",
                     }}
@@ -126,12 +128,13 @@ const Navbar = () => {
                     Technology and Development
                   </Link>
                   <Link
-                    href={"p&m"}
+                    href={"/services/media-and-marketing"}
+                    onClick={() => setVisible("none")}
                     style={{
                       fontSize: "1.5rem",
                     }}
                   >
-                    Publicity and Marketing
+                    Media and Marketing
                   </Link>
                 </div>
               }

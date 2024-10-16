@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaCross } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import Multiselect from "multiselect-react-dropdown";
 
 const stagger = {
   animate: {
@@ -30,15 +31,18 @@ const popup = {
 };
 
 const Contact = () => {
+  const [options, setOptions] = useState([
+    "Brands and Design",
+    "Technology and Development",
+    "Media and Marketing",
+  ]);
   const [services, setService] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const form = useRef();
 
   const handleSelect = (e) => {
-    const selectedService = e.target.value;
-    if (selectedService && !services.includes(selectedService)) {
-      setService([...services, selectedService]);
-    }
+    console.log(e);
+    setService(e);
   };
 
   const sendEmail = (e) => {
@@ -108,38 +112,20 @@ const Contact = () => {
           <input type="number" placeholder="Phone Number" name="phone_number" />
           <input type="text" placeholder="Your Brand" name="brand" />
 
-          <select
-            name="service_select"
-            id="services"
-            onChange={handleSelect}
-            required
-          >
-            <option value="select_services" disabled selected>
-              Select Services
-            </option>
-            <option value="Branding">Branding</option>
-            <option value="Design">Design</option>
-            <option value="Technology">Technology</option>
-            <option value="Marketing">Marketing</option>
-          </select>
-
-          {/* Displaying selected services */}
-          {services.length > 0 && (
-            <div className={styles.options}>
-              {services.map((service, index) => (
-                <small key={index}>
-                  {service}{" "}
-                  <span
-                    onClick={() => {
-                      setService(services.filter((item) => item !== service));
-                    }}
-                  >
-                    <IoMdClose />
-                  </span>{" "}
-                </small>
-              ))}
-            </div>
-          )}
+          <Multiselect
+            options={options}
+            onSelect={handleSelect}
+            onRemove={handleSelect}
+            showCheckbox={true}
+            placeholder="Select Services"
+            isObject={false}
+            style={{
+              searchBox: { borderRadius: "1rem" },
+              multiselectContainer: {
+                width: "100%",
+              },
+            }}
+          />
 
           {/* Hidden input to send selected services */}
           <input type="hidden" name="services_list" />
