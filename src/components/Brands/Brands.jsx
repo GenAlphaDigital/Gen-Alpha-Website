@@ -20,52 +20,29 @@ const Brands = ({ bg }) => {
       <div className={styles.brands}>
         <div className={styles.brand}>
           <Image
-            src="/brands/brand1.jpg"
+            src="/brands/google.png"
             alt="brand1"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
           />
         </div>
         <div className={styles.brand}>
           <Image
-            src="/brands/brand2.jpg"
+            src="/brands/meta.png"
             alt="brand2"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
           />
         </div>
         <div className={styles.brand}>
           <Image
-            src="/brands/brand3.jpg"
+            src="/brands/aws.jpg"
             alt="brand3"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
           />
         </div>
-        <div className={styles.brand}>
-          <Image
-            src="/brands/brand4.jpg"
-            alt="brand4"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div className={styles.brand}>
-          <Image
-            src="/brands/brand5.jpg"
-            alt="brand5"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div className={styles.brand}>
-          <Image
-            src="/brands/brand6.jpg"
-            alt="brand6"
-            width={500}
-            height={500}
-          />
-        </div>
+        
       </div>
     </div>
   );

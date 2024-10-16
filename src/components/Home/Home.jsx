@@ -50,7 +50,7 @@ const Home = () => {
         <div className={styles.textContainer}>
           <div className={styles.texts}>
             <StaggeredText
-              text={"We empower digital presence and {Test}"}
+              text={"We empower digital presence"}
               styles={{ fontSize: "2.5rem", lineHeight: "1" }}
             />
             <div

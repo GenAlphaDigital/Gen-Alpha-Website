@@ -23,7 +23,7 @@
 html,
 body {
   position: relative;
-  cursor: url("/cursor.svg");
+  cursor: url("/cursor.svg"), auto !important;
 }
 
 /* Scrollbar */
