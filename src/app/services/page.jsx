@@ -46,7 +46,6 @@ const page = () => {
             </MotionDiv>
           </div>
         </MotionDiv>
-        
         <MotionDiv className={styles.service}>
           <div className={styles.textContainer}>
             <StaggeredText
