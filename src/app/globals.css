@@ -21,7 +21,8 @@
 }
 
 html,
-body {
+body,
+a {
   position: relative;
   cursor: url("/cursor.svg"), auto !important;
 }
@@ -49,7 +50,7 @@ button {
 
 button span {
   font-size: 1rem;
-}   
+}
 
 input::placeholder,
 textarea::placeholder,

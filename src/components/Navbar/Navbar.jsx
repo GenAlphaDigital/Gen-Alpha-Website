@@ -2,10 +2,13 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
-import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { IoMdMenu, IoMdClose, IoMdArrowDropup } from "react-icons/io";
 import Image from "next/image";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { MotionDiv } from "../motionComponents/motionComponents";
 
 const Navbar = () => {
+  const [dropDown, setDropDown] = useState(false);
   const [show, setShow] = useState(false);
   const [visible, setVisible] = useState("none");
   const [scrolled, setScrolled] = useState(false);
@@ -53,7 +56,6 @@ const Navbar = () => {
           }}
           onMouseEnter={() => {
             setHover(true);
-            console.log("hovered");
           }}
           onMouseLeave={() => setHover(false)}
         >
@@ -99,9 +101,40 @@ const Navbar = () => {
             </div>
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>
-              <Link href={"/services"} onClick={() => setVisible("none")}>
-                Services
-              </Link>
+              <p
+                className={styles.service}
+                onMouseEnter={() => setDropDown(!dropDown)}
+              >
+                Services{" "}
+              </p>
+              {
+                <div className={styles.dropDown}>
+                  <Link
+                    href={"b&s"}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Brands and Services
+                  </Link>
+                  <Link
+                    href={"t&d"}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Technology and Development
+                  </Link>
+                  <Link
+                    href={"p&m"}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Publicity and Marketing
+                  </Link>
+                </div>
+              }
             </div>
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>

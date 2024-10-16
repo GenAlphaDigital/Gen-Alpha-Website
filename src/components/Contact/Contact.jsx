@@ -127,8 +127,17 @@ const Contact = () => {
           {services.length > 0 && (
             <div className={styles.options}>
               {services.map((service, index) => (
-                <small key={index}>{service} <IoMdClose/> </small>
-              ))} 
+                <small key={index}>
+                  {service}{" "}
+                  <span
+                    onClick={() => {
+                      setService(services.filter((item) => item !== service));
+                    }}
+                  >
+                    <IoMdClose />
+                  </span>{" "}
+                </small>
+              ))}
             </div>
           )}
 
