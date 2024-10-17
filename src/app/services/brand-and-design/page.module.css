@@ -1,0 +1,17 @@
+.logo {
+  padding: 0rem 2.5rem;
+}
+
+.wrapper {
+  display: flex;
+  border: 1px black solid;
+  padding: 2rem 5rem;
+}
+
+.dropDown {
+  width: 50%;
+}
+
+.content {
+  width: 50%;
+}

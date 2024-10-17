@@ -65,3 +65,11 @@ textarea {
   font-family: "Poppins";
   font-size: 1rem;
 }
+
+.accordion button {
+  border-radius: 0%;
+}
+
+.accordion-button {
+  border-radius: 0;
+}
