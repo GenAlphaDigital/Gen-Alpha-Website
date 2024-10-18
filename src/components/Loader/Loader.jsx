@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import styles from "./styles.module.css";
 import { MotionDiv, MotionP } from "../motionComponents/motionComponents";
@@ -21,6 +21,28 @@ const Loader = () => {
   const [show4, setShow4] = useState(false);
   const [show5, setShow5] = useState(false);
   const [show6, setShow6] = useState(false);
+  const videoRef = useRef(null); // Create reference for video
+  const contactRef = useRef(null);
+  const aboutRef = useRef(null);
+
+  // Function to scroll to the video component
+  const scrollToVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.scrollIntoView({ behavior: "smooth" }); // Scrolls smoothly to video
+    }
+  };
+
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" }); // Scrolls smoothly to video
+    }
+  };
+
+  const scrollToAbout = () => {
+    if(aboutRef.current){
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   useEffect(() => {
     const hasSeenIntro = localStorage.getItem("hasSeenIntro");
@@ -185,13 +207,13 @@ const Loader = () => {
       <AnimatePresence>
         {show6 && (
           <>
-            <Home />
-            <BackgroundVideo />
-            <About />
+            <Home scrollToVideo={scrollToVideo} scrollToContact={scrollToContact} scrollToAbout={scrollToAbout}/>
+            <BackgroundVideo videoRef={videoRef}/>
+            <About aboutRef={aboutRef}/>
             <Service />
             <Projects />
             <Brands />
-            <Contact />
+            <Contact  contactRef={contactRef}/>
             <Footer />
           </>
         )}

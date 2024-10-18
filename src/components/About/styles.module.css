@@ -72,6 +72,11 @@
   border-top-right-radius: 50%;
 }
 
+.gifstyling{
+  height: 40rem;
+  width: 40rem;
+}
+
 .btn:hover {
   color: white;
 }

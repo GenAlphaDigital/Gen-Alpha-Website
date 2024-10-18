@@ -6,13 +6,14 @@ const contain = (delay) => ({
   visible: { opacity: 1, y: 0, transition: { delay: delay, duration: 0.8 } },
 });
 
-const BackgroundVideo = () => {
+const BackgroundVideo = ({ videoRef }) => {
   return (
     <MotionDiv
       variants={contain(0)}
       initial="hidden"
       whileInView={"visible"}
       className={styles.container}
+      ref={ videoRef }
     >
       <div className={styles.overlay}></div>
       <video src={"/video.mp4"} autoPlay loop muted />

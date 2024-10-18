@@ -1,11 +1,13 @@
 "use client";
 
+import contact_gif from "../../../public/contact_gif.json";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Multiselect from "multiselect-react-dropdown";
+import Lottie from "lottie-react";
 
 const stagger = {
   animate: {
@@ -28,7 +30,7 @@ const popup = {
   },
 };
 
-const Contact = () => {
+const Contact = ( {contactRef} ) => {
   const [options, setOptions] = useState([
     "Content & Copywriting",
     "Graphic Design, Iconography & Illustrations",
@@ -85,6 +87,7 @@ const Contact = () => {
       initial="hidden"
       whileInView="animate"
       className={styles.container}
+      ref={contactRef}
     >
       <MotionDiv
         variants={popup}
@@ -92,7 +95,10 @@ const Contact = () => {
         whileInView="visible"
         className={styles.imgContainer}
       >
-        <Image src={"/contact1.gif"} alt="" width={500} height={500} />
+        {/* <Image src={contact_gif} alt="" width={500} height={500} /> */}
+        <Lottie className={styles.gifstyling}
+        animationData={contact_gif}
+        />
       </MotionDiv>
       <MotionDiv
         variants={popup}

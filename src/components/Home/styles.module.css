@@ -131,6 +131,18 @@
   color: var(--orange);
 }
 
+.videoContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gifstyling{
+  height: 40rem;
+  width: 40rem;
+
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
