@@ -41,19 +41,12 @@ const Contact = () => {
   const form = useRef();
 
   const handleSelect = (e) => {
-    console.log(e);
     setService(e);
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    console.log("Before");
-    console.log(form.current);
     form.current.services_list.value = services.join(", ");
-    console.log("After");
-    console.log(form.current);
-
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID,
