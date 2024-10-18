@@ -15,10 +15,16 @@ import Image from "next/image";
 export function Model({ project }) {
   return (
     <Dialog>
+      <p className="text-3xl">{project.title}</p>
       <DialogTrigger asChild>
-        <p className="text-3xl">{project.title}</p>
+          <small
+          style={{
+            fontSize:'0.7rem'
+          }}
+          className="py-2 px-2  bg-[var(--orange)] rounded-[3rem] w-[fit-content]"
+          >Learn More</small>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-black text-white flex flex-col items-center justify-center">
+      <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-[80%] w-[80%] ">
           <Image
             src={project.img}

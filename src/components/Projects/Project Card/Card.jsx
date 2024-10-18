@@ -69,6 +69,7 @@ const Card = () => {
         }}
         />
       </div>
+
       <div className={styles.textContainer}>
         <Model project={
           {
@@ -77,8 +78,8 @@ const Card = () => {
             img:"/projects/project1.jpg"
           }
         }>
-        <p className="text-3xl">Project Title</p>
-        </Model>
+      <p className="text-3xl">Project Title</p>
+      </Model>
       </div>
     </MotionDiv>
   );

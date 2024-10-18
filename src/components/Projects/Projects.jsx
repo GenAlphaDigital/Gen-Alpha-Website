@@ -13,7 +13,6 @@ const Projects = () => {
       <Card />
       <Card />
       </div>
-      <button className={styles.btn}>View All</button>
     </div>
   );
 };
