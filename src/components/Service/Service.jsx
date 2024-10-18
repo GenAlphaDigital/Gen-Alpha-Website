@@ -87,35 +87,49 @@ const Service = () => {
           </div>
         ))}
       </div>
-      {/* 
-      <MotionDiv
-        animate={{
-          delayChildren: 0.4,
-          staggerChildren: 0.1,
-        }}
-        className={styles.servicesRes}
-      >
-        {services.map((service, index) => (
-          <MotionDiv
-            key={index}
-            initial={{
-              opacity: 0,
-              x: "-100%",
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-              transition: { duration: 0.8 },
-            }}
-            className={styles.serviceRes}
-          >
-            <Image src={service.image} width={100} height={100} alt="service" />
 
-            <h6>{service.title}</h6>
-            <small>{service.desc}</small>
-          </MotionDiv>
-        ))}
-      </MotionDiv> */}
+      <div className={styles.small}>
+        <div className={styles.header}>
+          <h2>Our Services</h2>
+          <div className={styles.line}></div>
+        </div>
+        <MotionDiv
+          animate={{
+            delayChildren: 0.4,
+            staggerChildren: 0.1,
+          }}
+          className={styles.servicesRes}
+        >
+          {services.map((service, index) => (
+            <MotionDiv
+              key={index}
+              initial={{
+                opacity: 0,
+                x: "-100%",
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.8 },
+              }}
+              className={styles.serviceSm}
+            >
+              <Image
+                src={service.image}
+                width={100}
+                height={100}
+                alt="service"
+              />
+
+              <h6>{service.title}</h6>
+              <small>{service.desc}</small>
+              <Link href={service.link} className={styles.btnSm}>
+                Learn More
+              </Link>
+            </MotionDiv>
+          ))}
+        </MotionDiv>
+      </div>
     </div>
   );
 };

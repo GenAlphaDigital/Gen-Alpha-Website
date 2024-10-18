@@ -1,7 +1,12 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
-
+import { Model } from "../model/Model";
+import gif1 from "../gifs/gif1.json";
+import gif2 from "../gifs/gif2.json";
+import gif3 from "../gifs/gif3.json";
+import gif4 from "../gifs/gif4.json";
+import Lottie from "lottie-react";
 const line = {
   hidden: {
     width: 0,
@@ -38,52 +43,55 @@ const right = {
   },
 };
 
-const Card = () => {
+const gifs = [gif1, gif2, gif3, gif4];
+
+const Card = ({ work, i }) => {
   return (
-    <div className={styles.container}>
-      <MotionDiv
-        variants={line}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-        }}
-        className={styles.line}
-      ></MotionDiv>
-      <div className={styles.project}>
+    work && (
+      <>
         <MotionDiv
-          variants={left}
-          initial="hidden"
-          whileInView="visible"
+          initial={{
+            y: 100,
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+            },
+          }}
           viewport={{
             once: true,
           }}
-          className={styles.textContainer}
+          className={styles.container}
         >
-          <h3>Project Title</h3>
-          <p>
-            Project Description, Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
+          {/* <div className={styles.line}></div> */}
+          <div className={styles.imgContainer}>
+            <Lottie
+            animationData={gifs[i]}
+width={1000}
+              height={1000}
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
+
+          <div className={styles.textContainer}>
+            <Model
+              project={{
+                title: work?.title,
+                desc: work?.desc,
+                img: gifs[i],
+              }}
+            >
+              <p className="text-3xl">Project Title</p>
+            </Model>
+          </div>
         </MotionDiv>
-        <MotionDiv
-          variants={right}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-          }}
-          className={styles.imgContainer}
-        >
-          <Image
-            src={"/projects/project1.jpg"}
-            alt="project"
-            width={1000}
-            height={1000}
-          />
-        </MotionDiv>
-      </div>
-    </div>
+      </>
+    )
   );
 };
 

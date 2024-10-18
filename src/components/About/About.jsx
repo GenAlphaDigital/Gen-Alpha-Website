@@ -8,9 +8,7 @@ import Lottie from "lottie-react";
 
 const About = ({ aboutRef }) => {
   return (
-    <div className={styles.container}
-    ref={aboutRef}
-    >
+    <div className={styles.container} ref={aboutRef}>
       <div className={styles.textContainer}>
         <div className={styles.header}>
           <small>
@@ -28,6 +26,9 @@ const About = ({ aboutRef }) => {
             }}
             className={styles.line}
           ></MotionDiv>
+        </div>
+        <div className={styles.small}>
+          <Lottie className={styles.gifstyling} animationData={about_gif} />
         </div>
         <div>
           <StaggeredText
@@ -69,6 +70,7 @@ const About = ({ aboutRef }) => {
           </MotionButton>
         </div>
       </div>
+      <div className={styles.large}>
       <MotionDiv
         initial={{
           opacity: 0,
@@ -84,10 +86,9 @@ const About = ({ aboutRef }) => {
         className={styles.imgContainer}
       >
         {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
-        <Lottie className={styles.gifstyling}
-        animationData={about_gif}
-        />
+        <Lottie className={styles.gifstyling} animationData={about_gif} />
       </MotionDiv>
+      </div>
     </div>
   );
 };
