@@ -69,8 +69,8 @@ const Card = ({ work, i }) => {
           {/* <div className={styles.line}></div> */}
           <div className={styles.imgContainer}>
             <Lottie
-            animationData={gifs[i]}
-width={1000}
+              animationData={gifs[i]}
+              width={1000}
               height={1000}
               style={{
                 objectFit: "cover",

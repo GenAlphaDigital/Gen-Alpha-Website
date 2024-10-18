@@ -2,16 +2,10 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
+
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import Lottie from "lottie-react";
-import Image from "next/image";
 
 export function Model({ project }) {
   return (
@@ -22,7 +16,7 @@ export function Model({ project }) {
           style={{
             fontSize:'0.7rem'
           }}
-          className="py-2 px-2  bg-[var(--orange)] rounded-[3rem] w-[fit-content]"
+          className="py-4 px-4  bg-[var(--orange)] rounded-[3rem] w-[fit-content]"
           >Learn More</small>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">

@@ -66,10 +66,8 @@
   height: 175%;
 }
 
-@media (max-width: 435px){
+@media (max-width: 768px){
   .cards{
     width: 100%;
   }
-
-  
 }

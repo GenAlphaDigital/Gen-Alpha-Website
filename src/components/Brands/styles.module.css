@@ -129,6 +129,7 @@
 @media (max-width: 435px) {
   .container {
     height: 100%;
+    margin: 0rem;
     margin-top:  2rem;
 
   }
