@@ -1,4 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./SmoothScrolling";

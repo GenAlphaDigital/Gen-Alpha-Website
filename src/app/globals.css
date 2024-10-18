@@ -33,16 +33,17 @@ button {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 0.1rem;
+  width: 0.4rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--orange);
-  border-radius: 0.1rem;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--navyblue);
+  border-radius: 0.1rem;
+  background-color: transparent;
 }
 
 button {

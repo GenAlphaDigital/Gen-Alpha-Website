@@ -5,11 +5,14 @@ const Projects = () => {
   return (
     <div className={styles.container}>
       <p>Our Work</p>
+      <div className={styles.line}></div>
+      <div className={styles.cards}><Card />
       <Card />
       <Card />
       <Card />
       <Card />
       <Card />
+      </div>
       <button className={styles.btn}>View All</button>
     </div>
   );
