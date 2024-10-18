@@ -109,16 +109,16 @@
   color: var(--navyblue);
   background-color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  padding: 1rem 2.5rem;
+  border-radius: 3rem;
   transition: linear 0.3s;
   position: relative;
+  width: 60%;
   overflow: hidden;
 }
 
 .btnRes {
   color: var(--navyblue);
-  /* color: #fff; */
   border: none;
   border: 1px solid var(--navyblue);
   padding: 0.5rem 1rem;
@@ -126,13 +126,14 @@
   transition: linear 0.3s;
   position: relative;
   overflow: hidden;
+  z-index: 1000000;
 }
 
-.content h4{
+.content h4 {
   font-size: 2.5rem;
 }
 
-.content .desc{
+.content .desc {
   font-size: 1rem;
 }
 

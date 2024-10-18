@@ -2,7 +2,6 @@
 import { ContactShadows, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import Media from "../../../public/models/media/Media";
 import Brand from "../../../public/models/branding/Branding";
 
 const Branding = () => {
@@ -16,9 +15,10 @@ const Branding = () => {
     >
       <Canvas
         style={{
-          width: "100vw",
-          height: "100vh",
-          // border: "1px solid black",
+          width: "50vw",
+          height: "47vh",
+          padding: "0 0 0 0",
+          aspectRatio: 0.5,
         }}
       >
         <ambientLight />

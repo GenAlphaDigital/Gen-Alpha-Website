@@ -13,7 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Webdev(props) {
   const { nodes, materials } = useGLTF("../models/webdev/Webdev.gltf");
   return (
-    <group {...props} dispose={null} scale={0.3} rotation={[0.8, -0.8, 0.4]}>
+    <group {...props} dispose={null} scale={0.55} rotation={[0.8, -0.8, 0.4]}>
       <group scale={0.01}>
         <group
           position={[119.344, 0, 281.843]}

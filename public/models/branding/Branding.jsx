@@ -13,7 +13,7 @@ import { useGLTF } from "@react-three/drei";
 export default function Brand(props) {
   const { nodes, materials } = useGLTF("../models/branding/Branding.gltf");
   return (
-    <group {...props} dispose={null} scale={0.8} rotation={[0.4, 0.4, 0]}>
+    <group {...props} dispose={null} scale={1} rotation={[0.4, 0.4, 0]}>
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.Primitive_Material}

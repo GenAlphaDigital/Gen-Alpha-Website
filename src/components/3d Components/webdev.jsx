@@ -15,8 +15,8 @@ const WebDev = () => {
     >
       <Canvas
         style={{
-          width: "100vw",
-          // border: "1px solid black",
+          width: "50vw",
+          height: "60vh",
           aspectRatio: 0.5,
         }}
       >
