@@ -5,12 +5,14 @@ const Projects = () => {
   return (
     <div className={styles.container}>
       <p>Our Work</p>
+      <div className={styles.line}></div>
+      <div className={styles.cards}><Card />
       <Card />
       <Card />
       <Card />
       <Card />
       <Card />
-      <button className={styles.btn}>View All</button>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
+import { Model } from "../model/Model";
 
 const line = {
   hidden: {
@@ -40,50 +41,47 @@ const right = {
 
 const Card = () => {
   return (
-    <div className={styles.container}>
-      <MotionDiv
-        variants={line}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
+    <MotionDiv
+    initial={{
+        y:100,
+        opacity:0
+    }}
+
+    whileInView={{
+      y:0,
+      opacity:1,
+      transition:{
+        duration:1
+      }
+    }}
+
+    viewport={{
+      once:true
+    }}
+    className={styles.container}>
+      {/* <div className={styles.line}></div> */}
+      <div className={styles.imgContainer}>
+        <Image src={'/projects/project1.jpg'} 
+        width={1000}
+        height={1000}
+        style={{
+          objectFit:'cover'
         }}
-        className={styles.line}
-      ></MotionDiv>
-      <div className={styles.project}>
-        <MotionDiv
-          variants={left}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-          }}
-          className={styles.textContainer}
-        >
-          <h3>Project Title</h3>
-          <p>
-            Project Description, Lorem Ipsum is simply dummy text of the
-            printing and typesetting industry.
-          </p>
-        </MotionDiv>
-        <MotionDiv
-          variants={right}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{
-            once: true,
-          }}
-          className={styles.imgContainer}
-        >
-          <Image
-            src={"/projects/project1.jpg"}
-            alt="project"
-            width={1000}
-            height={1000}
-          />
-        </MotionDiv>
+        />
       </div>
-    </div>
+
+      <div className={styles.textContainer}>
+        <Model project={
+          {
+            title: "Project title",
+            desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, animi cupiditate. Unde quaerat voluptate dolor. Laboriosam dolore vero odit cum eligendi ducimus quam. Facere laudantium, corrupti voluptate labore esse deleniti?`,
+            img:"/projects/project1.jpg"
+          }
+        }>
+      <p className="text-3xl">Project Title</p>
+      </Model>
+      </div>
+    </MotionDiv>
   );
 };
 
