@@ -5,6 +5,8 @@ import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
 import { LuPhoneCall } from "react-icons/lu";
 import { FaArrowDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
+import hero_gif from "../../../public/hero_gif.json";
+import Lottie from "lottie-react";
 
 const flow = {
   initial: {
@@ -22,7 +24,9 @@ const flow = {
   },
 };
 
-const Home = () => {
+
+
+const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
   return (
     <div className={styles.container}>
       <MotionDiv
@@ -39,7 +43,7 @@ const Home = () => {
           animate="visible"
           className={styles.contactBtn}
         >
-          Contact Us{" "}
+          Call Me{" "}
           <span>
             <LuPhoneCall />
           </span>
@@ -77,6 +81,7 @@ const Home = () => {
               initial="initial"
               animate="visible"
               className={styles.btn}
+              onClick={scrollToVideo}
             >
               Learn More{" "}
               <span>
@@ -89,7 +94,8 @@ const Home = () => {
               initial="initial"
               animate="visible"
               className={styles.btn}
-            >
+                onClick={scrollToContact}
+              >
               Contact Us{" "}
               <span>
                 <LuPhoneCall />
@@ -112,6 +118,7 @@ const Home = () => {
               },
             }}
             className={styles.bouncingBall}
+            onClick={scrollToAbout}
           >
             <div className={styles.bouncingBallInner}>
               <FaArrowDown />
@@ -123,7 +130,10 @@ const Home = () => {
           {/* <Image src="/graph.webp" alt="graph" width={500} height={500} />
            */}
 
-          <video src="/graph.mp4" autoPlay muted></video>
+          {/* <video src="/graph.mp4" autoPlay muted></video> */}
+          <Lottie className={styles.gifstyling}
+          animationData={hero_gif}
+          />
         </div>
       </div>
     </div>

@@ -3,10 +3,14 @@ import styles from "./styles.module.css";
 import StaggeredWords from "../StaggeredWords/StaggeredWords";
 import StaggeredText from "../StaggeredText/StaggeredText";
 import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
+import about_gif from "../../../public/about_gif.json";
+import Lottie from "lottie-react";
 
-const About = () => {
+const About = ({ aboutRef }) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container}
+    ref={aboutRef}
+    >
       <div className={styles.textContainer}>
         <div className={styles.header}>
           <small>
@@ -79,7 +83,10 @@ const About = () => {
         }}
         className={styles.imgContainer}
       >
-        <Image src={"/image-2.png"} alt="about" width={1000} height={1000} />
+        {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
+        <Lottie className={styles.gifstyling}
+        animationData={about_gif}
+        />
       </MotionDiv>
     </div>
   );

@@ -37,7 +37,7 @@
 
 .brands {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   position: relative;
   margin: 5rem 0;
   height: 200px;
@@ -52,6 +52,7 @@
   cursor: pointer;
   top: 0;
   left: 100%;
+  padding: 0 2rem;
   animation-name: move;
   animation-duration: 15s;
   animation-timing-function: linear;
