@@ -16,7 +16,7 @@ export function Model({ project }) {
           style={{
             fontSize:'0.7rem'
           }}
-          className="py-4 px-4  bg-[var(--orange)] rounded-[3rem] w-[fit-content]"
+          className="py-4 px-4  bg-[var(--orange)] rounded-[3rem] w-[fit-content] sm:max-w-[80vw]"
           >Learn More</small>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">
@@ -35,7 +35,7 @@ export function Model({ project }) {
 
         <div className="flex gap-3 flex-col">
           {" "}
-          <p className="text-3xl ">{project.title}</p>
+          <p className="text-3xl">{project.title}</p>
           <p>{project.desc}</p>
         </div>
       </DialogContent>

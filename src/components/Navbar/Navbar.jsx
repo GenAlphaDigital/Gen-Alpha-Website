@@ -97,6 +97,7 @@ const Navbar = () => {
                 About Us
               </Link>
             </div>
+            <div className={styles.large}>
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>
               <p
@@ -136,6 +137,51 @@ const Navbar = () => {
                   </Link>
                 </div>
               }
+            </div>
+            </div>
+            <div className={styles.small}>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <div className={styles.dropDownContainer}>
+              <p
+                className={styles.service}
+                onMouseEnter={() => setDropDown(!dropDown)}
+              >
+                Services{" "}
+              </p>
+              {
+                <div className={styles.dropDownSm}>
+                  <Link
+                    href={"/services/brand-and-design"}
+                    onClick={() => setVisible("none")}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Brands and Design
+                  </Link>
+                  <Link
+                    href={"/services/technology-and-development"}
+                    onClick={() => setVisible("none")}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Technology and Development
+                  </Link>
+                  <Link
+                    href={"/services/media-and-marketing"}
+                    onClick={() => setVisible("none")}
+                    style={{
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Media and Marketing
+                  </Link>
+                </div>
+              }
+              </div>
+            </div>
             </div>
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>
