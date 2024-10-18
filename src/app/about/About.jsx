@@ -12,7 +12,7 @@ import img from "./images/image.png";
 import Lottie from "lottie-react";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer/Footer";
 
 const About = () => {

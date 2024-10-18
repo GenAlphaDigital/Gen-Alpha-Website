@@ -15,8 +15,8 @@ const Marketing = () => {
     >
       <Canvas
         style={{
-          width: "100vw",
-          height: "100vh",
+          width: "50vw",
+          height: "60vh",
           // border: "1px solid black",
         }}
       >

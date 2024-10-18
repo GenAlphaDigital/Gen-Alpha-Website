@@ -1,3 +1,4 @@
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./SmoothScrolling";
@@ -20,12 +21,6 @@ export default function RootLayout({ children }) {
         <Navbar />
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-        crossorigin="anonymous"
-      />
     </html>
   );
 }

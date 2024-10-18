@@ -5,8 +5,6 @@ import styles from "./styles.module.css";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaCross } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
 import Multiselect from "multiselect-react-dropdown";
 
 const stagger = {
@@ -32,9 +30,23 @@ const popup = {
 
 const Contact = () => {
   const [options, setOptions] = useState([
-    "Brands and Design",
-    "Technology and Development",
-    "Media and Marketing",
+    "Content & Copywriting",
+    "Graphic Design, Iconography & Illustrations",
+    "Video Editing & Animation",
+    "Film Production, AVs & Product Photography",
+    "Brand Identity, Brand Guide & Brand Story",
+    "Custom Web Development",
+    "Web Personalization",
+    "UI/UX Design",
+    "CRM & ERP Solutions",
+    "E-Commerce Solutions",
+    "AR/VR",
+    "Media Buying",
+    "Media Planning",
+    "Performance Marketing",
+    "Affiliate Marketing",
+    "SEO",
+    "Social Media Marketing",
   ]);
   const [services, setService] = useState([]);
   const [submitted, setSubmitted] = useState(false);
