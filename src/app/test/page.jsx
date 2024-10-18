@@ -68,15 +68,9 @@
 
 // export default Page;
 
-import React from "react";
-import AnimatedMulti from "@/components/Contact/components/Dropdown";
+import dynamic from "next/dynamic";
+const TestPage = dynamic(()=> import('./component.jsx'), {
+  ssr: false
+})
 
-const page = () => {
-  return (
-    <div>
-      <AnimatedMulti />
-    </div>
-  );
-};
-
-export default page;
+export default TestPage
