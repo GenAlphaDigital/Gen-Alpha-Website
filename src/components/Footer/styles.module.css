@@ -108,3 +108,9 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 435px){
+  .section1{
+    flex-direction: column;
+  }
+}

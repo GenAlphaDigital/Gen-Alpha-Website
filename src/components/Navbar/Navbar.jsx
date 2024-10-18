@@ -4,8 +4,6 @@ import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 import { IoMdMenu, IoMdClose, IoMdArrowDropup } from "react-icons/io";
 import Image from "next/image";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { MotionDiv } from "../motionComponents/motionComponents";
 
 const Navbar = () => {
   const [dropDown, setDropDown] = useState(false);

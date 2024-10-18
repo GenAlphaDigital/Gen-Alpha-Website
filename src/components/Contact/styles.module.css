@@ -103,7 +103,19 @@
   border-radius: 1rem;
 }
 
-.gifstyling{
+.gifstyling {
   height: 30rem;
   width: 30rem;
+}
+
+@media (max-width: 435px) {
+  .imgContainer,
+  .textContainer {
+    display: none;
+  }
+
+  .form{
+    width: 100%;
+    padding: 0;
+  }
 }

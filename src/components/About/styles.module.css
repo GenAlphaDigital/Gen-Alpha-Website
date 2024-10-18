@@ -84,3 +84,38 @@
 .btn:hover::before {
   height: 175%;
 }
+
+.small{
+  display: none;
+}
+
+@media (max-width:435px){
+    .container{
+      flex-direction: column;
+      margin: 0;
+    }
+    .large{
+      display: none;
+    }
+
+    .small{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .small .gifstyling{
+      width: 100vw;
+      height: 40vh;
+    }
+
+    .textContainer{
+      width: 100%;
+      font-size: 1rem;
+      }
+
+      .btn{
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem;
+      }
+}

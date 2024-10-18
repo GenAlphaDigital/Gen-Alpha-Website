@@ -10,6 +10,7 @@ const page = () => {
       width={120}
       height={120}
       className='p-2'
+      alt=''
       />
     </header>
     </>

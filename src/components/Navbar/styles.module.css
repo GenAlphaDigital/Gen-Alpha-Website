@@ -7,10 +7,10 @@
   justify-content: center;
   z-index: 1;
   right: 0;
+  /* border: 1px solid black; */
 }
 
 .container {
-  /* width: 1.5rem; */
   height: 100%;
   position: absolute;
   right: 0;
@@ -197,3 +197,17 @@
     opacity: 1;
   }
 }
+
+
+@media (max-width: 435px){
+
+  .container{
+    width: 4.5rem !important;
+  }
+  .navContainer svg {
+    position: absolute;
+    left: 7%;
+    padding: 0rem;
+    width: 0.813rem;
+  }
+  }

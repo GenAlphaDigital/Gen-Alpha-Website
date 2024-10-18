@@ -33,3 +33,20 @@
   height: 100%;
   border-radius: 30px;
 }
+
+@media (max-width: 435px){
+
+  .container{
+    width: 100%;
+  }
+  .container:nth-child(even){
+    margin-top: 2rem;
+  }
+  .container:nth-child(odd){
+    margin-top: 2rem;
+  }
+
+  .textContainer{
+    gap: 1rem;
+  }
+}

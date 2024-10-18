@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Lottie from "lottie-react";
 import Image from "next/image";
 
 export function Model({ project }) {
@@ -26,8 +27,8 @@ export function Model({ project }) {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">
         <div className="flex items-center justify-center h-[80%] w-[80%] ">
-          <Image
-            src={project.img}
+          <Lottie
+            animationData={project.img}
             width={1000}
             height={1000}
             style={{

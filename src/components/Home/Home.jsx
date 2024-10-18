@@ -26,7 +26,7 @@ const flow = {
 
 
 
-const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
+const Home = ({scrollToVideo, scrollToContact, scrollToAbout}) => {
   return (
     <div className={styles.container}>
       <MotionDiv
@@ -63,6 +63,7 @@ const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
                 alignItems: "flex-end",
                 gap: "0.5rem",
               }}
+              className={styles.subheading}
             >
               <StaggeredText
                 text={"amplify impact for startups and businesses. "}
@@ -72,7 +73,7 @@ const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
                   fontSize: "1.5rem",
                 }}
               />
-              <Image src={"/rocket.gif"} alt="rocket" width={45} height={45} />
+              <Image src={"/rocket.gif"} alt="rocket" width={45} height={45} className={styles.rocket}/>
             </div>
           </div>
           <MotionDiv className={styles.btns}>
@@ -104,6 +105,7 @@ const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
           </MotionDiv>
 
           {/* Bouncing ball animation */}
+          <div className={styles.large}>
           <MotionDiv
             initial={{
               y: "100%",
@@ -124,6 +126,7 @@ const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
               <FaArrowDown />
             </div>
           </MotionDiv>
+          </div>
         </div>
 
         <div className={styles.videoContainer}>
@@ -135,6 +138,30 @@ const Home = ({scrollToVideo, scrollToContact,scrollToAbout}) => {
           animationData={hero_gif}
           />
         </div>
+
+          {/* Bouncing ball animation */}
+          <div className={styles.small}>
+          <MotionDiv
+            initial={{
+              y: "100%",
+              opacity: 0,
+            }}
+            animate={{
+              y: "0",
+              opacity: 1,
+              transition: {
+                duration: 1,
+                delay: 3,
+              },
+            }}
+            className={styles.bouncingBall}
+            onClick={scrollToAbout}
+          >
+            <div className={styles.bouncingBallInner}>
+              <FaArrowDown />
+            </div>
+          </MotionDiv>
+          </div>
       </div>
     </div>
   );

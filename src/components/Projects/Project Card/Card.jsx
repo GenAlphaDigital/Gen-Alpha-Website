@@ -2,7 +2,11 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import { Model } from "../model/Model";
-
+import gif1 from "../gifs/gif1.json";
+import gif2 from "../gifs/gif2.json";
+import gif3 from "../gifs/gif3.json";
+import gif4 from "../gifs/gif4.json";
+import Lottie from "lottie-react";
 const line = {
   hidden: {
     width: 0,
@@ -39,49 +43,55 @@ const right = {
   },
 };
 
-const Card = () => {
+const gifs = [gif1, gif2, gif3, gif4];
+
+const Card = ({ work, i }) => {
   return (
-    <MotionDiv
-    initial={{
-        y:100,
-        opacity:0
-    }}
+    work && (
+      <>
+        <MotionDiv
+          initial={{
+            y: 100,
+            opacity: 0,
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+            },
+          }}
+          viewport={{
+            once: true,
+          }}
+          className={styles.container}
+        >
+          {/* <div className={styles.line}></div> */}
+          <div className={styles.imgContainer}>
+            <Lottie
+            animationData={gifs[i]}
+width={1000}
+              height={1000}
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
-    whileInView={{
-      y:0,
-      opacity:1,
-      transition:{
-        duration:1
-      }
-    }}
-
-    viewport={{
-      once:true
-    }}
-    className={styles.container}>
-      {/* <div className={styles.line}></div> */}
-      <div className={styles.imgContainer}>
-        <Image src={'/projects/project1.jpg'} 
-        width={1000}
-        height={1000}
-        style={{
-          objectFit:'cover'
-        }}
-        />
-      </div>
-
-      <div className={styles.textContainer}>
-        <Model project={
-          {
-            title: "Project title",
-            desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, animi cupiditate. Unde quaerat voluptate dolor. Laboriosam dolore vero odit cum eligendi ducimus quam. Facere laudantium, corrupti voluptate labore esse deleniti?`,
-            img:"/projects/project1.jpg"
-          }
-        }>
-      <p className="text-3xl">Project Title</p>
-      </Model>
-      </div>
-    </MotionDiv>
+          <div className={styles.textContainer}>
+            <Model
+              project={{
+                title: work?.title,
+                desc: work?.desc,
+                img: gifs[i],
+              }}
+            >
+              <p className="text-3xl">Project Title</p>
+            </Model>
+          </div>
+        </MotionDiv>
+      </>
+    )
   );
 };
 
