@@ -1,7 +1,6 @@
 .container {
   display: flex;
   align-items: center;
-  height: 90vh;
   color: black;
   flex-direction: column;
   gap: 2rem;
@@ -176,6 +175,11 @@
     justify-content: center;
     padding: 1rem;
   }
+
+  .videoContainer{
+    width: 90%;
+  }
+
 
   .texts {
     text-align: center;
