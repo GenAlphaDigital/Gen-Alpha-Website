@@ -82,6 +82,7 @@ const Card = ({ work, i }) => {
                 title: work?.title,
                 desc: work?.desc,
                 img: gifs[i],
+                id:work?.id
               }}
             ></Model>
           </div>

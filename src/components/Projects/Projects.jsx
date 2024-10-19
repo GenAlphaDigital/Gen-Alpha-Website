@@ -18,7 +18,6 @@ const Projects = () => {
       <p>Our Work</p>
       <div className={styles.line}></div>
       <div className={styles.cards}>
-        {/* <Card /> */}
         <div className={styles.evenContainer}>
           {even.map((work, i) => (
             <Card work={work} i={i} key={i} />

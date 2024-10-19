@@ -32,12 +32,12 @@
 .imgContainer {
   display: flex;
   align-items: center;
-  height: 65%;
+  height: 50%;
 }
 
 .textContainer {
-  height: 35%;
-  padding: 2.5rem;
+  height: 50%;
+  padding: 1.85rem;
 }
 
 .imgContainer img {
