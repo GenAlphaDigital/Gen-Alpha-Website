@@ -130,8 +130,7 @@
   .container {
     height: 100%;
     margin: 0rem;
-    margin-top:  2rem;
-
+    padding: 1.5rem;
   }
   .container h1 {
     font-size: 1.5rem;

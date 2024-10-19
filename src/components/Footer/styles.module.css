@@ -94,7 +94,7 @@
   width: 80%;
 }
 
-.input input[type="submit"] {
+.submitBtn {
   padding: 0.5rem;
   margin: 0.5rem 0;
   width: 40px;
@@ -103,10 +103,20 @@
   border: none;
   outline: none;
   background-color: var(--orange);
-  border-radius: 1050%;
+  border-radius: 50%;
   font-weight: bold;
   color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.submitBtn svg{
+  color: white;
+  width: 3rem !important;
+  height: 3rem !important;
 }
 
 @media (max-width: 768px){

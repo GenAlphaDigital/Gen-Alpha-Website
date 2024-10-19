@@ -4,8 +4,9 @@ import styles from "./styles.module.css";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { MotionDiv } from "../motionComponents/motionComponents";
+import { FaArrowRight } from "react-icons/fa";
 import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs, { send } from "@emailjs/browser";
 import Link from "next/link";
 const Footer = () => {
   const form = useRef();
@@ -132,7 +133,10 @@ const Footer = () => {
                   name="user_email"
                   required
                 />
-                <input type="submit" value={`🠦`} />
+
+                <button onClick={sendEmail} className={styles.submitBtn}>
+                  <FaArrowRight/>
+                </button>
               </form>
             </div>
           </div>

@@ -73,7 +73,7 @@ const Contact = ( {contactRef} ) => {
           console.log("SUCCESS!");
           e.target.reset();
           setService([]);
-          setSubmitted(true);
+          setSubmitted(true); 
         },
         (error) => {
           console.log("FAILED...", error.text);
