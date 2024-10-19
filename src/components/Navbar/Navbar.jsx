@@ -4,6 +4,8 @@ import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 import { IoMdMenu, IoMdClose, IoMdArrowDropup } from "react-icons/io";
 import Image from "next/image";
+import { FiPhoneCall } from "react-icons/fi";
+import { MotionDiv } from "../motionComponents/motionComponents";
 
 const Navbar = () => {
   const [dropDown, setDropDown] = useState(false);
@@ -18,7 +20,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const hasSeenIntro = localStorage.getItem("hasSeenIntro");
-    const duration = !hasSeenIntro ? 15000 : 3000;
+    const duration = !hasSeenIntro ? 15000 : 0;
     setTimeout(() => {
       setShow(true);
     }, duration);
@@ -97,52 +99,112 @@ const Navbar = () => {
                 About Us
               </Link>
             </div>
-            <div className={styles.link}>
-              <div className={styles.bounceDot}></div>
-              <p
-                className={styles.service}
-                onMouseEnter={() => setDropDown(!dropDown)}
-              >
-                Services{" "}
-              </p>
-              {
-                <div className={styles.dropDown}>
-                  <Link
-                    href={"/services/brand-and-design"}
-                    onClick={() => setVisible("none")}
-                    style={{
-                      fontSize: "1.5rem",
-                    }}
+            <div className={styles.large}>
+              <div className={styles.link}>
+                <div className={styles.bounceDot}></div>
+                <p
+                  className={styles.service}
+                  onMouseEnter={() => setDropDown(!dropDown)}
+                >
+                  Services{" "}
+                </p>
+                {
+                  <div className={styles.dropDown}>
+                    <Link
+                      href={"/services/brand-and-design"}
+                      onClick={() => setVisible("none")}
+                      style={{
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      Brands and Design
+                    </Link>
+                    <Link
+                      href={"/services/technology-and-development"}
+                      onClick={() => setVisible("none")}
+                      style={{
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      Technology and Development
+                    </Link>
+                    <Link
+                      href={"/services/media-and-marketing"}
+                      onClick={() => setVisible("none")}
+                      style={{
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      Media and Marketing
+                    </Link>
+                  </div>
+                }
+              </div>
+            </div>
+            <div className={styles.small}>
+              <div className={styles.link}>
+                <div className={styles.bounceDot}></div>
+                <div className={styles.dropDownContainer}>
+                  <p
+                    className={styles.service}
+                    onMouseEnter={() => setDropDown(!dropDown)}
                   >
-                    Brands and Design
-                  </Link>
-                  <Link
-                    href={"/services/technology-and-development"}
-                    onClick={() => setVisible("none")}
-                    style={{
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    Technology and Development
-                  </Link>
-                  <Link
-                    href={"/services/media-and-marketing"}
-                    onClick={() => setVisible("none")}
-                    style={{
-                      fontSize: "1.5rem",
-                    }}
-                  >
-                    Media and Marketing
-                  </Link>
+                    Services{" "}
+                  </p>
+                  {
+                    <div className={styles.dropDownSm}>
+                      <Link
+                        href={"/services/brand-and-design"}
+                        onClick={() => setVisible("none")}
+                        style={{
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        Brands and Design
+                      </Link>
+                      <Link
+                        href={"/services/technology-and-development"}
+                        onClick={() => setVisible("none")}
+                        style={{
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        Technology and Development
+                      </Link>
+                      <Link
+                        href={"/services/media-and-marketing"}
+                        onClick={() => setVisible("none")}
+                        style={{
+                          fontSize: "1.5rem",
+                        }}
+                      >
+                        Media and Marketing
+                      </Link>
+                    </div>
+                  }
                 </div>
-              }
+              </div>
             </div>
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>
-              <Link href={"/projects"} onClick={() => setVisible("none")}>
-                Our Works
+              <Link href={"/careers"} onClick={() => setVisible("none")}>
+                Careers
               </Link>
             </div>
+            <div className={styles.link}>
+              <div className={styles.bounceDot}></div>
+              <Link href={"/industries"} onClick={() => setVisible("none")}>
+                Industries
+              </Link>
+            </div>
+          </div>
+          <div
+          className={styles.cta}>
+            <button>
+              <a href="tel:9177705479">
+                <FiPhoneCall />
+              </a>
+            </button>
           </div>
         </div>
       </div>

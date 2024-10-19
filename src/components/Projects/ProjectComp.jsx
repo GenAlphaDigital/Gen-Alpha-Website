@@ -2,7 +2,7 @@ import { works } from "./data";
 import Card from "./Project Card/Card";
 import styles from "./styles.module.css";
 
-const Projects = () => {
+const ProjectComp = () => {
   let odd = [];
   let even = [];
   works?.map((work, index) => {
@@ -18,6 +18,7 @@ const Projects = () => {
       <p>Our Work</p>
       <div className={styles.line}></div>
       <div className={styles.cards}>
+        {/* <Card /> */}
         <div className={styles.evenContainer}>
           {even.map((work, i) => (
             <Card work={work} i={i} key={i} />
@@ -33,4 +34,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectComp;

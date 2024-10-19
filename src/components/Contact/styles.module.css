@@ -43,7 +43,7 @@
 
 .heading {
   width: 80%;
-  font-size: 1.75rem;
+  font-size: 3rem;
   margin: 1rem 0;
   font-weight: 600;
   text-align: left;
@@ -108,14 +108,26 @@
   width: 30rem;
 }
 
-@media (max-width: 435px) {
+@media (max-width: 768px) {
   .imgContainer,
   .textContainer {
     display: none;
   }
 
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
+
   .form{
     width: 100%;
-    padding: 0;
+    margin: 0rem;
+  }
+
+  .heading{
+    font-size: 2rem;
   }
 }

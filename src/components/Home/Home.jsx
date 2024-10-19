@@ -1,3 +1,4 @@
+
 import styles from "./styles.module.css";
 import StaggeredText from "../StaggeredText/StaggeredText";
 import Image from "next/image";
@@ -79,6 +80,7 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
                 width={45}
                 height={45}
                 className={styles.rocket}
+                loading="lazy"
               />
             </div>
           </div>

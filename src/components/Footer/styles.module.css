@@ -109,8 +109,21 @@
   cursor: pointer;
 }
 
-@media (max-width: 435px){
+@media (max-width: 768px){
   .section1{
+    padding: 5rem 0;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .address,
+  .services,
+  .social {
+    padding: 0rem !important;
+  }
+
+  .logo{
+    align-self: center;
   }
 }

@@ -77,6 +77,7 @@ const Service = () => {
                 width={100}
                 height={100}
                 className={styles.image}
+                loading="lazy"
               />
               <h4>{service.title}</h4>
               <small className={styles.desc}>{service.desc} </small>

@@ -69,9 +69,7 @@ const Card = ({ work, i }) => {
           {/* <div className={styles.line}></div> */}
           <div className={styles.imgContainer}>
             <Lottie
-            animationData={gifs[i]}
-width={1000}
-              height={1000}
+              animationData={gifs[i]}
               style={{
                 objectFit: "cover",
               }}
@@ -84,10 +82,9 @@ width={1000}
                 title: work?.title,
                 desc: work?.desc,
                 img: gifs[i],
+                id:work?.id
               }}
-            >
-              <p className="text-3xl">Project Title</p>
-            </Model>
+            ></Model>
           </div>
         </MotionDiv>
       </>

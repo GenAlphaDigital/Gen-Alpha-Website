@@ -5,20 +5,37 @@
   background-color: var(--navyblue);
   color: white;
   gap: 1rem;
+  align-items: center;
 }
 
 .container p:first-child {
-  font-size: 1.75rem;
+  font-size: 2rem;
+  align-self: flex-start;
 }
 
-.cards{
+.cards {
   display: flex;
   width: 70%;
-  align-self: center;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 5rem;
+  margin-top: 3rem;
+}
+
+.evenContainer,
+.oddContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  width: 43%;
+  height: 100%;
+  border-radius: 3rem;
+  overflow: hidden;
+  gap: 5rem;
+}
+.oddContainer {
+  margin-top: 35%;
 }
 
 .line {
@@ -66,10 +83,31 @@
   height: 175%;
 }
 
-@media (max-width: 435px){
-  .cards{
+@media (max-width: 768px) {
+  .container {
     width: 100%;
+    padding: 2rem;
   }
 
-  
+  .container p:first-child {
+    font-size: 2rem;
+  }
+
+  .cards {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .evenContainer,
+  .oddContainer {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .oddContainer {
+    margin-top: 0;
+  }
 }

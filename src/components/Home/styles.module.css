@@ -1,7 +1,6 @@
 .container {
   display: flex;
   align-items: center;
-  height: 90vh;
   color: black;
   flex-direction: column;
   gap: 2rem;
@@ -156,27 +155,32 @@
   display: none;
 }
 
-@media (max-width: 435px) {
+@media (max-width: 768px) {
   .header {
     padding: 1rem 0.5rem;
   }
   .wrapper {
     flex-direction: column;
   }
+  
   .btns {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .textContainer{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
-  .btn {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.6rem !important;
+
+  .videoContainer{
+    width: 90%;
   }
+
+
   .texts {
     text-align: center;
     font-size: 3rem;

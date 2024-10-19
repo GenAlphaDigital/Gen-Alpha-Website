@@ -36,7 +36,7 @@
 
 .brands {
   display: flex;
-  gap: 4rem;
+  gap: 8rem;
   position: relative;
   margin: 5rem 0;
   height: 200px;
@@ -129,6 +129,7 @@
 @media (max-width: 435px) {
   .container {
     height: 100%;
+    margin: 0rem;
     margin-top:  2rem;
 
   }

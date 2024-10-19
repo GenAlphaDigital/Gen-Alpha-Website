@@ -12,7 +12,7 @@ const About = ({ aboutRef }) => {
       <div className={styles.textContainer}>
         <div className={styles.header}>
           <small>
-            <StaggeredWords text={"About Us"} styles={{ fontSize: "1.5rem" }} />
+            <StaggeredWords text={"About Us"} styles={{ fontSize: "2rem" }} />
           </small>
           <MotionDiv
             initial={{
