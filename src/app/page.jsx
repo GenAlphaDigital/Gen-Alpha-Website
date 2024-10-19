@@ -1,10 +1,5 @@
-import styles from "./page.module.css";
-import Loader from "@/components/Loader/Loader";
+import dynamic from "next/dynamic";
 
-export default function App() {
-  return (
-    <div className={styles.container}>
-      <Loader />
-    </div>
-  );
-}
+const page = dynamic(() => import("./pageComp.jsx"), { ssr: false });
+
+export default page;
