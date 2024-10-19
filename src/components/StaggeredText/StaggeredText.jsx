@@ -35,7 +35,7 @@ const StaggeredText = ({ text, styles, lineHeight, whileInView }) => {
             style={{
               marginBlockStart: 0,
               marginBlockEnd: 0,
-              lineHeight: lineHeight ? lineHeight : "1.1",
+              lineHeight: lineHeight ? lineHeight : "0.7",
             }}
             initial={{
               opacity: 0,

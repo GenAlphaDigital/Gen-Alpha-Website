@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import { Model } from "../model/Model";
@@ -82,7 +81,7 @@ const Card = ({ work, i }) => {
                 title: work?.title,
                 desc: work?.desc,
                 img: gifs[i],
-                id:work?.id
+                id: work?.id,
               }}
             ></Model>
           </div>
