@@ -1,3 +1,4 @@
+
 import styles from "./styles.module.css";
 import StaggeredText from "../StaggeredText/StaggeredText";
 import Image from "next/image";

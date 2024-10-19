@@ -65,9 +65,6 @@ const Card = ({ work, i }) => {
             once: true,
           }}
           className={styles.container}
-          // style={{
-          //   marginTop: i % 2 !== 0 ? "50%" : "0%",
-          // }}
         >
           {/* <div className={styles.line}></div> */}
           <div className={styles.imgContainer}>
@@ -86,9 +83,7 @@ const Card = ({ work, i }) => {
                 desc: work?.desc,
                 img: gifs[i],
               }}
-            >
-              <p className="text-3xl md:text-xl">Project Title</p>
-            </Model>
+            ></Model>
           </div>
         </MotionDiv>
       </>
