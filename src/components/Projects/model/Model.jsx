@@ -10,13 +10,13 @@ import Lottie from "lottie-react";
 export function Model({ project }) {
   return (
     <Dialog>
-      <p className="text-3xl">{project.title}</p>
+      <p className="text-[var(--navyblue)] font-medium">{project.title}</p>
       <DialogTrigger asChild>
           <small
           style={{
             fontSize:'0.7rem'
           }}
-          className="py-4 px-4  bg-[var(--orange)] rounded-[3rem] w-[fit-content] sm:max-w-[80vw]"
+          className="py-4 px-4  bg-[var(--orange)] text-white rounded-[3rem] w-[fit-content] sm:max-w-[80vw]"
           >Learn More</small>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">

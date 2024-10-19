@@ -90,17 +90,15 @@
   }
 
   .container p:first-child {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .cards {
     width: 100%;
     flex-direction: column;
     padding: 0;
-    margin: 0;
-    margin-top: 1rem;
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    padding: 0.5rem;
   }
 
   .evenContainer,
