@@ -75,7 +75,10 @@ const Footer = () => {
               <p>
                 <b>Visit Office</b>
               </p>
-              <a href="#" target="_blank">
+              <a
+                href="https://maps.app.goo.gl/QP2huiE6bTNTNEo87"
+                target="_blank"
+              >
                 {"Map Link"}
               </a>
             </div>
@@ -135,7 +138,7 @@ const Footer = () => {
                 />
 
                 <button onClick={sendEmail} className={styles.submitBtn}>
-                  <FaArrowRight/>
+                  <FaArrowRight />
                 </button>
               </form>
             </div>
