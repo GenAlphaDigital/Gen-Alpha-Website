@@ -1,6 +1,5 @@
-import dynamic from "next/dynamic";
+import About from "./About.jsx";
 
-// Dynamically import the component with SSR disabled
-const AboutPage = dynamic(() => import("./About.jsx"), { ssr: false });
+const Page = () => <About />;
 
-export default AboutPage;
+export default Page;
