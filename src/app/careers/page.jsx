@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic";
+import PageComp from "./pageComp";
 
-const page = dynamic(() => import("./pageComp"), { ssr: false });
+const Page = () => <PageComp />;
 
-export default page;
+export default Page;
