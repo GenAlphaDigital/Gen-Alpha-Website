@@ -159,27 +159,32 @@
   .header {
     padding: 1rem 0.5rem;
   }
+
   .wrapper {
     flex-direction: column;
   }
-  
+
   .btns {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
   }
 
-  .textContainer{
+  .btns button {
+    font-size: 0.8rem;
+  }
+
+  .textContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
   }
 
-  .videoContainer{
-    width: 90%;
+  .videoContainer {
+    width: 80%;
   }
-
 
   .texts {
     text-align: center;
@@ -194,7 +199,7 @@
     justify-content: center;
   }
   .subheading div span {
-    font-size:0.8rem !important;
+    font-size: 0.8rem !important;
     text-align: center;
   }
   .gifstyling {

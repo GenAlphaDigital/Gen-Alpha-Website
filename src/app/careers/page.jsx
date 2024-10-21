@@ -1,20 +1,5 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import dynamic from "next/dynamic";
 
-const page = () => {
-  return (
-    <>
-    <header className={styles.logo}>
-      <Image
-      src={'/Logo.svg'}
-      width={120}
-      height={120}
-      className='p-2'
-      alt=''
-      />
-    </header>
-    </>
-  )
-}
+const page = dynamic(() => import("./pageComp"), { ssr: false });
 
-export default page
+export default page;

@@ -96,7 +96,6 @@
   .cards {
     width: 100%;
     flex-direction: column;
-    padding: 0;
     margin: 1rem;
     padding: 0.5rem;
   }
