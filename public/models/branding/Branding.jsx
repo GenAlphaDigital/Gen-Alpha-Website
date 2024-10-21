@@ -87,4 +87,4 @@ export default function Brand(props) {
   );
 }
 
-useGLTF.preload("/Branding.gltf");
+useGLTF.preload("../models/branding/Branding.gltf");

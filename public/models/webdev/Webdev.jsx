@@ -259,4 +259,4 @@ export default function Webdev(props) {
   );
 }
 
-useGLTF.preload("/Webdev.gltf");
+useGLTF.preload("../models/webdev/Webdev.gltf");

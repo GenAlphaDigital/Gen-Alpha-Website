@@ -5,6 +5,7 @@ import StaggeredText from "../StaggeredText/StaggeredText";
 import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
 import about_gif from "../../../public/about_gif.json";
 import Lottie from "lottie-react";
+import G from "@/components/3d Components/g";
 
 const About = ({ aboutRef }) => {
   return (
@@ -71,23 +72,30 @@ const About = ({ aboutRef }) => {
         </div>
       </div>
       <div className={styles.large}>
-      <MotionDiv
-        initial={{
-          opacity: 0,
-          y: 50,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 1.6,
-          },
-        }}
-        className={styles.imgContainer}
-      >
-        {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
-        <Lottie className={styles.gifstyling} animationData={about_gif} />
-      </MotionDiv>
+        <MotionDiv
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 1.6,
+            },
+          }}
+          className={styles.imgContainer}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            // border: "1px solid rgba(0,0,0,0.5)",
+          }}
+        >
+          {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
+          {/* <Lottie className={styles.gifstyling} animationData={about_gif} /> */}
+          <G />
+        </MotionDiv>
       </div>
     </div>
   );

@@ -42,4 +42,4 @@ export default function Media(props) {
   );
 }
 
-useGLTF.preload("/Media.gltf");
+useGLTF.preload("../models/media/Media.gltf");
