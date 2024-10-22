@@ -14,7 +14,6 @@ const HorizontalScroll = ({ data }) => {
 
 const HorizontalScrollCarousel = ({ data }) => {
   const targetRef = useRef(null);
-  li;
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
