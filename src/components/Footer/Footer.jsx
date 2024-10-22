@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { FaArrowRight } from "react-icons/fa";
@@ -123,6 +123,12 @@ const Footer = () => {
                 <p>
                   <FaFacebook />
                 </p>
+                <a
+                  href="https://linkedin.com/company/gen-alpha-digital"
+                  target="_blank"
+                >
+                  <FaLinkedin />
+                </a>
               </div>
             </div>
             <div>

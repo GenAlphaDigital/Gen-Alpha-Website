@@ -9,7 +9,7 @@ import {
   MotionSmall,
   MotionUl,
 } from "@/components/motionComponents/motionComponents";
-import { AnimatePresence, delay } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const container = {
   visible: {
@@ -29,6 +29,9 @@ const item = {
   },
   exit: {
     y: 100,
+    transition: {
+      duration: 1,
+    },
   },
 };
 
@@ -95,6 +98,7 @@ const page = () => {
           viewport={{
             once: true,
           }}
+          exit={"exit"}
         >
           <div className="w-[50%]">
             <MotionDiv variants={item}>
@@ -159,6 +163,7 @@ const page = () => {
           viewport={{
             once: true,
           }}
+          exit={"exit"}
         >
           <div className="w-[50%]">
             <MotionDiv variants={item}>
@@ -229,6 +234,7 @@ const page = () => {
           viewport={{
             once: true,
           }}
+          exit={"exit"}
         >
           <div className="w-[50%]">
             <MotionDiv variants={item}>
@@ -295,6 +301,7 @@ const page = () => {
           viewport={{
             once: true,
           }}
+          exit={"exit"}
         >
           <div className="w-[50%]">
             <MotionDiv variants={item}>
@@ -353,6 +360,29 @@ const page = () => {
           <div className="w-[50%]"></div>
         </MotionSection>
       </AnimatePresence>
+
+      <section className={styles.cards}>
+        <div className={styles.card}>
+          <div className={styles.upper}></div>
+          <div className={styles.lower}></div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}></div>
+          <div className={styles.lower}></div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}></div>
+          <div className={styles.lower}></div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}></div>
+          <div className={styles.lower}></div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}></div>
+          <div className={styles.lower}></div>
+        </div>
+      </section>
     </>
   );
 };

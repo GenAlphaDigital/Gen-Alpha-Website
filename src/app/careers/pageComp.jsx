@@ -4,6 +4,9 @@ import styles from "./page.module.css";
 import Lottie from "lottie-react";
 import join_us from "../../../public/join_us.json";
 import Footer from "@/components/Footer/Footer";
+import { useEffect, useRef } from "react";
+import HorizontalScroll from "./components/horizontalScroll";
+import { jobListings } from "./components/data";
 const PageComp = () => {
   return (
     <>
@@ -81,6 +84,129 @@ const PageComp = () => {
           </div>
         </div>
       </section>
+
+      {/* <section
+        className={styles.cards}
+        onScroll={(e) => {
+          handleScroll(e);
+        }}
+        ref={cardsRef}
+      >
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+        <div className={styles.card}>
+          <div className={styles.upper}>
+            <Image src={"/dummy.webp"} alt="" width={1000} height={1000} />
+          </div>
+          <div className={styles.lower}>
+            <h1>Software Developer</h1>
+            <p>
+              Join us in crafting cutting-edge software solutions that redefine
+              the future of technology. We’re looking for passionate developers
+              who can bring their ideas to life and help shape the next
+              generation of digital products.
+            </p>
+          </div>
+        </div>
+      </section> */}
+
+      <HorizontalScroll data={jobListings} />
 
       <section className={styles.contact}>
         <h1

@@ -93,8 +93,8 @@ const About = ({ aboutRef }) => {
           }}
         >
           {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
-          {/* <Lottie className={styles.gifstyling} animationData={about_gif} /> */}
-          <G />
+          <Lottie className={styles.gifstyling} animationData={about_gif} />
+          {/* <G /> */}
         </MotionDiv>
       </div>
     </div>

@@ -98,6 +98,38 @@
   cursor: url("/cursor.svg"), auto !important;
 }
 
+/* .cards {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  width: fit-content;
+   position: sticky;
+  top: 0; 
+}
+
+.card {
+  width: 30vw;
+} */
+
+.cards {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Optional for snap effect */
+  position: sticky;
+  top: 0;
+}
+
+.card {
+  flex: 0 0 auto; /* Prevent the cards from shrinking */
+  width: 300px; /* Set a fixed width for each card */
+  scroll-snap-align: start; /* Optional for snap effect */
+  margin-right: 20px; /* Space between cards */
+}
+
+.card .lower {
+  padding: 2rem;
+}
+
 @media (max-width: 768px) {
   .main {
     flex-direction: column;

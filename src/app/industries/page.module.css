@@ -87,3 +87,10 @@
 .industry div li {
   margin: 1rem;
 }
+
+/* Horizontal Scrolling for cards in cards section */
+.cards {
+  height: 100px;
+  width: 100px;
+  background-color: #f15a2b;
+}

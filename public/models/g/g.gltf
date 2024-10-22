@@ -151,21 +151,17 @@
   ],
   "materials": [
     {
-      "name": "#F15A2BFF",
+      "name": "#F15A2BEE",
       "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.9450980424880981, 0.3529411852359772, 0.16862745583057404, 1.0
-        ],
+        "baseColorFactor": [0.9450980424880981, 0.3529411852359772, 0.0],
         "metallicFactor": 0.0
       },
       "doubleSided": true
     },
     {
-      "name": "#F89820FF",
+      "name": "#F89820EE",
       "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          0.9725490212440491, 0.5960784554481506, 0.125490203499794, 1.0
-        ],
+        "baseColorFactor": [0.9725490212440491, 0.5960784554481506, 0.0],
         "metallicFactor": 0.0
       },
       "doubleSided": true

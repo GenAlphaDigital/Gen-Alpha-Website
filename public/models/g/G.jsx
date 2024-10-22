@@ -18,17 +18,17 @@ export default function GModel(props) {
     <group ref={groupRef} {...props} dispose={null} rotation={[0, -0.3, 0]}>
       <mesh
         geometry={nodes.Node1.geometry}
-        material={materials["#F15A2BFF"]}
+        material={materials["#F15A2BEE"]}
         rotation={[89.5, 0, 0]}
       />
       <mesh
         geometry={nodes.Node2.geometry}
-        material={materials["#F15A2BFF"]}
+        material={materials["#F15A2BEE"]}
         rotation={[89.5, 0, 0]}
       />
       <mesh
         geometry={nodes.Node3.geometry}
-        material={materials["#F89820FF"]}
+        material={materials["#F89820EE"]}
         rotation={[89.5, 0, 0]}
       />
     </group>
