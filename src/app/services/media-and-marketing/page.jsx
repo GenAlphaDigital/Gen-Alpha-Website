@@ -27,6 +27,7 @@ const page = () => {
                   In the world of marketing, it’s survival of the fittest. Let us be your secret weapon, bringing the perfect mix of creativity, strategy, and a dash of attitude.`}
                 styles={{
                   fontSize: "1.1rem",
+                  lineHeight: "1.15",
                   fontWeight: "300",
                 }}
               />

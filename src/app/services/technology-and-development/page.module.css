@@ -39,3 +39,26 @@
   border: 0.5px solid #000;
   margin: 1rem 0;
 }
+
+@media (max-width: 768px) {
+  .container {
+    height: 100%;
+  }
+  .wrapper {
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .title div p {
+    line-height: 1.15 !important;
+  }
+
+  .content,
+  .dropDown {
+    width: 100%;
+    padding: 0rem 2rem;
+    margin: 0;
+  }
+}

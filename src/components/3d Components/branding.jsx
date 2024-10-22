@@ -11,6 +11,7 @@ const Branding = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        width: "100%",
       }}
     >
       <Canvas
@@ -20,6 +21,7 @@ const Branding = () => {
           padding: "0 0 0 0",
           aspectRatio: 0.5,
         }}
+        className="w-[100vw]"
       >
         <ambientLight />
         <Suspense fallback={null}>
