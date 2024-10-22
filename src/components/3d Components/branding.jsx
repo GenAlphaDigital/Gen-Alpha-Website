@@ -6,8 +6,21 @@ import Brand from "../../../public/models/branding/Branding";
 import styles from "./styling/branding.module.css";
 const Branding = () => {
   return (
-    <div className={styles.container}>
-      <Canvas className={styles.canvas}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
+      <Canvas
+        style={{
+          width: "100%",
+          height: "60vh",
+          aspectRatio: 0.5,
+        }}
+      >
         <ambientLight />
         <Suspense fallback={null}>
           <OrbitControls enableZoom={false} />
