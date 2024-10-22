@@ -17,7 +17,6 @@
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.9",
     "@splinetool/react-spline": "^4.0.0",
-    "@studio-freight/react-lenis": "^0.0.47",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "emailjs": "^4.0.3",

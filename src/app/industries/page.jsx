@@ -10,6 +10,8 @@ import {
   MotionUl,
 } from "@/components/motionComponents/motionComponents";
 import { AnimatePresence } from "framer-motion";
+import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
+import { works } from "./data";
 
 const container = {
   visible: {
@@ -360,29 +362,6 @@ const page = () => {
           <div className="w-[50%]"></div>
         </MotionSection>
       </AnimatePresence>
-
-      <section className={styles.cards}>
-        <div className={styles.card}>
-          <div className={styles.upper}></div>
-          <div className={styles.lower}></div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.upper}></div>
-          <div className={styles.lower}></div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.upper}></div>
-          <div className={styles.lower}></div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.upper}></div>
-          <div className={styles.lower}></div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.upper}></div>
-          <div className={styles.lower}></div>
-        </div>
-      </section>
     </>
   );
 };

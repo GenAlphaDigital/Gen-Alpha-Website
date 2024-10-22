@@ -143,3 +143,14 @@ textarea {
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 768px) {
+  #model {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+    height: 100%;
+    overflow: scroll;
+  }
+}

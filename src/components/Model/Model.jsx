@@ -9,15 +9,18 @@ export function Model({ project }) {
       <small
         style={{
           fontSize: "0.85rem",
-          display:"flex",
-          flexDirection:"column",
-          gap:"0.5rem"
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
         }}
       >
         Client: {project.client}
-        <Image src={`/projects/project${project.id+1}.png`} width={90} height={90}
-        className="rounded-[50%]"
-        alt=""
+        <Image
+          src={`/projects/project${project.id + 1}.png`}
+          width={90}
+          height={90}
+          className="rounded-[50%]"
+          alt=""
         />
       </small>
 
@@ -39,7 +42,10 @@ export function Model({ project }) {
           Learn More
         </small>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[80vw] h-[80vh] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center">
+      <DialogContent
+        className="sm:max-w-[80%] bg-[var(--navyblue)] border-none text-white flex flex-col items-center justify-center"
+        id="model"
+      >
         <div className="flex items-center justify-center h-[80%] w-[80%] ">
           <Lottie
             animationData={project.img}
