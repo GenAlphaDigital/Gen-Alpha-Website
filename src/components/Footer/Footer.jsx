@@ -162,8 +162,10 @@ const Footer = () => {
             style={{
               fontWeight: 300,
             }}
+            className="text-[10px]"
           >
-            &copy; {new Date().getFullYear()} Gen Alpha, All Rights Reserved
+            &copy; {new Date().getFullYear()} Gen Alpha, All Rights Reserved |{" "}
+            <Link href={"/privacy"}>Privacy Policy</Link>
           </small>
         </div>
       </MotionDiv>
