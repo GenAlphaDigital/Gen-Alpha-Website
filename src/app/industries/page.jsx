@@ -12,6 +12,7 @@ import {
 import { AnimatePresence } from "framer-motion";
 import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
 import { works } from "./data";
+import Footer from "@/components/Footer/Footer";
 
 const container = {
   visible: {
@@ -362,6 +363,7 @@ const page = () => {
           <div className="w-[50%]"></div>
         </MotionSection>
       </AnimatePresence>
+      <Footer />
     </>
   );
 };

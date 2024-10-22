@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import AnimatedTextWord from "./variants";
 import About from "@/components/About comp/About";
+import Footer from "@/components/Footer/Footer";
 
 const Page = () => {
   const contain = {
@@ -74,17 +75,6 @@ const Page = () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    const scroller = document.querySelector(`.${styles.scroller__inner}`);
-    const images = scroller.querySelectorAll("img");
-    const totalWidth = Array.from(images).reduce(
-      (acc, img) => acc + img.width,
-      0
-    );
-
-    scroller.style.animationDuration = `${totalWidth / 50}px`;
   }, []);
 
   return (
@@ -296,6 +286,9 @@ const Page = () => {
       </div>
 
       {/* Team Section */}
+
+      {/* Footer */}
+      <Footer />
     </>
   );
 };
