@@ -142,6 +142,12 @@ const Footer = () => {
                 </button>
               </form>
             </div>
+            <div>
+              <p>
+                <b>Privacy Policy</b>
+              </p>
+              <Link href="/privacy">Link</Link>
+            </div>
           </div>
         </div>
         <div
