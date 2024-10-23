@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { FaArrowRight } from "react-icons/fa";
@@ -75,7 +75,10 @@ const Footer = () => {
               <p>
                 <b>Visit Office</b>
               </p>
-              <a href="#" target="_blank">
+              <a
+                href="https://maps.app.goo.gl/QP2huiE6bTNTNEo87"
+                target="_blank"
+              >
                 {"Map Link"}
               </a>
             </div>
@@ -120,6 +123,12 @@ const Footer = () => {
                 <p>
                   <FaFacebook />
                 </p>
+                <a
+                  href="https://linkedin.com/company/gen-alpha-digital"
+                  target="_blank"
+                >
+                  <FaLinkedin />
+                </a>
               </div>
             </div>
             <div>
@@ -135,9 +144,15 @@ const Footer = () => {
                 />
 
                 <button onClick={sendEmail} className={styles.submitBtn}>
-                  <FaArrowRight/>
+                  <FaArrowRight />
                 </button>
               </form>
+            </div>
+            <div>
+              <p>
+                <b>Privacy Policy</b>
+              </p>
+              <Link href="/privacy">Page Link</Link>
             </div>
           </div>
         </div>
@@ -153,8 +168,10 @@ const Footer = () => {
             style={{
               fontWeight: 300,
             }}
+            className="text-[10px]"
           >
-            &copy; {new Date().getFullYear()} Gen Alpha, All Rights Reserved
+            &copy; {new Date().getFullYear()} Gen Alpha, All Rights Reserved |{" "}
+            <Link href={"/privacy"}>Privacy Policy</Link>
           </small>
         </div>
       </MotionDiv>

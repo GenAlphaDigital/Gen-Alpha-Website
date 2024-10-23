@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import Lottie from "lottie-react";
 import join_us from "../../../public/join_us.json";
 import Footer from "@/components/Footer/Footer";
+import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
+import { jobListings } from "./data/data";
 const PageComp = () => {
   return (
     <>
@@ -81,6 +83,8 @@ const PageComp = () => {
           </div>
         </div>
       </section>
+
+      <HorizontalScroll data={jobListings} />
 
       <section className={styles.contact}>
         <h1

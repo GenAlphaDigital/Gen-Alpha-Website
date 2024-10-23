@@ -2,10 +2,9 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
-import { IoMdMenu, IoMdClose, IoMdArrowDropup } from "react-icons/io";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Image from "next/image";
 import { FiPhoneCall } from "react-icons/fi";
-import { MotionDiv } from "../motionComponents/motionComponents";
 
 const Navbar = () => {
   const [dropDown, setDropDown] = useState(false);
@@ -194,12 +193,11 @@ const Navbar = () => {
             <div className={styles.link}>
               <div className={styles.bounceDot}></div>
               <Link href={"/industries"} onClick={() => setVisible("none")}>
-                Industries
+                Industries and Case Studies
               </Link>
             </div>
           </div>
-          <div
-          className={styles.cta}>
+          <div className={styles.cta}>
             <button>
               <a href="tel:9177705479">
                 <FiPhoneCall />

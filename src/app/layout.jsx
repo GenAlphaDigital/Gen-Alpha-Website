@@ -1,6 +1,5 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import SmoothScrolling from "./SmoothScrolling";
 import Navbar from "@/components/Navbar/Navbar";
 
 const poppins = Poppins({
@@ -18,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className}>
         <Navbar />
-        <SmoothScrolling>{children}</SmoothScrolling>
+        {children}
       </body>
     </html>
   );

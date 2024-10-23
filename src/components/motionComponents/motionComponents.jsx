@@ -11,3 +11,5 @@ export const MotionH1 = motion.h1;
 export const MotionH2 = motion.h2;
 export const MotionSmall = motion.small;
 export const MotionImage = motion.Image;
+export const MotionSection = motion.section;
+export const MotionUl = motion.ul;

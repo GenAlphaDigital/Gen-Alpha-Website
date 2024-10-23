@@ -11,11 +11,12 @@ const WebDev = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        width: "100%",
       }}
     >
       <Canvas
         style={{
-          width: "50vw",
+          width: "100%",
           height: "60vh",
           aspectRatio: 0.5,
         }}

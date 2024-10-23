@@ -30,6 +30,7 @@ const page = () => {
                 styles={{
                   fontSize: "1.1rem",
                   fontWeight: "300",
+                  lineHeight: "1.15",
                 }}
               />
             </div>

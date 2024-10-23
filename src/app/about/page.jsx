@@ -1,5 +1,4 @@
-import About from "./About.jsx";
+import Page from "./pageComp";
 
-const Page = () => <About />;
-
-export default Page;
+const AboutPage = () => <Page />;
+export default AboutPage;

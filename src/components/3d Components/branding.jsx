@@ -3,7 +3,6 @@ import { ContactShadows, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Brand from "../../../public/models/branding/Branding";
-
 const Branding = () => {
   return (
     <div
@@ -11,13 +10,13 @@ const Branding = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        width: "100%",
       }}
     >
       <Canvas
         style={{
-          width: "50vw",
-          height: "47vh",
-          padding: "0 0 0 0",
+          width: "100%",
+          height: "60vh",
           aspectRatio: 0.5,
         }}
       >

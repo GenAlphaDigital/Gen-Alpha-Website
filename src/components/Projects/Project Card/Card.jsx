@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
-import { Model } from "../model/Model";
+import { Model } from "@/components/Model/Model";
 import gif1 from "../gifs/gif1.json";
 import gif2 from "../gifs/gif2.json";
 import gif3 from "../gifs/gif3.json";
@@ -66,11 +66,16 @@ const Card = ({ work, i }) => {
           className={styles.container}
         >
           {/* <div className={styles.line}></div> */}
-          <div className={styles.imgContainer}>
+          <div
+            className={styles.imgContainer}
+            style={{
+              position: "relative",
+            }}
+          >
             <Lottie
               animationData={gifs[i]}
               style={{
-                objectFit: "cover",
+                objectFit: "fill",
               }}
             />
           </div>
