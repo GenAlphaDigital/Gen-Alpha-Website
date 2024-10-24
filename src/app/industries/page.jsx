@@ -103,7 +103,7 @@ const page = () => {
           }}
           exit={"exit"}
         >
-          <div className="w-[50%]">
+          <div className={styles.subIndustry}>
             <MotionDiv variants={item}>
               <MotionP>
                 <b>Fashion, Brands & E-commerce</b>
@@ -168,7 +168,7 @@ const page = () => {
           }}
           exit={"exit"}
         >
-          <div className="w-[50%]">
+          <div className={styles.subIndustry}>
             <MotionDiv variants={item}>
               <MotionP>
                 <b>Sports & Fitness</b>
@@ -226,7 +226,7 @@ const page = () => {
             </MotionUl>
           </div>
 
-          <div className="w-[50%]"></div>
+          <div className={styles.gifsContainer}></div>
         </MotionSection>
 
         <MotionSection
@@ -239,7 +239,7 @@ const page = () => {
           }}
           exit={"exit"}
         >
-          <div className="w-[50%]">
+          <div className={styles.subIndustry}>
             <MotionDiv variants={item}>
               <MotionP>
                 <b>Real Estate</b>
@@ -306,7 +306,7 @@ const page = () => {
           }}
           exit={"exit"}
         >
-          <div className="w-[50%]">
+          <div className={styles.subIndustry}>
             <MotionDiv variants={item}>
               <MotionP>
                 <b>Hospitality</b>

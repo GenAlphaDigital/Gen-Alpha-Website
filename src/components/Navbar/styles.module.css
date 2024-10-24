@@ -246,11 +246,23 @@
     flex: 0;
   }
   .container {
-    width: 4rem !important;
+    width: 6rem !important;
   }
+
+  .navContainer {
+    height: fit-content;
+    width: fit-content;
+    /* border-radius: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    position: absolute;
+    right: 20%;
+  }
+
   .navContainer svg {
     position: absolute;
-    left: 7%;
     padding: 0rem;
     /* width: 0.813rem; */
   }
