@@ -5,6 +5,8 @@ import { Tech_Services } from "../data/data";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import WebDev from "@/components/3d Components/webdev";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
 
 const page = () => {
   return (
@@ -48,6 +50,8 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Contact />
+      <Footer />
     </>
   );
 };

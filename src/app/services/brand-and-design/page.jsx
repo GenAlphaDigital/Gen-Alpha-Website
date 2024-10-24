@@ -5,6 +5,8 @@ import { Brand_and_Design } from "../data/data";
 import Branding from "@/components/3d Components/branding";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
 
 const page = () => {
   return (
@@ -50,6 +52,8 @@ const page = () => {
           </div>
         </div>
       </div>
+      <Contact />
+      <Footer />
     </>
   );
 };
