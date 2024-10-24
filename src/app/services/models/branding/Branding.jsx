@@ -10,7 +10,7 @@ Title: Upwards Trending Bar Graph on Phone
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Brand(props) {
+export default function Branding(props) {
   const { nodes, materials } = useGLTF("../models/branding/Branding.gltf");
   return (
     <group {...props} dispose={null} scale={1} rotation={[0.4, 0.4, 0]}>
