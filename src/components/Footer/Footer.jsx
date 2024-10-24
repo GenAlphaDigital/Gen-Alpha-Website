@@ -89,15 +89,15 @@ const Footer = () => {
               <p>
                 <b>Services: </b>
               </p>
-              <Link href={"/brand-and-design"}>
+              <Link href={"/services/brand-and-design"}>
                 Brand &amp; Design Services
               </Link>
               <br />
-              <Link href={"/technology-and-development"}>
+              <Link href={"/services/technology-and-development"}>
                 Technology Services
               </Link>
               <br />
-              <Link href={"/media-and-marketing"}>
+              <Link href={"/services/media-and-marketing"}>
                 Advertisement and Marketing
               </Link>
             </div>
