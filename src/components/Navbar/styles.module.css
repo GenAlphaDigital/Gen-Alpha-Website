@@ -79,9 +79,8 @@
   /* width: 50%; */
 }
 
-.large{
+.large {
   width: calc(100% + 30rem);
-
 }
 
 .link:nth-child(3) {
@@ -90,7 +89,6 @@
   justify-content: center;
   width: calc(100% + 30rem);
   position: relative;
-
 }
 
 .dropDown {
@@ -223,19 +221,19 @@
   display: none;
 }
 
-.cta  {
+.cta {
   padding: 5rem 3rem;
   flex: 0.08;
   display: flex;
   align-items: flex-end;
 }
 
-.cta button{
+.cta button {
   width: 4rem;
   height: 4rem;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background-color: var(--orange);
   color: white;
   font-size: 1rem;
@@ -244,11 +242,11 @@
 }
 
 @media (max-width: 768px) {
-  .logo{
+  .logo {
     flex: 0;
   }
   .container {
-    width: 5rem !important;
+    width: 4rem !important;
   }
   .navContainer svg {
     position: absolute;
@@ -306,17 +304,16 @@
     flex: 0;
   }
 
-  .cta{
+  .cta {
     padding: 0rem;
     flex: 0;
     /* width: 100%; */
     align-items: flex-end;
   }
 
-  .cta button{
-      position: absolute;
-      bottom: 3%;
-      right: 3%;
+  .cta button {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
   }
-
 }
