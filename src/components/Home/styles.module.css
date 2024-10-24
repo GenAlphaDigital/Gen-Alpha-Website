@@ -6,6 +6,7 @@
   gap: 2rem;
   height: 100%;
   font-size: 3rem;
+  padding: 0 2rem;
 }
 
 .wrapper {
@@ -21,6 +22,11 @@
   flex-direction: column;
   gap: 3rem;
   align-items: flex-start;
+  width: 50%;
+}
+
+.videoContainer {
+  width: 50%;
 }
 
 .texts > p {
@@ -173,6 +179,11 @@
 
   .btns button {
     font-size: 0.8rem;
+    padding: 1rem !important;
+  }
+
+  .contactBtn {
+    padding: 1rem !important;
   }
 
   .textContainer {
@@ -180,6 +191,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    width: 100%;
   }
 
   .videoContainer {
@@ -188,10 +200,9 @@
 
   .texts {
     text-align: center;
-    font-size: 3rem;
   }
   .texts div span {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
   }
   .subheading {
     display: flex;
@@ -199,7 +210,7 @@
     justify-content: center;
   }
   .subheading div span {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
     text-align: center;
   }
   .gifstyling {
@@ -214,6 +225,6 @@
     padding: 1rem 0;
   }
   .rocket {
-    width: 2rem;
+    display: none;
   }
 }

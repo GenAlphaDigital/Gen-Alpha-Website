@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-around !important;
   gap: 3rem;
-  margin: 1rem 5rem;
+  margin: 1rem 3rem;
 }
 
 .textContainer {
@@ -118,6 +118,6 @@
   }
 
   .textContainer div:nth-child(3) {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   }
 }

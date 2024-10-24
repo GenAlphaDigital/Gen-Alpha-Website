@@ -5,7 +5,6 @@ import StaggeredText from "../StaggeredText/StaggeredText";
 import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
 import about_gif from "../../../public/about_gif.json";
 import Lottie from "lottie-react";
-import G from "@/components/3d Components/g";
 
 const About = ({ aboutRef }) => {
   return (
@@ -33,7 +32,7 @@ const About = ({ aboutRef }) => {
         </div>
         <div>
           <StaggeredText
-            lineHeight={"1.3"}
+            lineHeight={"1.15"}
             whileInView={true}
             text={`Gen Alpha Digitals is your go-to partner for innovative digital
             marketing solutions. We offer expertise in branding, design, and
@@ -43,7 +42,7 @@ const About = ({ aboutRef }) => {
           <br />
           <StaggeredText
             whileInView={true}
-            lineHeight={"1.3"}
+            lineHeight={"1.15"}
             text={`
             Our comprehensive advertising services cover affiliate, social
             media, programmatic, content, and email/WhatsApp marketing. Whether

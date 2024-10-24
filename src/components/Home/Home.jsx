@@ -57,7 +57,7 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
               text={"We empower digital presence"}
               styles={{
                 fontSize: "2.5rem",
-                lineHeight: "0.8",
+                lineHeight: "1.15",
               }}
             />
             <div
@@ -72,7 +72,7 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
                 text={"amplify impact for startups and businesses. "}
                 styles={{
                   fontWeight: "300",
-                  // lineHeight: "1",
+                  lineHeight: "1",
                   fontSize: "1.5rem",
                 }}
               />

@@ -55,7 +55,6 @@
   position: relative;
   overflow: hidden;
   font-size: 1rem;
-  /* margin: 2rem 0; */
   z-index: 2;
   align-self: center;
 }
@@ -81,6 +80,12 @@
 
 .btn:hover::before {
   height: 175%;
+}
+
+@media (max-width: 920px) {
+  .cards {
+    width: 90%;
+  }
 }
 
 @media (max-width: 768px) {
