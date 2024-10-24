@@ -21,7 +21,12 @@ const page = () => {
           </div>
           <div className={styles.content}>
             <h1 className={styles.title}>
-              <StaggeredText text={"Brand And Design Services"} />
+              <StaggeredText
+                text={"Brand And Design Services"}
+                styles={{
+                  lineHeight: "1.15",
+                }}
+              />
             </h1>
             <div className={styles.desc}>
               <StaggeredText
