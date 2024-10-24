@@ -55,7 +55,6 @@
   position: relative;
   overflow: hidden;
   font-size: 1rem;
-  /* margin: 2rem 0; */
   z-index: 2;
   align-self: center;
 }
