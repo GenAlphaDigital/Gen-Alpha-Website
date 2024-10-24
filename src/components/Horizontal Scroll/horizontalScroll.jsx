@@ -4,15 +4,15 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-const HorizontalScroll = ({ data }) => {
+const HorizontalScroll = ({ data, scrollToForm }) => {
   return (
     <div>
-      <HorizontalScrollCarousel data={data} />
+      <HorizontalScrollCarousel data={data} scrollToForm={scrollToForm} />
     </div>
   );
 };
 
-const HorizontalScrollCarousel = ({ data }) => {
+const HorizontalScrollCarousel = ({ data, scrollToForm }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -25,7 +25,14 @@ const HorizontalScrollCarousel = ({ data }) => {
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {data.map((card, index) => {
-            return <Card card={card} key={index} id={index + 1} />;
+            return (
+              <Card
+                card={card}
+                key={index}
+                id={index + 1}
+                scrollToForm={scrollToForm}
+              />
+            );
           })}
         </motion.div>
       </div>
@@ -33,9 +40,9 @@ const HorizontalScrollCarousel = ({ data }) => {
   );
 };
 
-const Card = ({ card }) => {
+const Card = ({ card, scrollToForm }) => {
   return (
-    <Model job={card}>
+    <Model job={card} scrollToForm={scrollToForm}>
       <div
         key={card.id}
         style={{

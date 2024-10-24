@@ -6,13 +6,23 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/upwards-trending-bar-graph-on-phone-b005fc3213004e0c95e67a8158138677
 Title: Upwards Trending Bar Graph on Phone
 */
-
+"use client";
 import React from "react";
 import { useGLTF } from "@react-three/drei";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 export default function Brand(props) {
   const { nodes, materials } = useGLTF("../models/branding/Branding.gltf");
+
+  const groupRef = useRef();
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.01;
+    }
+  });
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props} dispose={null}>
       <mesh
         geometry={nodes.Object_4.geometry}
         material={materials.Primitive_Material}
