@@ -6,14 +6,29 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/3d-clipart-webdev-f3d8f1a7174847d994ab698e265f9672
 Title: 3D Clipart - WebDev
 */
-
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 
 export default function Webdev(props) {
   const { nodes, materials } = useGLTF("../models/webdev/Webdev.gltf");
+  const groupRef = useRef();
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.01;
+    }
+  });
+
   return (
-    <group {...props} dispose={null} scale={0.55} rotation={[0.8, -0.8, 0.4]}>
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      scale={0.55}
+      // rotation={[0.8, -0.8, 0.4]}
+    >
       <group scale={0.01}>
         <group
           position={[119.344, 0, 281.843]}

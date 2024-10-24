@@ -1,10 +1,26 @@
+"use client";
 import React from "react";
 import { useGLTF } from "@react-three/drei";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 export default function Media(props) {
   const { nodes, materials } = useGLTF("../models/media/Media.gltf");
+  const groupRef = useRef();
+
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.01;
+    }
+  });
   return (
-    <group {...props} dispose={null} scale={1} position={[0, 0, 0]}>
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      scale={1}
+      position={[0, 0, 0]}
+    >
       <group scale={0.1} position={[0, 0, 0]}>
         <mesh
           geometry={nodes.Facebook_2_Facebook1_0.geometry}

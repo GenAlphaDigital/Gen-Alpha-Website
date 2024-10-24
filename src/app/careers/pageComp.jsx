@@ -6,7 +6,16 @@ import join_us from "../../../public/join_us.json";
 import Footer from "@/components/Footer/Footer";
 import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
 import { jobListings } from "./data/data";
+import { useRef } from "react";
 const PageComp = () => {
+  const formRef = useRef(null);
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    console.log("Click");
+  };
+
   return (
     <>
       <header className={styles.logo}>
@@ -84,7 +93,7 @@ const PageComp = () => {
         </div>
       </section>
 
-      <HorizontalScroll data={jobListings} />
+      <HorizontalScroll data={jobListings} scrollToForm={scrollToForm} />
 
       <section className={styles.contact}>
         <h1
@@ -95,13 +104,14 @@ const PageComp = () => {
         >
           “Your Opportunity to be a part of the pack”
         </h1>
-        <form className={styles.form}>
+        <form className={styles.form} ref={formRef}>
           <h2>
             The Alpha Evolution Starts Here. <span>👇</span>
           </h2>
           <input type="text" placeholder="Name" />
           <input type="number" placeholder="Phone Number" />
           <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Role You Want To Apply For" />
 
           <div className="flex flex-col gap-[0.5rem] text-[0.8rem]">
             <label htmlFor="file">Upload your resume</label>
