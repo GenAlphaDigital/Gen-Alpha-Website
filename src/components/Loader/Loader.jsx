@@ -39,10 +39,10 @@ const Loader = () => {
   };
 
   const scrollToAbout = () => {
-    if(aboutRef.current){
+    if (aboutRef.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   useEffect(() => {
     const hasSeenIntro = localStorage.getItem("hasSeenIntro");
@@ -207,13 +207,17 @@ const Loader = () => {
       <AnimatePresence>
         {show6 && (
           <>
-            <Home scrollToVideo={scrollToVideo} scrollToContact={scrollToContact} scrollToAbout={scrollToAbout}/>
-            <BackgroundVideo videoRef={videoRef}/>
-            <About aboutRef={aboutRef}/>
+            <Home
+              scrollToVideo={scrollToVideo}
+              scrollToContact={scrollToContact}
+              scrollToAbout={scrollToAbout}
+            />
+            <BackgroundVideo videoRef={videoRef} />
+            <About aboutRef={aboutRef} />
             <Service />
             <Projects />
             <Brands />
-            <Contact  contactRef={contactRef}/>
+            <Contact contactRef={contactRef} />
             <Footer />
           </>
         )}
