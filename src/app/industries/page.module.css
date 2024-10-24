@@ -88,9 +88,56 @@
   margin: 1rem;
 }
 
+.gifsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+  margin-top: 2rem;
+}
+
+.subIndustry {
+  width: 50%;
+}
+
 /* Horizontal Scrolling for cards in cards section */
 .cards {
   height: 100px;
   width: 100px;
   background-color: #f15a2b;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0rem;
+  }
+  .hero {
+    flex-direction: column;
+    margin: 0;
+    padding: 1rem;
+  }
+  .modelContainer,
+  .textContainer {
+    width: 100%;
+    padding: 1rem;
+    height: 30%;
+  }
+
+  .textContainer h1,
+  .second p {
+    font-size: 2rem;
+  }
+
+  .industry {
+    width: 100%;
+    height: max-content;
+    margin: 0;
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .subIndustry {
+    width: 100%;
+  }
 }

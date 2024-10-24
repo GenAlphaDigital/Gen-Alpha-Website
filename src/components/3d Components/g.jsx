@@ -8,6 +8,7 @@ const page = () => {
   return (
     <div
       style={{
+        width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -15,7 +16,7 @@ const page = () => {
     >
       <Canvas
         style={{
-          width: "50vw",
+          width: "100%",
           height: "60vh",
           aspectRatio: 0.5,
         }}
