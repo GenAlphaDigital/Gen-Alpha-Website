@@ -3,6 +3,8 @@ import { Model } from "@/app/careers/components/Model";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import { MotionDiv } from "../motionComponents/motionComponents";
+import styles from "./horizontalScroll.module.css";
 
 const HorizontalScroll = ({ data, scrollToForm }) => {
   return (
@@ -44,6 +46,18 @@ const HorizontalScrollCarousel = ({ data, scrollToForm }) => {
   return (
     <section ref={targetRef} className="relative h-[300vh]">
       <h1 className="px-6 text-4xl">Job Openings</h1>
+      <MotionDiv
+        initial={{
+          width: 0,
+        }}
+        whileInView={{
+          width: "90%",
+          transition: {
+            duration: 1.6,
+          },
+        }}
+        className={` px-6 ${styles.line} `}
+      ></MotionDiv>
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-6">
           {data.map((card, index) => {
