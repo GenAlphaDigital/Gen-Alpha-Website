@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Multiselect from "multiselect-react-dropdown";
 import Lottie from "lottie-react";
+import Loading from "../Loading/Loading";
 
 const stagger = {
   animate: {
@@ -30,7 +31,7 @@ const popup = {
   },
 };
 
-const Contact = ( {contactRef} ) => {
+const Contact = ({ contactRef }) => {
   const [options, setOptions] = useState([
     "Content & Copywriting",
     "Graphic Design, Iconography & Illustrations",
@@ -52,6 +53,7 @@ const Contact = ( {contactRef} ) => {
   ]);
   const [services, setService] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const form = useRef();
 
   const handleSelect = (e) => {
@@ -60,6 +62,7 @@ const Contact = ( {contactRef} ) => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSending(true);
     form.current.services_list.value = services.join(", ");
     emailjs
       .sendForm(
@@ -73,7 +76,8 @@ const Contact = ( {contactRef} ) => {
           console.log("SUCCESS!");
           e.target.reset();
           setService([]);
-          setSubmitted(true); 
+          setSubmitted(true);
+          setSending(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -96,9 +100,7 @@ const Contact = ( {contactRef} ) => {
         className={styles.imgContainer}
       >
         {/* <Image src={contact_gif} alt="" width={500} height={500} /> */}
-        <Lottie className={styles.gifstyling}
-        animationData={contact_gif}
-        />
+        <Lottie className={styles.gifstyling} animationData={contact_gif} />
       </MotionDiv>
       <MotionDiv
         variants={popup}
@@ -142,7 +144,7 @@ const Contact = ( {contactRef} ) => {
           <input type="hidden" name="services_list" />
 
           <textarea placeholder="Message" rows={6} name="message"></textarea>
-          <input type="submit" value="Send" />
+          {sending ? <Loading /> : <input type="submit" value="Send" />}
         </form>
         {submitted && (
           <small style={{ color: "green", textAlign: "center" }}>

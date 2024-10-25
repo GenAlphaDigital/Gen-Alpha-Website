@@ -7,7 +7,10 @@ import Footer from "@/components/Footer/Footer";
 import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
 import { jobListings } from "./data/data";
 import { useRef, useState } from "react";
+import emailjs, { send } from "@emailjs/browser";
 import Link from "next/link";
+import { getFile, uploadFile } from "@/lib/storage";
+import Loading from "@/components/Loading/Loading";
 const PageComp = () => {
   const formRef = useRef(null);
   const scrollToForm = () => {
@@ -20,22 +23,35 @@ const PageComp = () => {
   const [role, setRole] = useState([]);
   const [url, setUrl] = useState(null);
   const [file, setFile] = useState(null);
+  const [sending, setSending] = useState(false);
+
+  const handleUpload = (e) => {
+    uploadFile(file, "resumes").then((res) => {
+      getFile(res).then((res) => {
+        setUrl(res);
+      });
+    });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+    handleUpload(e);
+    setSending(true);
+    console.log("sending");
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID_2,
         process.env.NEXT_PUBLIC_TEMPLATE3_ID,
-        form.current,
+        formRef.current,
         process.env.NEXT_PUBLIC_PUBLIC_KEY2
       )
       .then(
         () => {
           console.log("SUCCESS!");
           e.target.reset();
-          setService([]);
-          setSubmitted(true);
+          setFile(null);
+          setUrl(null);
+          setSending(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
@@ -161,7 +177,7 @@ const PageComp = () => {
             }}
           >
             <option
-              value=""
+              defaultValue=""
               disabled
               selected
               style={{
@@ -182,7 +198,7 @@ const PageComp = () => {
           </select>
 
           <input type="hidden" name="role" value={role} />
-          <input type="hidden" name="resume_link" />
+          <input type="hidden" name="resume_link" value={url} />
 
           <div className="flex flex-col gap-[0.5rem] text-[0.8rem]">
             <label htmlFor="file">Upload your resume</label>
@@ -193,11 +209,15 @@ const PageComp = () => {
             />
           </div>
 
-          <input
-            type="submit"
-            value="Submit"
-            className="bg-[var(--orange)] text-white p-2 rounded-lg w-[30%]"
-          />
+          {sending ? (
+            <Loading />
+          ) : (
+            <input
+              type="submit"
+              value="Submit"
+              className="bg-[var(--orange)] text-white p-2 rounded-lg w-[30%]"
+            />
+          )}
         </form>
       </section>
       <Footer />
