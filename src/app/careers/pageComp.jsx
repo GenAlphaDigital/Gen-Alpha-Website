@@ -97,11 +97,21 @@ const PageComp = () => {
 
       <section className={styles.contact}>
         <h1
-          className={"text-4xl w-[50%]"}
+          className={
+            "text-4xl w-[50%] flex flex-col items-center justify-center gap-4"
+          }
           style={{
             lineHeight: "1.1",
+            textAlign: "center",
           }}
         >
+          <Image
+            src={"/wolf.png"}
+            alt="wolf"
+            width={1080}
+            height={1080}
+            className="w-[70%]"
+          />
           “Your Opportunity to be a part of the pack”
         </h1>
         <form className={styles.form} ref={formRef}>

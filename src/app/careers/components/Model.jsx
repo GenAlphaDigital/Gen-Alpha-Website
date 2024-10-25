@@ -1,7 +1,8 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import styles from "./styles.module.css";
+import { DialogClose } from "@radix-ui/react-dialog";
 
-export function Model({ children, job, formRef, scrollToForm }) {
+export function Model({ children, job, scrollToForm }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -41,10 +42,12 @@ export function Model({ children, job, formRef, scrollToForm }) {
             ))}
           </ul>
         </div>
-        <button className="bg-[var(--orange)]" onClick={scrollToForm}>
-          {" "}
-          Apply Now{" "}
-        </button>
+        <DialogClose asChild>
+          <button className="bg-[var(--orange)]" onClick={scrollToForm}>
+            {" "}
+            Apply Now{" "}
+          </button>
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );
