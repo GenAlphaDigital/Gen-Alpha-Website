@@ -111,7 +111,32 @@ const PageComp = () => {
           <input type="text" placeholder="Name" />
           <input type="number" placeholder="Phone Number" />
           <input type="email" placeholder="Email" />
-          <input type="text" placeholder="Role You Want To Apply For" />
+
+          <select
+            name="jobs"
+            id="jobs"
+            style={{
+              padding: "1rem",
+              borderRadius: "0.5rem",
+              border: "1px solid #ccc",
+            }}
+          >
+            <option
+              value=""
+              disabled
+              selected
+              style={{
+                color: "#ccc",
+              }}
+            >
+              Select a Role
+            </option>
+            {jobListings.map((job) => (
+              <option value={job.id} key={job.id}>
+                {job.title}
+              </option>
+            ))}
+          </select>
 
           <div className="flex flex-col gap-[0.5rem] text-[0.8rem]">
             <label htmlFor="file">Upload your resume</label>
