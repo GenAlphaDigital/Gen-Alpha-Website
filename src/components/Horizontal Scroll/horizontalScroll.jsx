@@ -85,7 +85,7 @@ const Card = ({ card, scrollToForm }) => {
           fontFamily: "Poppins",
           border: "1px solid var(--navyblue)",
         }}
-        className="group relative w-[20rem] h-[85vh] rounded-xl overflow-hidden  flex flex-col "
+        className="group relative w-[20rem] h-[75vh] rounded-xl overflow-hidden  flex flex-col  "
       >
         <div
           className="h-[100%] flex items-center justify-center"
@@ -107,23 +107,20 @@ const Card = ({ card, scrollToForm }) => {
               Job Title:
             </p>
             <p className="text-base">{card.title}</p>
-          </div>
-          <div className="p-4 flex flex-col gap-[1rem]">
             <p className="text-xl font-bold text-[var(--navyblue)]">
               Experience:
             </p>
             <p className="text-base">{card.experience}</p>
           </div>
-          <button
-            style={{
-              padding: "1rem !important",
-            }}
-            className="bg-[var(--orange)] text-white w-[60%] p-2 self-center "
-          >
-            More Info
-          </button>
-          <Model job={card}></Model>
         </div>
+        <button
+          style={{
+            padding: "0.5rem !important",
+          }}
+          className="bg-[var(--orange)] text-white w-[95%] my-2 mx-2"
+        >
+          More Info
+        </button>
       </div>
     </Model>
   );

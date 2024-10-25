@@ -139,7 +139,7 @@ const PageComp = () => {
             alt="wolf"
             width={1080}
             height={1080}
-            className="w-[70%]"
+            className="w-[50%]"
           />
           “Your Opportunity to be a part of the pack”
         </h1>
