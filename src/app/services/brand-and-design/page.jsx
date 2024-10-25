@@ -7,6 +7,7 @@ import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 const page = () => {
   return (

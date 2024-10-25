@@ -7,6 +7,7 @@ import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import Marketing from "@/components/3d Components/marketing";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 const page = () => {
   return (
