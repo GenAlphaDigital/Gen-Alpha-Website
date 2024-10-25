@@ -165,4 +165,34 @@ export const jobListings = [
       "Understanding of CI/CD tools and pipelines.",
     ],
   },
+  {
+    id: 7,
+    title: "Web Developer",
+    experience: "1+ years",
+    jobDescription:
+      "We are looking for an experienced Web Developer to join our team. The ideal candidate will be responsible for designing and developing landing pages and fully-fledged websites based on client requirements. You will have expertise in SEO optimization, no-code tools like WordPress and WooCommerce, and the ability to deliver visually appealing, user-friendly designs without requiring extensive direction from UI/UX designers.",
+    rolesAndResponsibilities: [
+      "Design and develop responsive landing pages and full-scale websites.",
+      "Build websites using no-code platforms such as WordPress, WooCommerce, and similar tools.",
+      "Ensure all websites are optimized for search engines, focusing on meta tags, alt tags, and overall SEO best practices.",
+      "Translate client specifications into functional, attractive websites with minimal handholding on UI/UX.",
+      "Test website performance, troubleshoot issues, and implement optimizations.",
+      "Collaborate with the design and marketing teams to ensure consistency with brand and business goals.",
+      "Stay updated with the latest web design trends, development best practices, and SEO techniques.",
+    ],
+    requiredSkills: [
+      "1+ years of experience in web development using WordPress, WooCommerce, or similar platforms.",
+      "Strong understanding of SEO principles and web optimization.",
+      "Proficiency in HTML, CSS, and JavaScript, with experience in responsive design.",
+      "Ability to work independently and translate client needs into well-structured web solutions.",
+      "Excellent UI/UX sensibility with a strong eye for design.",
+      "Experience with plugins, eCommerce integrations, and third-party tools.",
+      "Familiarity with version control tools such as Git.",
+    ],
+    preferredSkills: [
+      "Experience with additional no-code platforms (e.g., Webflow, Shopify).",
+      "Knowledge of design tools like Figma or Adobe XD.",
+      "Understanding of web performance analytics and tools like Google Analytics.",
+    ],
+  },
 ];

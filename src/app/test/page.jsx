@@ -10,6 +10,7 @@ import {
   MotionUl,
 } from "@/components/motionComponents/motionComponents";
 import { AnimatePresence, delay } from "framer-motion";
+import Link from "next/link";
 
 const container = {
   visible: {
