@@ -103,14 +103,14 @@ const Card = ({ card, scrollToForm }) => {
         </div>
         <div className="flex flex-col h-[100%] justify-between px-4 py-2 col">
           <div className="col p-4 flex flex-col gap-[1rem]">
-            <p className="heading text-xl font-bold text-[var(--navyblue)]">
+            <p className="heading text-base font-bold text-[var(--navyblue)]">
               Job Title:
             </p>
-            <p className="content text-base">{card.title}</p>
-            <p className="heading text-xl font-bold text-[var(--navyblue)]">
+            <p className="content text-sm">{card.title}</p>
+            <p className="heading text-base font-bold text-[var(--navyblue)]">
               Experience:
             </p>
-            <p className="content text-base">{card.experience}</p>
+            <p className="content text-sm">{card.experience}</p>
           </div>
         </div>
         <button
