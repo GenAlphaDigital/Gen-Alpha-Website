@@ -73,6 +73,7 @@ const Card = ({ work, i }) => {
             }}
           >
             <Lottie
+              className={styles.gifstyling}
               animationData={gifs[i]}
               style={{
                 objectFit: "fill",

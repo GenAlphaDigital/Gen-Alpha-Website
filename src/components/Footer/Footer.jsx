@@ -14,22 +14,26 @@ const Footer = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE2_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          e.target.reset();
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+    if (form.current.user_email.value !== "") {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE2_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            e.target.reset();
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    } else {
+      alert("Please enter your email");
+    }
   };
 
   return (
@@ -51,7 +55,15 @@ const Footer = () => {
         <div className={styles.section1}>
           <div className={styles.logo}>
             {/* Logo */}
-            <Image src="/g.svg" alt="logo" width={1000} height={1000} />
+            <Link href={"/"}>
+              <Image
+                src={"/g.svg"}
+                width={120}
+                height={120}
+                className="p-2"
+                alt=""
+              />
+            </Link>{" "}
           </div>
 
           <div className={styles.address}>
@@ -151,7 +163,11 @@ const Footer = () => {
                   required
                 />
 
-                <button onClick={sendEmail} className={styles.submitBtn}>
+                <button
+                  type="submit"
+                  onClick={sendEmail}
+                  className={styles.submitBtn}
+                >
                   <FaArrowRight />
                 </button>
               </form>

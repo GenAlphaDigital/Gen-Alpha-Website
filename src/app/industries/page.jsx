@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion";
 import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
 import { works } from "./data";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 const container = {
   visible: {
@@ -42,13 +43,15 @@ const page = () => {
   return (
     <>
       <header className={styles.logo}>
-        <Image
-          src={"/Logo.svg"}
-          width={120}
-          height={120}
-          className="p-2"
-          alt=""
-        />
+        <Link href={"/"}>
+          <Image
+            src={"/Logo.svg"}
+            width={120}
+            height={120}
+            className="p-2"
+            alt=""
+          />
+        </Link>
       </header>
 
       <section className={styles.hero}>

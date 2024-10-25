@@ -36,13 +36,15 @@ const page = () => {
   return (
     <>
       <header className={styles.logo}>
-        <Image
-          src={"/Logo.svg"}
-          width={120}
-          height={120}
-          className="p-2"
-          alt=""
-        />
+        <Link href={"/"}>
+          <Image
+            src={"/Logo.svg"}
+            width={120}
+            height={120}
+            className="p-2"
+            alt=""
+          />
+        </Link>
       </header>
 
       <section className={styles.hero}>

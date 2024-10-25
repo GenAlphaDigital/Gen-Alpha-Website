@@ -7,12 +7,21 @@ import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import Marketing from "@/components/3d Components/marketing";
 import Contact from "@/components/Contact/Contact";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 const page = () => {
   return (
     <>
       <div className={styles.logo}>
-        <Image src={"/Logo.svg"} alt="" width={120} height={120} />
+        <Link href={"/"}>
+          <Image
+            src={"/Logo.svg"}
+            width={120}
+            height={120}
+            className="p-2"
+            alt=""
+          />
+        </Link>{" "}
       </div>
       <div className={styles.container}>
         <div className={styles.wrapper}>

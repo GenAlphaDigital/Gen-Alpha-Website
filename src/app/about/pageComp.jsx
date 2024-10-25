@@ -7,10 +7,10 @@ import {
 } from "@/components/motionComponents/motionComponents";
 import styles from "./page.module.css";
 import { useEffect } from "react";
-import Image from "next/image";
 import AnimatedTextWord from "./variants";
 import About from "@/components/About comp/About";
 import Footer from "@/components/Footer/Footer";
+import StaggeredText from "@/components/StaggeredText/StaggeredText";
 
 const Page = () => {
   const contain = {
@@ -82,11 +82,17 @@ const Page = () => {
       <div className={styles.container}>
         <div className={styles.hero}>
           <h1 className={styles.title}>
-            <AnimatedTextWord
+            <StaggeredText
+              styles={{
+                lineHeight: "1.2",
+              }}
               text={"Redefining routine with data-driven creativity and"}
             />
             <i>
-              <AnimatedTextWord
+              <StaggeredText
+                styles={{
+                  lineHeight: "1.2",
+                }}
                 text={"relentless innovation"}
                 textStyles={`"fontSize": "3.5rem", "color":"blue"`}
               />
