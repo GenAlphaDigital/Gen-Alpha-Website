@@ -25,7 +25,7 @@ const HorizontalScrollCarousel = ({ data, scrollToForm }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1000 || window.innerWidth > 1023) {
-        setXRange(["1%", "-83%"]);
+        setXRange(["1%", "-85%"]);
       } else {
         setXRange(["1%", "-27%"]);
       }
@@ -58,8 +58,8 @@ const HorizontalScrollCarousel = ({ data, scrollToForm }) => {
         }}
         className={` px-6 ${styles.line} `}
       ></MotionDiv>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-6">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden main">
+        <motion.div style={{ x }} className="flex gap-6 scroll">
           {data.map((card, index) => {
             return (
               <Card
@@ -85,10 +85,10 @@ const Card = ({ card, scrollToForm }) => {
           fontFamily: "Poppins",
           border: "1px solid var(--navyblue)",
         }}
-        className="group relative w-[20rem] h-[75vh] rounded-xl overflow-hidden  flex flex-col  "
+        className="group relative w-[20rem] h-[35rem] rounded-xl overflow-hidden  flex flex-col  "
       >
         <div
-          className="h-[100%] flex items-center justify-center"
+          className="h-[100%] flex items-center justify-center imgContainer"
           style={{
             width: "100%",
           }}
@@ -98,26 +98,26 @@ const Card = ({ card, scrollToForm }) => {
             alt="job"
             width={1200}
             height={1200}
-            className="px-9"
+            className="px-9 image"
           />
         </div>
-        <div className="flex flex-col h-[100%] justify-between px-4 py-2">
-          <div className="p-4 flex flex-col gap-[1rem]">
-            <p className="text-xl font-bold text-[var(--navyblue)]">
+        <div className="flex flex-col h-[100%] justify-between px-4 py-2 col">
+          <div className="col p-4 flex flex-col gap-[1rem]">
+            <p className="heading text-xl font-bold text-[var(--navyblue)]">
               Job Title:
             </p>
-            <p className="text-base">{card.title}</p>
-            <p className="text-xl font-bold text-[var(--navyblue)]">
+            <p className="content text-base">{card.title}</p>
+            <p className="heading text-xl font-bold text-[var(--navyblue)]">
               Experience:
             </p>
-            <p className="text-base">{card.experience}</p>
+            <p className="content text-base">{card.experience}</p>
           </div>
         </div>
         <button
           style={{
             padding: "0.5rem !important",
           }}
-          className="bg-[var(--orange)] text-white w-[95%] my-2 mx-2"
+          className="bg-[var(--orange)] text-white w-[95%] my-2 mx-2 button"
         >
           More Info
         </button>

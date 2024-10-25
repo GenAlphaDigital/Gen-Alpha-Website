@@ -161,3 +161,58 @@ select {
     overflow: scroll;
   }
 }
+
+@media (max-height: 430px) {
+  .heading {
+    font-size: 100% !important;
+  }
+  .content {
+    font-size: 100% !important;
+  }
+  .col {
+    gap: 0.4rem !important;
+  }
+}
+
+@media (max-height: 545px) {
+  .group {
+    height: 95%;
+  }
+
+  .scroll {
+    height: 100% !important;
+  }
+
+  .heading {
+    /* font-size: 85%; */
+    padding: 0rem !important;
+  }
+  .main {
+    height: 35%;
+  }
+
+  .image {
+    padding: 0rem !important;
+    max-width: 50%;
+  }
+
+  .imgContainer {
+    height: fit-content !important;
+  }
+
+  .content {
+    padding: 0rem !important;
+    /* font-size: 80%; */
+  }
+
+  .col {
+    /* gap: 0rem !important; */
+    height: fit-content !important;
+  }
+
+  .button {
+    padding: 0rem !important;
+    position: absolute;
+    bottom: 0;
+  }
+}
