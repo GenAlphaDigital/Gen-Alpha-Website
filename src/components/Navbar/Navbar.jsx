@@ -83,7 +83,15 @@ const Navbar = () => {
           style={{ display: visible }}
         >
           <div className={styles.logo}>
-            <Image src={"/g.svg"} alt="logo" width={1000} height={1000} />
+            <Link href={"/"}>
+              <Image
+                src={"/g.svg"}
+                width={120}
+                height={120}
+                className="p-2"
+                alt=""
+              />
+            </Link>{" "}
           </div>
           <div className={styles.links}>
             <div className={styles.link}>

@@ -201,6 +201,37 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    height: 400vh;
+  }
+
+  .svgSection,
+  .content {
+    width: 100%;
+    /* display: none; */
+    height: fit-content;
+    padding: 2rem;
+  }
+
+  .svgSection svg {
+    width: 100%;
+    height: 200%;
+  }
+
+  .box {
+    display: none;
+  }
+
+  .missionVision,
+  .mainDiv {
+    gap: 3rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .vision {
+    text-align: right;
+  }
 }
 
 @media (max-width: 425px) {

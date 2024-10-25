@@ -6,7 +6,8 @@ import join_us from "../../../public/join_us.json";
 import Footer from "@/components/Footer/Footer";
 import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
 import { jobListings } from "./data/data";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 const PageComp = () => {
   const formRef = useRef(null);
   const scrollToForm = () => {
@@ -16,16 +17,44 @@ const PageComp = () => {
     console.log("Click");
   };
 
+  const [role, setRole] = useState([]);
+  const [url, setUrl] = useState(null);
+  const [file, setFile] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID_2,
+        process.env.NEXT_PUBLIC_TEMPLATE3_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY2
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          e.target.reset();
+          setService([]);
+          setSubmitted(true);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <>
       <header className={styles.logo}>
-        <Image
-          src={"/Logo.svg"}
-          width={120}
-          height={120}
-          className="p-2"
-          alt=""
-        />
+        <Link href={"/"}>
+          <Image
+            src={"/Logo.svg"}
+            width={120}
+            height={120}
+            className="p-2"
+            alt=""
+          />
+        </Link>
       </header>
 
       <div className={styles.wrapper}>
@@ -114,13 +143,13 @@ const PageComp = () => {
           />
           “Your Opportunity to be a part of the pack”
         </h1>
-        <form className={styles.form} ref={formRef}>
+        <form className={styles.form} ref={formRef} onSubmit={sendEmail}>
           <h2>
             The Alpha Evolution Starts Here. <span>👇</span>
           </h2>
-          <input type="text" placeholder="Name" />
-          <input type="number" placeholder="Phone Number" />
-          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Name" name="from_name" />
+          <input type="number" placeholder="Phone Number" name="phone_number" />
+          <input type="email" placeholder="Email" name="user_email" />
 
           <select
             name="jobs"
@@ -142,15 +171,26 @@ const PageComp = () => {
               Select a Role
             </option>
             {jobListings.map((job) => (
-              <option value={job.id} key={job.id}>
+              <option
+                value={job.id}
+                key={job.id}
+                onSelect={() => setRole(job.title)}
+              >
                 {job.title}
               </option>
             ))}
           </select>
 
+          <input type="hidden" name="role" value={role} />
+          <input type="hidden" name="resume_link" />
+
           <div className="flex flex-col gap-[0.5rem] text-[0.8rem]">
             <label htmlFor="file">Upload your resume</label>
-            <input type="file" id="file" />
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
           </div>
 
           <input
