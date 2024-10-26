@@ -7,6 +7,7 @@ import {
 } from "../motionComponents/motionComponents";
 import about_gif from "../../../public/about_gif.json";
 import Lottie from "lottie-react";
+import Link from "next/link";
 
 const container = {
   show: {
@@ -73,9 +74,11 @@ const About = ({ aboutRef }) => {
             you're a business or a startup, we're here to help you thrive in the
             digital world.
           </MotionP>
-          <MotionButton variants={textVarient} className={styles.btn}>
-            Know More
-          </MotionButton>
+          <Link href={"/about"}>
+            <MotionButton variants={textVarient} className={styles.btn}>
+              Know More
+            </MotionButton>
+          </Link>
         </MotionDiv>
       </div>
       <div className={styles.large}>
