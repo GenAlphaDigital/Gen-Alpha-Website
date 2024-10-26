@@ -4,7 +4,6 @@ import Header from "@/components/Header/Header";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import StaggeredWords from "@/components/StaggeredWords/StaggeredWords";
 import Footer from "@/components/Footer/Footer";
-import Packaging from "@/components/3d Components/packaging";
 import WebDev from "@/components/3d Components/webdev";
 import Marketing from "@/components/3d Components/marketing";
 import Branding from "@/components/3d Components/branding";

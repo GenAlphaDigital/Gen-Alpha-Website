@@ -6,41 +6,6 @@ import gif2 from "../gifs/gif2.json";
 import gif3 from "../gifs/gif3.json";
 import gif4 from "../gifs/gif4.json";
 import Lottie from "lottie-react";
-const line = {
-  hidden: {
-    width: 0,
-  },
-  visible: {
-    width: "100%",
-    transition: {
-      duration: 1.2,
-    },
-  },
-};
-
-const left = {
-  hidden: {
-    x: "-5vh",
-  },
-  visible: {
-    x: 0,
-    transition: {
-      duration: 1.2,
-    },
-  },
-};
-
-const right = {
-  hidden: {
-    x: "5vh",
-  },
-  visible: {
-    x: 0,
-    transition: {
-      duration: 1.2,
-    },
-  },
-};
 
 const gifs = [gif1, gif2, gif3, gif4];
 

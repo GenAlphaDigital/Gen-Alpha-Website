@@ -140,10 +140,6 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
         </div>
 
         <div className={styles.videoContainer}>
-          {/* <Image src="/graph.webp" alt="graph" width={500} height={500} />
-           */}
-
-          {/* <video src="/graph.mp4" autoPlay muted></video> */}
           <Lottie className={styles.gifstyling} animationData={hero_gif} />
         </div>
 

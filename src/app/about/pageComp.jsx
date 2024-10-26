@@ -7,7 +7,6 @@ import {
 } from "@/components/motionComponents/motionComponents";
 import styles from "./page.module.css";
 import { useEffect } from "react";
-import AnimatedTextWord from "./variants";
 import About from "@/components/About comp/About";
 import Footer from "@/components/Footer/Footer";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";

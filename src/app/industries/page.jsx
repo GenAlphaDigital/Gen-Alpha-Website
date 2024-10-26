@@ -10,8 +10,6 @@ import {
   MotionUl,
 } from "@/components/motionComponents/motionComponents";
 import { AnimatePresence } from "framer-motion";
-import HorizontalScroll from "@/components/Horizontal Scroll/horizontalScroll";
-import { works } from "./data";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 

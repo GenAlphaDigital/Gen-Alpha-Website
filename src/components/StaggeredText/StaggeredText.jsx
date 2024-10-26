@@ -14,16 +14,6 @@ const container = {
   },
 };
 
-const textVarient = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 const StaggeredText = ({ text, styles, lineHeight, whileInView }) => {
   const flag = whileInView;
   const letters = text.split("");
