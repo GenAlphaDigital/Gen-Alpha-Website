@@ -1,11 +1,14 @@
 import React from "react";
+// import AnimatedParticles from "./Particles";
 import Particles from "./Particles";
 
 const page = () => {
   return (
-    <main style={{ height: "100vh" }}>
-      <Particles imageUrl="/industries/web.png" />{" "}
-      {/* Replace with your image path */}
+    <main>
+      <Particles imageUrl={"/industries/ecommerce.png"} />
+      <Particles imageUrl={"/industries/real estate.png"} />
+      <Particles imageUrl={"/industries/sports.png"} />
+      <Particles imageUrl={"/industries/hospitality.png"} />
     </main>
   );
 };
