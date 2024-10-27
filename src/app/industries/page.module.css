@@ -16,6 +16,7 @@
 .textContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -94,13 +95,15 @@
   width: 100%;
   margin-top: 2rem;
   height: 100vh;
-  border: 1px solid var(--orange);
   position: sticky;
   top: 0;
 }
 
 .subIndustry {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Horizontal Scrolling for cards in cards section */

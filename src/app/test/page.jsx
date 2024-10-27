@@ -6,8 +6,8 @@ const page = () => {
   return (
     <main>
       <Particles imageUrl={"/industries/ecommerce.png"} />
-      <Particles imageUrl={"/industries/real estate.png"} />
-      <Particles imageUrl={"/industries/sports.png"} />
+      <Particles imageUrl={"/industries/real-estate.png"} />
+      <Particles imageUrl={"/industries/fitness.png"} />
       <Particles imageUrl={"/industries/hospitality.png"} />
     </main>
   );

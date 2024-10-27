@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import G from "@/components/3d Components/g";
@@ -13,6 +15,7 @@ import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import Particles from "../test/Particles";
 
+// Motion variants
 const container = {
   visible: {
     transition: {
@@ -37,7 +40,56 @@ const item = {
   },
 };
 
-const page = () => {
+const Page = () => {
+  const [currentImage, setCurrentImage] = useState("/industries/ecommerce.png");
+
+  // Refs for each industry section
+  const sectionsRefs = {
+    fashion: useRef(null),
+    fitness: useRef(null),
+    realEstate: useRef(null),
+    hospitality: useRef(null),
+  };
+
+  useEffect(() => {
+    const observerOptions = { threshold: 0.5 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Update current image based on the intersected section
+          switch (entry.target) {
+            case sectionsRefs.fashion.current:
+              setCurrentImage("/industries/ecommerce.png");
+              break;
+            case sectionsRefs.fitness.current:
+              setCurrentImage("/industries/fitness.png");
+              break;
+            case sectionsRefs.realEstate.current:
+              setCurrentImage("/industries/real-estate.png");
+              break;
+            case sectionsRefs.hospitality.current:
+              setCurrentImage("/industries/hospitality.png");
+              break;
+            default:
+              break;
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observing each section
+    Object.values(sectionsRefs).forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      Object.values(sectionsRefs).forEach((ref) => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
+    };
+  }, []);
+
   return (
     <>
       <header className={styles.logo}>
@@ -57,16 +109,12 @@ const page = () => {
           <G />
         </div>
         <div className={styles.textContainer}>
-          <h1 className="text-7xl ">Industries We Rule</h1>
+          <h1 className="text-7xl">Industries We Rule</h1>
           <p>
-            {" "}
             At Gen Alpha Marketing Solutions, we don’t just step into
             industries—we dive in headfirst with passion and purpose. We’re all
             about helping brands push boundaries, make a lasting impact, and
-            maybe even spark a movement. Whether you’re making waves in fashion,
-            pushing limits in fitness, closing deals in real estate, or rolling
-            out unforgettable experiences in hospitality, we’ve got the
-            creativity, tech, and strategy to elevate your brand.
+            maybe even spark a movement.
           </p>
         </div>
       </section>
@@ -74,16 +122,11 @@ const page = () => {
       <section className={styles.second}>
         <p className="text-6xl">Let’s show you where we truly shine</p>
         <MotionDiv
-          initial={{
-            y: "100%",
-            opacity: 0,
-          }}
+          initial={{ y: "100%", opacity: 0 }}
           animate={{
             y: "0",
             opacity: 1,
-            transition: {
-              duration: 1,
-            },
+            transition: { duration: 1 },
           }}
           className={styles.bouncingBall}
         >
@@ -92,16 +135,17 @@ const page = () => {
           </div>
         </MotionDiv>
       </section>
-      <div className="flex ">
+
+      <div className="flex">
         <div className="w-[100%]">
+          {/* Fashion Section */}
           <MotionSection
+            ref={sectionsRefs.fashion}
             className={styles.industry}
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-            }}
+            viewport={{ once: true }}
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
@@ -157,14 +201,14 @@ const page = () => {
             </div>
           </MotionSection>
 
+          {/* Fitness Section */}
           <MotionSection
+            ref={sectionsRefs.fitness}
             className={styles.industry}
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-            }}
+            viewport={{ once: true }}
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
@@ -227,14 +271,14 @@ const page = () => {
             </div>
           </MotionSection>
 
+          {/* Real Estate Section */}
           <MotionSection
+            ref={sectionsRefs.realEstate}
             className={styles.industry}
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-            }}
+            viewport={{ once: true }}
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
@@ -294,14 +338,14 @@ const page = () => {
             </div>
           </MotionSection>
 
+          {/* Hospitality Section */}
           <MotionSection
+            ref={sectionsRefs.hospitality}
             className={styles.industry}
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{
-              once: true,
-            }}
+            viewport={{ once: true }}
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
@@ -360,8 +404,9 @@ const page = () => {
           </MotionSection>
         </div>
 
+        {/* Particles Component */}
         <div className={styles.gifsContainer}>
-          {/* <Particles imageUrl={"/industries/web.png"} /> */}
+          <Particles imageUrl={currentImage} />
         </div>
       </div>
 
@@ -370,4 +415,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
