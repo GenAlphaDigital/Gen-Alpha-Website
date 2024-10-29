@@ -52,7 +52,11 @@ const Page = () => {
       const totalDistance = 3645;
       const scrollPercent = scrollValue / totalDistance;
       const currentPoint = scrollPercent * pathLength;
-      path.style.strokeDashoffset = (pathLength - currentPoint) * 1.5;
+      if (scrollPercent < 0.8) {
+        path.style.strokeDashoffset = (pathLength - currentPoint) * 1.3;
+      } else {
+        path.style.strokeDashoffset = (pathLength - currentPoint) * 0.8;
+      }
     };
 
     const observer = new IntersectionObserver(
