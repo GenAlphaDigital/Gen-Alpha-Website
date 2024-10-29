@@ -202,8 +202,10 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 400vh;
+    height: 465vh;
   }
+
+
 
   .svgSection,
   .content {
@@ -216,10 +218,16 @@
   .svgSection svg {
     width: 100%;
     height: 200%;
+    margin-top: 0;
   }
 
   .box {
-    display: none;
+    width: 350px;
+    height: 275px;
+  }
+
+  .box1{
+    top: 30.5rem;
   }
 
   .missionVision,
