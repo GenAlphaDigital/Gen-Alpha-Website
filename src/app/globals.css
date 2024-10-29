@@ -151,6 +151,10 @@ select {
   }
 }
 
+.button {
+  padding: 0.5rem !important;
+}
+
 @media (max-width: 768px) {
   #model {
     display: flex;

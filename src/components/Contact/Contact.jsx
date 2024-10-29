@@ -1,7 +1,6 @@
 "use client";
 
 import contact_gif from "../../../public/contact_gif.json";
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef, useState } from "react";

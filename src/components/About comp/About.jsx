@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./styles.module.css";
 import StaggeredWords from "../StaggeredWords/StaggeredWords";
 import StaggeredText from "../StaggeredText/StaggeredText";
@@ -45,25 +44,6 @@ const About = ({ aboutRef }) => {
            Unlike typical marketing agencies, our focus is on data-driven strategies designed to meet and exceed client expectations. Our distinct approach & experience in Designing, Technology and growth marketing ensures we maintain a competitive edge. Our culture is driven by curiosity in finding new possibilities instead of being comfortable with the known.
 `}
           />
-          <MotionButton
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 1.6,
-              },
-            }}
-            viewport={{
-              once: true,
-            }}
-            className={styles.btn}
-          >
-            Know More
-          </MotionButton>
         </div>
       </div>
       <div className={styles.large}>

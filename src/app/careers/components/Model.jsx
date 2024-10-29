@@ -1,5 +1,4 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import styles from "./styles.module.css";
 import { DialogClose } from "@radix-ui/react-dialog";
 
 export function Model({ children, job, scrollToForm }) {

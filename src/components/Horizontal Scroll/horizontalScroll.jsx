@@ -113,12 +113,7 @@ const Card = ({ card, scrollToForm }) => {
             <p className="content text-sm">{card.experience}</p>
           </div>
         </div>
-        <button
-          style={{
-            padding: "0.5rem !important",
-          }}
-          className="bg-[var(--orange)] text-white w-[95%] my-2 mx-2 button"
-        >
+        <button className="bg-[var(--orange)] text-white w-[95%] my-2 mx-2 button">
           More Info
         </button>
       </div>

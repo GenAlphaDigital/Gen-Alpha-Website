@@ -1,10 +1,33 @@
-import Image from "next/image";
 import styles from "./styles.module.css";
 import StaggeredWords from "../StaggeredWords/StaggeredWords";
-import StaggeredText from "../StaggeredText/StaggeredText";
-import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
+import {
+  MotionButton,
+  MotionDiv,
+  MotionP,
+} from "../motionComponents/motionComponents";
 import about_gif from "../../../public/about_gif.json";
 import Lottie from "lottie-react";
+import Link from "next/link";
+
+const container = {
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const textVarient = {
+  hidden: {
+    y: 30,
+  },
+  show: {
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 const About = ({ aboutRef }) => {
   return (
@@ -30,45 +53,33 @@ const About = ({ aboutRef }) => {
         <div className={styles.small}>
           <Lottie className={styles.gifstyling} animationData={about_gif} />
         </div>
-        <div>
-          <StaggeredText
-            lineHeight={"1.15"}
-            whileInView={true}
-            text={`Gen Alpha Digitals is your go-to partner for innovative digital
+        <MotionDiv
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{
+            once: true,
+          }}
+          className="flex flex-col gap-3"
+        >
+          <MotionP variants={textVarient}>
+            Gen Alpha Digitals is your go-to partner for innovative digital
             marketing solutions. We offer expertise in branding, design, and
             technology, including graphic and logo design, UX/UI, Web and App
-            development, AR/VR solutions, and SAP platform development.`}
-          />
-          <br />
-          <StaggeredText
-            whileInView={true}
-            lineHeight={"1.15"}
-            text={`
+            development, AR/VR solutions, and SAP platform development.
+          </MotionP>
+          <MotionP variants={textVarient}>
             Our comprehensive advertising services cover affiliate, social
             media, programmatic, content, and email/WhatsApp marketing. Whether
-            you're a business or a startup, we're here to help you
-            thrive in the digital world.`}
-          />
-          <MotionButton
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 1.6,
-              },
-            }}
-            viewport={{
-              once: true,
-            }}
-            className={styles.btn}
-          >
-            Know More
-          </MotionButton>
-        </div>
+            you&apos;re a business or a startup, we&apos;re here to help you
+            thrive in the digital world.
+          </MotionP>
+          <Link href={"/about"}>
+            <MotionButton variants={textVarient} className={styles.btn}>
+              Know More
+            </MotionButton>
+          </Link>
+        </MotionDiv>
       </div>
       <div className={styles.large}>
         <MotionDiv
