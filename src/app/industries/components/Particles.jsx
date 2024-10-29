@@ -35,11 +35,6 @@ const Particles = ({ imageUrl }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         inView.current = entry.isIntersecting;
-        if (!inView.current) {
-          particles.current.forEach((particle) => {
-            randomPos(particle.position, true); // Scatter particles outside the viewport
-          });
-        }
       },
       { threshold: 0.1 }
     );
@@ -120,7 +115,7 @@ const Particles = ({ imageUrl }) => {
   };
 
   const createParticles = () => {
-    const particleCount = graphicPixels.current.length; // Limit particles for performance
+    const particleCount = graphicPixels.current.length;
     graphicPixels.current.slice(0, particleCount).forEach((pixel) => {
       const particle = new THREE.Object3D();
       particle.targetPosition = getGraphicPos(pixel);
@@ -128,7 +123,7 @@ const Particles = ({ imageUrl }) => {
       randomPos(particle.position, true);
       particle.add(
         new THREE.Mesh(
-          new THREE.SphereGeometry(1, 4, 4), // Reduced size for better performance
+          new THREE.SphereGeometry(1, 4, 4),
           new THREE.MeshBasicMaterial({ color: "#000" })
         )
       );
@@ -155,7 +150,7 @@ const Particles = ({ imageUrl }) => {
   const updateParticles = () => {
     particles.current.forEach((particle) => {
       if (inView.current) {
-        particle.position.lerp(particle.targetPosition, 0.2); // Increased lerp factor for faster movement
+        particle.position.lerp(particle.targetPosition, 0.2);
       } else {
         randomPos(particle.position, true);
       }
