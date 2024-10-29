@@ -71,8 +71,8 @@ const About = ({ aboutRef }) => {
           <MotionP variants={textVarient}>
             Our comprehensive advertising services cover affiliate, social
             media, programmatic, content, and email/WhatsApp marketing. Whether
-            you're a business or a startup, we're here to help you thrive in the
-            digital world.
+            you&apos;re a business or a startup, we&apos;re here to help you
+            thrive in the digital world.
           </MotionP>
           <Link href={"/about"}>
             <MotionButton variants={textVarient} className={styles.btn}>

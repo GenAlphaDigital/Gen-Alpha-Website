@@ -1,6 +1,5 @@
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import styles from "./page.module.css";
-import Header from "@/components/Header/Header";
 import StaggeredText from "@/components/StaggeredText/StaggeredText";
 import StaggeredWords from "@/components/StaggeredWords/StaggeredWords";
 import Footer from "@/components/Footer/Footer";
@@ -11,7 +10,6 @@ import Branding from "@/components/3d Components/branding";
 const page = () => {
   return (
     <div className={styles.container}>
-      <Header />
       <div className={styles.main}>
         <div className={styles.heading}>
           <StaggeredWords text={"Our Services"} />
