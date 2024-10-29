@@ -72,6 +72,7 @@ const Page = () => {
               setCurrentImage("/industries/hospitality.png");
               break;
             default:
+              setCurrentImage(null);
               break;
           }
         }
@@ -136,7 +137,12 @@ const Page = () => {
         </MotionDiv>
       </section>
 
-      <div className="flex">
+      <div
+        className="flex"
+        style={{
+          position: "relative",
+        }}
+      >
         <div className="w-[100%]">
           {/* Fashion Section */}
           <MotionSection
@@ -149,15 +155,15 @@ const Page = () => {
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
-              <MotionDiv variants={item}>
-                <MotionP>
+              <MotionDiv className={styles.content}>
+                <MotionP className="text-5xl">
                   <b>Fashion, Brands & E-commerce</b>
                 </MotionP>
                 <MotionSmall>
                   (Design, Marketing & Tech for D2C Brands)
                 </MotionSmall>
               </MotionDiv>
-              <MotionP variants={item}>
+              <MotionP>
                 Fashion is more than just threads—it’s a vibe, a story, and
                 we’re here to tell it. We work with D2C brands, luxury labels,
                 and everything in between, helping you stand out in the
@@ -165,11 +171,10 @@ const Page = () => {
                 eye-catching brand identity and data-driven marketing
                 strategies, we make sure your brand’s runway moment is 24/7.
               </MotionP>
-              <MotionP variants={item}>
+              <MotionP>
                 <b>What we bring to the table:</b>
               </MotionP>
               <MotionUl
-                variants={item}
                 style={{
                   margin: "0 2rem",
                 }}
@@ -199,6 +204,9 @@ const Page = () => {
                 </li>
               </MotionUl>
             </div>
+            <div className={styles.imageContainer}>
+              <Particles imageUrl={"/industries/ecommerce.png"} />
+            </div>
           </MotionSection>
 
           {/* Fitness Section */}
@@ -212,15 +220,15 @@ const Page = () => {
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
-              <MotionDiv variants={item}>
-                <MotionP>
+              <MotionDiv className={styles.content}>
+                <MotionP className="text-5xl">
                   <b>Sports & Fitness</b>
                 </MotionP>
                 <MotionSmall>
                   (Brand Collaborations, Marketing & Technology)
                 </MotionSmall>
               </MotionDiv>
-              <MotionP variants={item}>
+              <MotionP>
                 Whether you’re launching the next big fitness app or organizing
                 a championship game, we’re your go-to for getting fans hyped and
                 connected. From brand partnerships to innovative digital
@@ -229,11 +237,10 @@ const Page = () => {
                 streamline your operations and make your brand a champion in its
                 field.
               </MotionP>
-              <MotionP variants={item}>
+              <MotionP>
                 <b>Our game plan includes:</b>
               </MotionP>
               <MotionUl
-                variants={item}
                 style={{
                   margin: "0 2rem",
                 }}
@@ -269,6 +276,9 @@ const Page = () => {
                 </li>
               </MotionUl>
             </div>
+            <div className={styles.imageContainer}>
+              <Particles imageUrl={"/industries/fitness.png"} />
+            </div>
           </MotionSection>
 
           {/* Real Estate Section */}
@@ -282,13 +292,13 @@ const Page = () => {
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
-              <MotionDiv variants={item}>
-                <MotionP>
+              <MotionDiv className={styles.content}>
+                <MotionP className="text-5xl">
                   <b>Real Estate</b>
                 </MotionP>
                 <MotionSmall>(Advanced Tech & Lead Generation)</MotionSmall>
               </MotionDiv>
-              <MotionP variants={item}>
+              <MotionP>
                 In real estate, leads are everything. We harness advanced
                 technology and proven lead generation strategies to help you
                 turn browsers into buyers. Whether you’re selling dream homes or
@@ -296,11 +306,10 @@ const Page = () => {
                 ever.The real estate game has changed—so why hasn’t your
                 marketing?.
               </MotionP>
-              <MotionP variants={item}>
+              <MotionP>
                 <b>Here’s what we do best:</b>
               </MotionP>
               <MotionUl
-                variants={item}
                 style={{
                   margin: "0 2rem",
                 }}
@@ -336,6 +345,9 @@ const Page = () => {
                 </li>
               </MotionUl>
             </div>
+            <div className={styles.imageContainer}>
+              <Particles imageUrl={"/industries/real-estate.png"} />
+            </div>
           </MotionSection>
 
           {/* Hospitality Section */}
@@ -349,12 +361,12 @@ const Page = () => {
             exit={"exit"}
           >
             <div className={styles.subIndustry}>
-              <MotionDiv variants={item}>
-                <MotionP>
+              <MotionDiv className={styles.content}>
+                <MotionP className="text-5xl">
                   <b>Hospitality</b>
                 </MotionP>
               </MotionDiv>
-              <MotionP variants={item}>
+              <MotionP>
                 Whether you’re running a swanky hotel or the coolest café in
                 town, hospitality is all about creating a vibe. We’re here to
                 make sure your brand looks as good as your best guest suite.
@@ -362,11 +374,10 @@ const Page = () => {
                 your bookings faster than a long weekend, we’ve got the recipe
                 for your success—and yes, it’s delicious.
               </MotionP>
-              <MotionP variants={item}>
+              <MotionP>
                 <b>Here’s how we create magic:</b>
               </MotionP>
               <MotionUl
-                variants={item}
                 style={{
                   margin: "0 2rem",
                 }}
@@ -401,11 +412,19 @@ const Page = () => {
                 </li>
               </MotionUl>
             </div>
+            <div className={styles.imageContainer}>
+              <Particles imageUrl={"/industries/hospitality.png"} />
+            </div>
           </MotionSection>
         </div>
 
         {/* Particles Component */}
-        <div className={styles.gifsContainer}>
+        <div
+          className={styles.gifsContainer}
+          style={{
+            display: currentImage ? "block" : "none",
+          }}
+        >
           <Particles imageUrl={currentImage} />
         </div>
       </div>

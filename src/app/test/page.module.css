@@ -13,3 +13,16 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .particlesContainer canvas,
+  .particlesContainer canvas[data-engine="three.js"] {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+}

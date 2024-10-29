@@ -15,8 +15,8 @@ const Particles = ({ imageUrl }) => {
   let camera, renderer, scene;
   let windowWidth, windowHeight;
   if (typeof window !== "undefined") {
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
+    windowWidth = window.innerWidth * 0.8;
+    windowHeight = window.innerHeight * 0.8;
   }
 
   const init = () => {
@@ -195,6 +195,7 @@ const Particles = ({ imageUrl }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        position: "relative",
       }}
       className={styles.particlesContainer}
     />
