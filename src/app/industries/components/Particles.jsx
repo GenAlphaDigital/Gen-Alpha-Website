@@ -13,10 +13,11 @@ const Particles = ({ imageUrl }) => {
   const gctx = useRef(null);
   const workerRef = useRef(null);
   const workerRef2 = useRef(null);
-  const cameraWorker = useRef(null);
   const inView = useRef(false);
+  const arrangedOnce = useRef(false); // State variable to track if arranged
   let camera, renderer, scene;
   let windowWidth, windowHeight;
+
   if (typeof window !== "undefined") {
     windowWidth = window.innerWidth * 0.8;
     windowHeight = window.innerHeight * 0.8;
@@ -80,12 +81,10 @@ const Particles = ({ imageUrl }) => {
 
   const addEventListeners = () => {
     window.addEventListener("resize", onWindowResize);
-    window.addEventListener("mousemove", onMouseMove);
   };
 
   const removeEventListeners = () => {
     window.removeEventListener("resize", onWindowResize);
-    window.removeEventListener("mousemove", onMouseMove);
   };
 
   const loadImageAndSetParticles = () => {
@@ -107,18 +106,16 @@ const Particles = ({ imageUrl }) => {
         height,
         gData,
       });
-
-      // createParticles();
     };
   };
 
   const createParticles = () => {
-    const particleCount = graphicPixels.current?.length; // Limit particles for performance
+    const particleCount = graphicPixels.current?.length || 0; // Limit particles for performance
     graphicPixels.current?.slice(0, particleCount).forEach((pixel) => {
       const particle = new THREE.Object3D();
       particle.targetPosition = getGraphicPos(pixel);
-      particle.position.set(windowWidth / 2, windowHeight / 2, 20);
-      randomPos(particle.position, true);
+      // Set random starting position
+      randomPos(particle.position);
       particle.add(
         new THREE.Mesh(
           new THREE.SphereGeometry(1, 4, 4), // Reduced size for better performance
@@ -136,8 +133,8 @@ const Particles = ({ imageUrl }) => {
     z: -20 * Math.random() + 40,
   });
 
-  const randomPos = (vector, outFrame = false) => {
-    const radius = outFrame ? windowWidth * 2 : windowWidth * -2;
+  const randomPos = (vector) => {
+    const radius = windowWidth * 2;
     const angle = Math.random() * Math.PI * 2;
     const r = windowWidth + radius * Math.random();
     vector.x = r * Math.cos(angle);
@@ -146,23 +143,18 @@ const Particles = ({ imageUrl }) => {
   };
 
   const updateParticles = () => {
-    particles.current.forEach((particle) => {
-      if (inView.current) {
-        particle.position.lerp(particle.targetPosition, 0.2);
-      } else {
-        randomPos(particle.position, true);
+    if (!arrangedOnce.current && inView.current) {
+      particles.current.forEach((particle) => {
+        particle.position.lerp(particle.targetPosition, 0.05); // Adjust this for speed
+      });
+      // Check if all particles are close enough to their target positions
+      const allArranged = particles.current.every(
+        (particle) => particle.position.distanceTo(particle.targetPosition) < 1
+      );
+      if (allArranged) {
+        arrangedOnce.current = true; // Set to true after first arrangement
       }
-    });
-  };
-
-  const onMouseMove = ({ clientX, clientY }) => {
-    cameraWorker.current.postMessage({
-      cameraTarget: cameraTarget.current,
-      clientX,
-      clientY,
-      windowWidth,
-      windowHeight,
-    });
+    }
   };
 
   const onWindowResize = () => {
@@ -175,24 +167,9 @@ const Particles = ({ imageUrl }) => {
 
   const animate = () => {
     requestAnimationFrame(animate);
+    updateParticles(); // Update particles on each frame
     camera.position.lerp(cameraTarget.current, 0.2);
     camera.lookAt(cameraLookAt.current);
-    // updateParticles();
-    workerRef2.current.postMessage({
-      particlePositions: particles.current.map((particle) => ({
-        x: particle.position.x,
-        y: particle.position.y,
-        z: particle.position.z,
-      })),
-      targetPositions: particles.current.map((particle) => ({
-        x: particle.targetPosition.x,
-        y: particle.targetPosition.y,
-        z: particle.targetPosition.z,
-      })),
-      inView: inView.current,
-      windowWidth,
-      windowHeight,
-    });
     renderer.render(scene, camera);
   };
 
@@ -201,37 +178,23 @@ const Particles = ({ imageUrl }) => {
       new URL("../../../../worker.js", import.meta.url)
     );
     workerRef.current = worker;
+
     const worker2 = new Worker(
       new URL("../../../../worker2.js", import.meta.url)
     );
     workerRef2.current = worker2;
-
-    const cameraWorkerRef = new Worker(
-      new URL("../../../../cameraWorker.js", import.meta.url)
-    );
-    cameraWorker.current = cameraWorkerRef;
 
     workerRef.current.onmessage = (event) => {
       graphicPixels.current = event.data;
       createParticles();
     };
 
-    workerRef2.current.onmessage = (event) => {
-      // // particles.current = event.data;
-      // console.log("particles updated", event.data);
-      const { updatedPositions } = event.data;
-      updatedPositions.forEach((pos, index) => {
-        particles.current[index].position.set(pos.x, pos.y, pos.z);
-      });
-    };
-
-    cameraWorker.current.onmessage = (event) => {
-      cameraTarget.current = event.data;
-      camera.position.lerp(cameraTarget.current, 0.2);
-      camera.lookAt(cameraLookAt.current);
-    };
-
     init();
+
+    return () => {
+      workerRef.current.terminate();
+      workerRef2.current.terminate();
+    };
   }, [imageUrl]);
 
   return (

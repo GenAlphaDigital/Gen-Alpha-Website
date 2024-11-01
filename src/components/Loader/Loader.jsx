@@ -3,15 +3,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import styles from "./styles.module.css";
 import { MotionDiv, MotionP } from "../motionComponents/motionComponents";
-import Home from "../Home/Home";
-import BackgroundVideo from "../Background/BackgroundVideo";
-import About from "../About/About";
-import Service from "../Service/Service";
-import Projects from "../Projects/Projects";
-import Brands from "../Brands/Brands";
+import dynamic from "next/dynamic"; // Import dynamic
 import Image from "next/image";
-import Footer from "../Footer/Footer";
-import Contact from "../Contact/Contact";
+// Dynamic imports for components
+const Home = dynamic(() => import("../Home/Home"), { ssr: false });
+const BackgroundVideo = dynamic(() => import("../Background/BackgroundVideo"), {
+  ssr: false,
+});
+const About = dynamic(() => import("../About/About"), { ssr: false });
+const Service = dynamic(() => import("../Service/Service"), { ssr: false });
+const Projects = dynamic(() => import("../Projects/Projects"), { ssr: false });
+const Brands = dynamic(() => import("../Brands/Brands"), { ssr: false });
+const Contact = dynamic(() => import("../Contact/Contact"), { ssr: false });
+const Footer = dynamic(() => import("../Footer/Footer"), { ssr: false });
 
 const Loader = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -21,20 +25,20 @@ const Loader = () => {
   const [show4, setShow4] = useState(false);
   const [show5, setShow5] = useState(false);
   const [show6, setShow6] = useState(false);
-  const videoRef = useRef(null); // Create reference for video
+  const videoRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
 
-  // Function to scroll to the video component
+  // Scroll functions remain unchanged
   const scrollToVideo = () => {
     if (videoRef.current) {
-      videoRef.current.scrollIntoView({ behavior: "smooth" }); // Scrolls smoothly to video
+      videoRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const scrollToContact = () => {
     if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" }); // Scrolls smoothly to video
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -48,7 +52,6 @@ const Loader = () => {
     const hasSeenIntro = localStorage.getItem("hasSeenIntro");
 
     if (!hasSeenIntro) {
-      // If intro hasn't been seen, show it and set the flag
       setShowIntro(true);
       localStorage.setItem("hasSeenIntro", "true");
 

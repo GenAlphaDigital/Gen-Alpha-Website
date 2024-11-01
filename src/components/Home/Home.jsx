@@ -18,7 +18,6 @@ const flow = {
     opacity: 1,
     transition: {
       duration: 1,
-      delay: 0.8,
       ease: "easeOut",
     },
   },
@@ -82,7 +81,7 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
                 width={45}
                 height={45}
                 className={styles.rocket}
-                loading="lazy"
+                loading="eager"
               />
             </div>
           </div>
