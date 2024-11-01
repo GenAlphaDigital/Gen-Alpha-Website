@@ -6,9 +6,6 @@ import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import Industries from "./components/industries";
-// import dynamic from "next/dynamic";
-
-// const LazyText = dynamic(() => import("./components/LazyText"), { ssr: false });
 
 const Page = () => {
   return (

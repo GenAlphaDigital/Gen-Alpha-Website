@@ -4,11 +4,6 @@
   align-items: center;
 }
 
-/* .particlesContainer canvas:first-child,
-.particlesContainer canvas[data-engine="three.js"]:first-child {
-  display: none !important;
-} */
-
 .particlesContainer canvas,
 .particlesContainer canvas[data-engine="three.js"] {
   width: 100%;
@@ -17,16 +12,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid black; */
 }
 
 @media (max-width: 768px) {
   .particlesContainer {
     width: 100% !important;
   }
+
   .particlesContainer canvas,
   .particlesContainer canvas[data-engine="three.js"] {
-    width: 90% !important;
-    height: 90% !important;
+    aspect-ratio: 1/1;
   }
 }
