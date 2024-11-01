@@ -11,6 +11,9 @@ const Particles = ({ imageUrl }) => {
   const cameraLookAt = useRef(new THREE.Vector3(0, 0, 0));
   const graphicCanvas = useRef(null);
   const gctx = useRef(null);
+  const workerRef = useRef(null);
+  const workerRef2 = useRef(null);
+  const cameraWorker = useRef(null);
   const inView = useRef(false);
   let camera, renderer, scene;
   let windowWidth, windowHeight;
@@ -35,11 +38,6 @@ const Particles = ({ imageUrl }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         inView.current = entry.isIntersecting;
-        if (!inView.current) {
-          particles.current.forEach((particle) => {
-            randomPos(particle.position, true); // Scatter particles outside the viewport
-          });
-        }
       },
       { threshold: 0.1 }
     );
@@ -101,27 +99,22 @@ const Particles = ({ imageUrl }) => {
         graphicCanvas.current.width,
         graphicCanvas.current.height
       );
-      extractPixels();
-      createParticles();
+
+      const { width, height } = graphicCanvas.current;
+      const gData = gctx.current.getImageData(0, 0, width, height).data;
+      workerRef.current.postMessage({
+        width,
+        height,
+        gData,
+      });
+
+      // createParticles();
     };
   };
 
-  const extractPixels = () => {
-    const { width, height } = graphicCanvas.current;
-    const gData = gctx.current.getImageData(0, 0, width, height).data;
-    graphicPixels.current = [];
-    for (let i = gData.length; i >= 0; i -= 4) {
-      if (gData[i + 3] > 0) {
-        const x = (i / 4) % width;
-        const y = height - Math.floor(i / (4 * width));
-        if (x % 2 === 0 && y % 2 === 0) graphicPixels.current.push({ x, y });
-      }
-    }
-  };
-
   const createParticles = () => {
-    const particleCount = graphicPixels.current.length; // Limit particles for performance
-    graphicPixels.current.slice(0, particleCount).forEach((pixel) => {
+    const particleCount = graphicPixels.current?.length; // Limit particles for performance
+    graphicPixels.current?.slice(0, particleCount).forEach((pixel) => {
       const particle = new THREE.Object3D();
       particle.targetPosition = getGraphicPos(pixel);
       particle.position.set(windowWidth / 2, windowHeight / 2, 20);
@@ -155,7 +148,7 @@ const Particles = ({ imageUrl }) => {
   const updateParticles = () => {
     particles.current.forEach((particle) => {
       if (inView.current) {
-        particle.position.lerp(particle.targetPosition, 0.2); // Increased lerp factor for faster movement
+        particle.position.lerp(particle.targetPosition, 0.2);
       } else {
         randomPos(particle.position, true);
       }
@@ -163,11 +156,13 @@ const Particles = ({ imageUrl }) => {
   };
 
   const onMouseMove = ({ clientX, clientY }) => {
-    cameraTarget.current.set(
-      (clientX - windowWidth / 2) * -0.5,
-      (clientY - windowHeight / 2) * 0.5,
-      800
-    );
+    cameraWorker.current.postMessage({
+      cameraTarget: cameraTarget.current,
+      clientX,
+      clientY,
+      windowWidth,
+      windowHeight,
+    });
   };
 
   const onWindowResize = () => {
@@ -182,11 +177,62 @@ const Particles = ({ imageUrl }) => {
     requestAnimationFrame(animate);
     camera.position.lerp(cameraTarget.current, 0.2);
     camera.lookAt(cameraLookAt.current);
-    updateParticles();
+    // updateParticles();
+    workerRef2.current.postMessage({
+      particlePositions: particles.current.map((particle) => ({
+        x: particle.position.x,
+        y: particle.position.y,
+        z: particle.position.z,
+      })),
+      targetPositions: particles.current.map((particle) => ({
+        x: particle.targetPosition.x,
+        y: particle.targetPosition.y,
+        z: particle.targetPosition.z,
+      })),
+      inView: inView.current,
+      windowWidth,
+      windowHeight,
+    });
     renderer.render(scene, camera);
   };
 
-  useEffect(init, [imageUrl]);
+  useEffect(() => {
+    const worker = new Worker(
+      new URL("../../../../worker.js", import.meta.url)
+    );
+    workerRef.current = worker;
+    const worker2 = new Worker(
+      new URL("../../../../worker2.js", import.meta.url)
+    );
+    workerRef2.current = worker2;
+
+    const cameraWorkerRef = new Worker(
+      new URL("../../../../cameraWorker.js", import.meta.url)
+    );
+    cameraWorker.current = cameraWorkerRef;
+
+    workerRef.current.onmessage = (event) => {
+      graphicPixels.current = event.data;
+      createParticles();
+    };
+
+    workerRef2.current.onmessage = (event) => {
+      // // particles.current = event.data;
+      // console.log("particles updated", event.data);
+      const { updatedPositions } = event.data;
+      updatedPositions.forEach((pos, index) => {
+        particles.current[index].position.set(pos.x, pos.y, pos.z);
+      });
+    };
+
+    cameraWorker.current.onmessage = (event) => {
+      cameraTarget.current = event.data;
+      camera.position.lerp(cameraTarget.current, 0.2);
+      camera.lookAt(cameraLookAt.current);
+    };
+
+    init();
+  }, [imageUrl]);
 
   return (
     <div

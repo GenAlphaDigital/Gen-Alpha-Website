@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+/* .particlesContainer canvas:first-child,
+.particlesContainer canvas[data-engine="three.js"]:first-child {
+  display: none !important;
+} */
+
 .particlesContainer canvas,
 .particlesContainer canvas[data-engine="three.js"] {
   width: 100%;
