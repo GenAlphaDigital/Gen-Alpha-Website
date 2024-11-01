@@ -58,7 +58,7 @@ const Industries = () => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <Particles imageUrl={"/industries/ecommerce.png"} />
+          <Particles imageUrl={"/industries/ecommerce.webp"} />
         </div>
       </section>
 
@@ -119,7 +119,7 @@ const Industries = () => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <Particles imageUrl={"/industries/fitness.png"} />
+          <Particles imageUrl={"/industries/fitness.webp"} />
         </div>
       </section>
 
@@ -178,7 +178,7 @@ const Industries = () => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <Particles imageUrl={"/industries/real-estate.png"} />
+          <Particles imageUrl={"/industries/real-estate.webp"} />
         </div>
       </section>
 
@@ -237,7 +237,7 @@ const Industries = () => {
           </ul>
         </div>
         <div className={styles.imageContainer}>
-          <Particles imageUrl={"/industries/hospitality.png"} />
+          <Particles imageUrl={"/industries/hospitality.webp"} />
         </div>
       </section>
     </>

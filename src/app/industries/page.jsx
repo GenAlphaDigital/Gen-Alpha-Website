@@ -5,11 +5,10 @@ import { FaArrowDown } from "react-icons/fa";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import Industries from "./components/industries";
+// import dynamic from "next/dynamic";
 
-const Industries = dynamic(() => import("./components/industries"), {
-  ssr: false,
-});
+// const LazyText = dynamic(() => import("./components/LazyText"), { ssr: false });
 
 const Page = () => {
   return (
@@ -26,23 +25,26 @@ const Page = () => {
         </Link>
       </header>
 
-      <section className={styles.hero} priority>
+      <section className={styles.hero}>
         <div className={styles.modelContainer}>
           <G />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.heading}>Industries We Rule</h1>
           <p>
-            At Gen Alpha Marketing Solutions, we don’t just step into
-            industries—we dive in headfirst with passion and purpose. We’re all
-            about helping brands push boundaries, make a lasting impact, and
+            At Gen Alpha Marketing Solutions, we don&apos;t just step into
+            industries—we dive in headfirst with passion and purpose. We&apos;re
+            all about helping brands push boundaries, make a lasting impact, and
             maybe even spark a movement.
           </p>
         </div>
+        {/* <LazyText /> */}
       </section>
 
       <section className={styles.second}>
-        <p className={styles.subHeading}>Let’s show you where we truly shine</p>
+        <p className={styles.subHeading}>
+          Let&apos;s show you where we truly shine
+        </p>
         <MotionDiv
           initial={{ y: "100%", opacity: 0 }}
           animate={{
