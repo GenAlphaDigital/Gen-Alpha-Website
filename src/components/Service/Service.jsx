@@ -51,7 +51,6 @@ const Service = () => {
     };
 
     const handleMouseLeave = () => {
-      // Reset the translate to 0 (showing the first card)
       wrapper.style.transform = `translate3d(0%, 0, 0)`;
     };
 
@@ -78,6 +77,7 @@ const Service = () => {
                 height={100}
                 className={styles.image}
                 loading="lazy"
+                unoptimized
               />
               <h4>{service.title}</h4>
               <small className={styles.desc}>{service.desc} </small>
@@ -113,6 +113,7 @@ const Service = () => {
                 x: 0,
                 transition: { duration: 0.8 },
               }}
+              viewport={{ once: true }}
               className={styles.serviceSm}
             >
               <Image
@@ -120,6 +121,8 @@ const Service = () => {
                 width={100}
                 height={100}
                 alt="service"
+                loading="lazy"
+                unoptimized
               />
 
               <h6>{service.title}</h6>

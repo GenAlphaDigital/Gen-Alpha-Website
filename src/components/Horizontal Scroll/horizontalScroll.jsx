@@ -94,7 +94,7 @@ const Card = ({ card, scrollToForm }) => {
           }}
         >
           <Image
-            src={`/jobs/job${card.id}.png`}
+            src={`/jobs/job${card.id}.webp`}
             alt="job"
             width={1200}
             height={1200}

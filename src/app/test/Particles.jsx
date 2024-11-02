@@ -155,7 +155,7 @@ const Particles = ({ imageUrl }) => {
   const updateParticles = () => {
     particles.current.forEach((particle) => {
       if (inView.current) {
-        particle.position.lerp(particle.targetPosition, 0.2); // Increased lerp factor for faster movement
+        particle.position.lerp(particle.targetPosition, 1);
       } else {
         randomPos(particle.position, true);
       }

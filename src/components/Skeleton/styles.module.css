@@ -1,0 +1,29 @@
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton {
+  width: 100%; /* Adjust width to match text width */
+  height: 1.5rem; /* Match line height */
+  background: #ddd;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #ddd, #eee, #ddd);
+  animation: shimmer 1.5s infinite;
+}

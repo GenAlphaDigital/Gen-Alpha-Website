@@ -9,7 +9,7 @@ import {
 const container = {
   show: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -36,13 +36,15 @@ const StaggeredText = ({ text, styles, lineHeight, whileInView }) => {
                   whileInView: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 2 },
+                    transition: { duration: 0.5 },
                   },
                   viewport: {
                     once: true,
                   },
                 }
-              : { animate: { opacity: 1, y: 0, transition: { duration: 2 } } })}
+              : {
+                  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                })}
           >
             {letters.map((letter, index) => (
               <MotionSpan key={index} style={styles}>

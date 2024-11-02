@@ -20,7 +20,7 @@ const Brands = ({ bg }) => {
       <div className={styles.brands}>
         <div className={styles.brand}>
           <Image
-            src="/brands/google.png"
+            src="/brands/google.webp"
             alt="brand1"
             width={1000}
             height={1000}
@@ -28,7 +28,7 @@ const Brands = ({ bg }) => {
         </div>
         <div className={styles.brand}>
           <Image
-            src="/brands/meta.png"
+            src="/brands/meta.webp"
             alt="brand2"
             width={1000}
             height={1000}
@@ -36,13 +36,12 @@ const Brands = ({ bg }) => {
         </div>
         <div className={styles.brand}>
           <Image
-            src="/brands/aws.jpg"
+            src="/brands/aws.webp"
             alt="brand3"
             width={1000}
             height={1000}
           />
         </div>
-        
       </div>
     </div>
   );

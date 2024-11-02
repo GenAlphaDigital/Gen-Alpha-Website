@@ -6,8 +6,11 @@ import {
   MotionP,
 } from "../motionComponents/motionComponents";
 import about_gif from "../../../public/about_gif.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+// Dynamically import Lottie to optimize initial load
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const container = {
   show: {
@@ -50,9 +53,15 @@ const About = ({ aboutRef }) => {
             className={styles.line}
           ></MotionDiv>
         </div>
+
         <div className={styles.small}>
-          <Lottie className={styles.gifstyling} animationData={about_gif} />
+          <Lottie
+            className={styles.gifstyling}
+            animationData={about_gif}
+            loading="lazy"
+          />
         </div>
+
         <MotionDiv
           variants={container}
           initial="hidden"
@@ -81,6 +90,7 @@ const About = ({ aboutRef }) => {
           </Link>
         </MotionDiv>
       </div>
+
       <div className={styles.large}>
         <MotionDiv
           initial={{
@@ -99,12 +109,13 @@ const About = ({ aboutRef }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            // border: "1px solid rgba(0,0,0,0.5)",
           }}
         >
-          {/* <Image src={"/image-2.png"} alt="about" width={1000} height={1000} /> */}
-          <Lottie className={styles.gifstyling} animationData={about_gif} />
-          {/* <G /> */}
+          <Lottie
+            className={styles.gifstyling}
+            animationData={about_gif}
+            loading="lazy"
+          />
         </MotionDiv>
       </div>
     </div>
