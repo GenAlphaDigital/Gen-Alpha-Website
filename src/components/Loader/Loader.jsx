@@ -5,8 +5,9 @@ import styles from "./styles.module.css";
 import { MotionDiv, MotionP } from "../motionComponents/motionComponents";
 import dynamic from "next/dynamic"; // Import dynamic
 import Image from "next/image";
+import Home from "../Home/Home";
+
 // Dynamic imports for components
-const Home = dynamic(() => import("../Home/Home"), { ssr: false });
 const BackgroundVideo = dynamic(() => import("../Background/BackgroundVideo"), {
   ssr: false,
 });
