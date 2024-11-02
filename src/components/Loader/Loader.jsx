@@ -7,10 +7,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Home from "../Home/Home";
 
-<<<<<<< HEAD
-=======
 // Dynamic imports for components
->>>>>>> 38f21afaaaba89c334407ad0904966c184bd5469
 const BackgroundVideo = dynamic(() => import("../Background/BackgroundVideo"), {
   ssr: false,
 });
