@@ -13,10 +13,10 @@ const BackgroundVideo = ({ videoRef }) => {
       initial="hidden"
       whileInView={"visible"}
       className={styles.container}
-      ref={ videoRef }
+      ref={videoRef}
     >
       <div className={styles.overlay}></div>
-      <video src={"/video.mp4"} autoPlay loop muted />
+      <video src={"/video.webm"} autoPlay loop muted />
     </MotionDiv>
   );
 };

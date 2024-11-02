@@ -1,7 +1,10 @@
 import styles from "./styles.module.css";
-import StaggeredText from "../StaggeredText/StaggeredText";
 import Image from "next/image";
-import { MotionButton, MotionDiv } from "../motionComponents/motionComponents";
+import {
+  MotionButton,
+  MotionDiv,
+  MotionP,
+} from "../motionComponents/motionComponents";
 import { LuPhoneCall } from "react-icons/lu";
 import { FaArrowDown } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
@@ -17,7 +20,7 @@ const flow = {
     y: "0",
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.5,
       ease: "easeOut",
     },
   },
@@ -26,21 +29,17 @@ const flow = {
 const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
   return (
     <div className={styles.container}>
-      <MotionDiv
-        className={styles.header}
-        variants={flow}
-        initial="initial"
-        animate="visible"
-      >
-        <Image src={"/Logo.svg"} alt="logo" width={120} height={120} />
+      <MotionDiv className={styles.header}>
+        <Image
+          src={"/Logo.svg"}
+          alt="logo"
+          width={120}
+          height={120}
+          priority={true}
+        />
 
         <a href="tel:9177705479">
-          <MotionButton
-            variants={flow}
-            initial="initial"
-            animate="visible"
-            className={styles.contactBtn}
-          >
+          <MotionButton className={styles.contactBtn}>
             Call Me
             <span>
               <LuPhoneCall />
@@ -52,13 +51,9 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
       <div className={styles.wrapper}>
         <div className={styles.textContainer}>
           <div className={styles.texts}>
-            <StaggeredText
-              text={"We empower digital presence"}
-              styles={{
-                fontSize: "2.5rem",
-                lineHeight: "1.15",
-              }}
-            />
+            <MotionP className={styles.heading}>
+              We Empower Digital Presence
+            </MotionP>
             <div
               style={{
                 display: "flex",
@@ -67,21 +62,26 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
               }}
               className={styles.subheading}
             >
-              <StaggeredText
-                text={"amplify impact for startups and businesses. "}
-                styles={{
+              <MotionP
+                style={{
                   fontWeight: "300",
                   lineHeight: "1",
                   fontSize: "1.5rem",
                 }}
-              />
+                variants={flow}
+                initial="initial"
+                animate="visible"
+              >
+                amplify impact for startups and businesses.
+              </MotionP>
               <Image
                 src={"/rocket.gif"}
                 alt="rocket"
                 width={45}
                 height={45}
                 className={styles.rocket}
-                loading="eager"
+                loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -139,7 +139,13 @@ const Home = ({ scrollToVideo, scrollToContact, scrollToAbout }) => {
         </div>
 
         <div className={styles.videoContainer}>
-          <Lottie className={styles.gifstyling} animationData={hero_gif} />
+          <Lottie
+            className={styles.gifstyling}
+            animationData={hero_gif}
+            loading="lazy"
+            priority={"true"}
+            placeholder="empty"
+          />
         </div>
 
         {/* Bouncing ball animation */}

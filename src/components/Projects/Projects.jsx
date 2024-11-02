@@ -1,6 +1,9 @@
+import dynamic from "next/dynamic";
 import { works } from "./data";
-import Card from "./Project Card/Card";
+
 import styles from "./styles.module.css";
+
+const Card = dynamic(() => import("./Project Card/Card"), { ssr: false });
 
 const Projects = () => {
   let odd = [];

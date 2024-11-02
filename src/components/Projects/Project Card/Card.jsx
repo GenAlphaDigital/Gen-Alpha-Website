@@ -1,11 +1,13 @@
 import styles from "./styles.module.css";
 import { MotionDiv } from "@/components/motionComponents/motionComponents";
-import { Model } from "@/components/Model/Model";
 import gif1 from "../gifs/gif1.json";
 import gif2 from "../gifs/gif2.json";
 import gif3 from "../gifs/gif3.json";
 import gif4 from "../gifs/gif4.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+import { Model } from "@/components/Model/Model";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const gifs = [gif1, gif2, gif3, gif4];
 

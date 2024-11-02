@@ -6,8 +6,9 @@ import { MotionDiv } from "../motionComponents/motionComponents";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Multiselect from "multiselect-react-dropdown";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import Loading from "../Loading/Loading";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const stagger = {
   animate: {

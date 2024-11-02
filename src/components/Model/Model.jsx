@@ -15,7 +15,7 @@ export function Model({ project }) {
       >
         Client: {project.client}
         <Image
-          src={`/projects/project${project.id + 1}.png`}
+          src={`/projects/project${project.id + 1}.webp`}
           width={90}
           height={90}
           className="rounded-[50%]"

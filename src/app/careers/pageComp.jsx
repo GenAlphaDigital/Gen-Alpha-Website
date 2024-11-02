@@ -120,7 +120,7 @@ const PageComp = () => {
         <div className={styles.images}>
           <div className={styles.image}>
             <Image
-              src={"/careers/pic1.jpg"}
+              src={"/careers/pic1.webp"}
               alt=""
               width={1000}
               height={1000}
@@ -128,7 +128,7 @@ const PageComp = () => {
           </div>
           <div className={styles.image}>
             <Image
-              src={"/careers/pic2.jpg"}
+              src={"/careers/pic2.webp"}
               alt=""
               width={1000}
               height={1000}
