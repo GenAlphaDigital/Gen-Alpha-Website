@@ -1,15 +1,24 @@
 import React from "react";
-// import AnimatedParticles from "./Particles";
-import Particles from "./Particles";
+import MainFrame from "../../../public/about/svg";
 
 const page = () => {
   return (
-    <main>
-      <Particles imageUrl={"/industries/ecommerce.png"} />
-      <Particles imageUrl={"/industries/real-estate.png"} />
-      <Particles imageUrl={"/industries/fitness.png"} />
-      <Particles imageUrl={"/industries/hospitality.png"} />
-    </main>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        padding: "40px",
+        boxSizing: "border-box",
+        overflow: "hidden",
+        margin: "6rem 0",
+      }}
+    >
+      <MainFrame />
+    </div>
   );
 };
 

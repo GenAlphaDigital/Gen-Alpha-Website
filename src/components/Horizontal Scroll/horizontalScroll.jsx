@@ -44,35 +44,37 @@ const HorizontalScrollCarousel = ({ data, scrollToForm }) => {
   const x = useTransform(scrollYProgress, [0, 1], xRange);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
-      <h1 className="px-6 text-4xl">Job Openings</h1>
-      <MotionDiv
-        initial={{
-          width: 0,
-        }}
-        whileInView={{
-          width: "90%",
-          transition: {
-            duration: 1.6,
-          },
-        }}
-        className={` px-6 ${styles.line} `}
-      ></MotionDiv>
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden main">
-        <motion.div style={{ x }} className="flex gap-6 scroll">
-          {data.map((card, index) => {
-            return (
-              <Card
-                card={card}
-                key={index}
-                id={index + 1}
-                scrollToForm={scrollToForm}
-              />
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
+    <>
+      <section ref={targetRef} className="relative h-[230vh]">
+        <h1 className="px-6 text-4xl">Job Openings</h1>
+        <MotionDiv
+          initial={{
+            width: 0,
+          }}
+          whileInView={{
+            width: "90%",
+            transition: {
+              duration: 1.6,
+            },
+          }}
+          className={` px-6 ${styles.line} `}
+        ></MotionDiv>
+        <div className="sticky top-0 flex h-[80vh] items-center overflow-hidden main ">
+          <motion.div style={{ x }} className="flex gap-6 scroll">
+            {data.map((card, index) => {
+              return (
+                <Card
+                  card={card}
+                  key={index}
+                  id={index + 1}
+                  scrollToForm={scrollToForm}
+                />
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 };
 
