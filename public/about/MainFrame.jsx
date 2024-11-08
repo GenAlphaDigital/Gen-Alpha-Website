@@ -1,8 +1,5 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import * as React from "react";
-const MainFrame = (props) => {
+const SVGComponent = (props) => {
   const { ref: circleRef, inView: circleInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -92,8 +89,7 @@ const MainFrame = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}
-      preserveAspectRatio="xMinYMax meet"
-      // className="flex items-center justify-center"
+      // preserveAspectRatio="xMinYMax meet"
     >
       <g clipPath="url(#clip0_5_57)">
         <rect width={1280} height={720} fill="white" />
@@ -123,7 +119,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[0],
             strokeDashoffset: inView1 ? 0 : pathLengths[0],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -145,7 +141,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[1],
             strokeDashoffset: inView2 ? 0 : pathLengths[1],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -178,7 +174,7 @@ const MainFrame = (props) => {
         style={{
           strokeDasharray: pathLengths[2],
           strokeDashoffset: inView3 ? 0 : pathLengths[2],
-          transition: "stroke-dashoffset 2s ease",
+          transition: "stroke-dashoffset 1.5s ease",
         }}
         strokeWidth={10}
       />
@@ -192,7 +188,7 @@ const MainFrame = (props) => {
         style={{
           strokeDasharray: pathLengths[3],
           strokeDashoffset: inView4 ? 0 : pathLengths[3],
-          transition: "stroke-dashoffset 2s ease",
+          transition: "stroke-dashoffset 1.5s ease",
         }}
         strokeWidth={10}
       />
@@ -228,7 +224,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[4],
             strokeDashoffset: inView5 ? 0 : pathLengths[4],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -256,7 +252,6 @@ const MainFrame = (props) => {
         />
         <path
           d="M1079.5 2496L1080 2880"
-          stroke="#19325C"
           ref={(el) => {
             pathRef6.current = el;
             inViewRef6(el);
@@ -264,7 +259,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[5],
             strokeDashoffset: inView6 ? 0 : pathLengths[5],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -290,7 +285,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[5],
             strokeDashoffset: inView6 ? 0 : pathLengths[5],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -311,7 +306,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[6],
             strokeDashoffset: inView7 ? 0 : pathLengths[6],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -348,7 +343,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[7],
             strokeDashoffset: inView8 ? 0 : pathLengths[7],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -370,7 +365,7 @@ const MainFrame = (props) => {
           style={{
             strokeDasharray: pathLengths[8],
             strokeDashoffset: inView9 ? 0 : pathLengths[8],
-            transition: "stroke-dashoffset 2s ease",
+            transition: "stroke-dashoffset 1.5s ease",
           }}
           strokeWidth={10}
         />
@@ -399,7 +394,7 @@ const MainFrame = (props) => {
         style={{
           strokeDasharray: pathLengths[9],
           strokeDashoffset: inView10 ? 0 : pathLengths[9],
-          transition: "stroke-dashoffset 2s ease",
+          transition: "stroke-dashoffset 1.5s ease",
         }}
         strokeWidth={10}
       />
@@ -488,4 +483,4 @@ const MainFrame = (props) => {
     </svg>
   );
 };
-export default MainFrame;
+export default SVGComponent;
