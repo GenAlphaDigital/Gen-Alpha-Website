@@ -6,14 +6,15 @@ import styles from "./page.module.css";
 const AboutPage = () => {
   return (
     <>
-      <Image
-        src={"/Logo.svg"}
-        alt="logo"
-        width={120}
-        height={120}
-        priority={true}
-        className="m-7"
-      />
+      <div className={styles.header}>
+        <Image
+          src={"/Logo.svg"}
+          alt="logo"
+          width={120}
+          height={120}
+          priority={true}
+        />
+      </div>
       <div className={styles.svgContainer}>
         <MainFrame />
       </div>
