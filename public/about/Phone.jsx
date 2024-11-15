@@ -115,7 +115,7 @@ const Phone = (props) => {
 
   return (
     <svg
-      width={375}
+      width={360}
       height={5502}
       viewBox="0 0 375 5502"
       fill="none"

@@ -6,6 +6,8 @@ import MainFrame from "../../../public/about/svg";
 import Tablet from "../../../public/about/Tablet";
 import Phone from "../../../public/about/Phone";
 import styles from "./page.module.css";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/Footer/Footer";
 
 const AboutPage = () => {
   const [screenWidth, setScreenWidth] = useState(null);
@@ -36,6 +38,8 @@ const AboutPage = () => {
         <div className={`${styles.svgContainer}`}>
           <Phone />
         </div>
+        <Contact />
+        <Footer />
       </>
     );
   } else if (screenWidth <= 768) {
@@ -53,6 +57,8 @@ const AboutPage = () => {
         <div className={`${styles.svgContainer}`}>
           <Tablet />
         </div>
+        <Contact />
+        <Footer />
       </>
     );
   }
@@ -71,6 +77,8 @@ const AboutPage = () => {
       <div className={`${styles.svgContainer}`}>
         <MainFrame />
       </div>
+      <Contact />
+      <Footer />
     </>
   );
 };
